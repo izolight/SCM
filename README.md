@@ -30,3 +30,10 @@ pip install django mysqlclient docker-compose
 # in SimpleClubManager-SCM directory
 docker-compose up -d
 ```
+
+### setup django db
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
