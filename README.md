@@ -17,6 +17,7 @@ bla
 
 ```bash
 git clone https://gitlab.com/ch.bfh.ti.keusa1/SimpleClubManager-SCM
+git checkout develop
 python3 -m venv SimpleClubManager-SCM
 cd SimpleClubManager-SCM
 . bin/activate # windows -> \Scripts\activate.bat
