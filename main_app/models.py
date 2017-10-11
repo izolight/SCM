@@ -9,9 +9,9 @@ class Member(models.Model):
     city = models.ForeignKey(City, related_name='members')
     phone_regex = RegexValidator(regex=r'^\+41\d{9}$', message="Bitte gültige Telefonnummer eingeben")
     phone_number = models.CharField(validators=[phone_regex], max_length=12)
-    email_regex = RegexValidator(regex=r'^[^@\s]+@[^@\s]+\.[^@\s]+$', message="Bitte gültige email angeben")  # stupid
-    email = models.CharField(validators=[email_regex], max_length=100)
+    email = models.EmailField(max_length=200)
     user_name = models.CharField(max_length=50, unique=True)  # TODO connect with builtin auth
+    website = models.URLField(max_length=100, blank=True)
 
 
 class City (models.Model):
