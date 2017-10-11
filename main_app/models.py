@@ -5,6 +5,12 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 
+class City(models.Model):
+    zip_regex = RegexValidator(regex=r'^\d{4}$', message="Bitte vierstellige PLZ eingeben")
+    zip_code = models.PositiveSmallIntegerField(validators=[zip_regex], unique=True)
+    city = models.CharField(max_length=30)
+
+
 class Member(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -27,9 +33,3 @@ def create_member(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_member(sender, instance, **kwargs):
     instance.member.save()
-
-
-class City (models.Model):
-    zip_regex = RegexValidator(regex=r'^\d{4}$', message="Bitte vierstellige PLZ eingeben")
-    zip_code = models.PositiveSmallIntegerField(validators=[zip_regex], unique=True)
-    city = models.CharField(max_length=30)
