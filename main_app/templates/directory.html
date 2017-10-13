@@ -36,10 +36,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{% 'index' %}">Index</a></li>
+                <li><a href="{% static 'index' %}">Index</a></li>
+                <li class="active"><a href="/directory">Directory</a></li>
                 <li><a href="{% static 'login' %}">Login</a></li>
-                <li><a href="{% static 'show_member' %}">List Member</a></li>
-                <li><a href="{% static 'add_member' %}">Add Member</a></li>
+                <li><a href="/add_member">Add Member</a></li>
                 <li><a href="{% static 'modify_member' %}">Modify Member</a></li>
                 <li><a href="{% static 'facturate_member' %}">Facturate Member</a></li>
                 <li><a href="{% static 'contact' %}">Contact</a></li>

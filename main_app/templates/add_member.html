@@ -38,9 +38,9 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="{% static 'index' %}">Index</a></li>
+                <li><a href="/directory">Directory</a></li>
                 <li><a href="{% static 'login' %}">Login</a></li>
-                <li><a href="{% static 'show_member' %}">List Member</a></li>
-                <li class="active"><a href="{% static 'add_member' %}">Add Member</a></li>
+                <li class="active"><a href="/add_member">Add Member</a></li>
                 <li><a href="{% static 'modify_member' %}">Modify Member</a></li>
                 <li><a href="{% static 'facturate_member' %}">Facturate Member</a></li>
                 <li><a href="{% static 'contact' %}">Contact</a></li>
@@ -55,30 +55,33 @@
 <div class="container">
     <div class="jumbotron">
         <div class="raw">
-            <p>
-            <div class="col-md-3"><img class="logo" src="{% static '/images/logo_scm.jpg' %}"></div>
-            <div class="col-md-5"><h2>Simple Club Manager</h2></div>
-            <div class="col-md-4 calendarbox">
+            <div class="col-md-2 navbar-brand"><img class="logo pull-left" src="{% static '/images/logo_scm.jpg' %}">
+            </div>
+            <div class="col-md-5 pull-left"><h2>Simple Club Manager</h2></div>
+            <div class="col-md-5 calendar pull-right">
                 <p id="demo"></p>
                 <script>
                     var d = new Date();
-                    document.getElementById("demo").innerHTML = d.toDateString() + ", " + d.getUTCHours() + ":" + d.getUTCMinutes();
+                    document.getElementById("demo").innerHTML = "<h2>" + d.toDateString() + ", " + d.getUTCHours() + ":" + d.getUTCMinutes() + "</h2>";
                 </script>
 
-                </p> </div>
-        </div>
-        <div class="raw">
-            <div class="col-md-12">
-                <p> <h2>Mitglied hinzufügen</h2></p>
             </div>
         </div>
+        <div class="raw">
+            <br>
+            <div class="col-md-12 pull-left">
+                <p>
+                    <br>
+                <h2>Mitglied hinzufügen</h2></p>
+            </div>
+            <br><br><br><br><br><br>
+        </div>
     </div>
-</div>
-<div class="container">
+
     <div class="row marketing">
 
-        <div class="raw">
-            <div class="col-md-12">Bitte tragen Sie die Daten des neuen Mitglieds ein:</div>
+        <div class="row marketing">
+            <div class="col-lg-6">Bitte tragen Sie die Daten des neuen Mitglieds ein:<br><br></div>
         </div>
 
 
@@ -185,13 +188,13 @@
         </section>
 
     </aside>
-
-    <footer>
-
-        &copy; SCM - Developer Team, Bern, 03.05.2020
-
-    </footer>
 {% endcomment %}
+        <footer class="footer">
+
+            &copy; SCM - Developer Team, Bern, 03.05.2020
+
+        </footer>
+
     </div>
 </div> <!-- /container -->
 
@@ -200,6 +203,6 @@
 ================================================== -->
 <!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="{% static 'bootstrap/css/bootstrap.min.css' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 
 

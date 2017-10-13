@@ -6,3 +6,6 @@ def index(request):
 
 def add_member(request):
     return render(request, 'add_member.html')
+
+def directory(request):
+    return render(request, 'directory.html')
