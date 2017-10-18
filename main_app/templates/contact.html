@@ -7,9 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Die 3 Meta-Tags oben *müssen* zuerst im head stehen; jeglicher sonstiger head-Inhalt muss *nach* diesen Tags kommen -->
     <!-- Bootstrap-CSS -->
-    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Besondere Stile für diese Vorlage -->
-    <link href="{% static 'bootstrap/css/navbar-fixed-top.css' %}" rel="stylesheet">
+    <link href="{% static '/bootstrap/css/navbar-fixed-top.css' %}" rel="stylesheet">
+    <link href="{% static '/bootstrap/css/css.css' %}" rel="stylesheet">
+
+    {% comment %}    <!-- Besondere Stile für diese Vorlage -->
+    <link href="jumbotron-narrow.css" rel="stylesheet">
+
+        <!-- Besondere Stile für diese Vorlage -->
+    <link href="{% static '/bootstrap/css/blog.css' %}" rel="stylesheet">{% endcomment %}
 
     <!-- Unterstützung für Media Queries und HTML5-Elemente in IE8 über HTML5 shim und Respond.js -->
     <!--[if lt IE 9]>
@@ -32,79 +39,88 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Projekt-Titel</a>
+            <a class="navbar-brand" href="#">Simple Club Manager</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{% 'index' %}">Index</a></li>
-                <li><a href="{% static 'login' %}">Login</a></li>
-                <li><a href="{% static 'show_member' %}">List Member</a></li>
-                <li><a href="{% static 'add_member' %}">Add Member</a></li>
-                <li><a href="{% static 'modify_member' %}">Modify Member</a></li>
-                <li><a href="{% static 'facturate_member' %}">Facturate Member</a></li>
-                <li><a href="{% static 'contact' %}">Contact</a></li>
-                <li><a href="{% static 'index' %}">Logout</a></li>
+                <li><a href="/">Index</a></li>
+                <li><a href="/ice_management">Ice Management</a></li>
+                <li><a href="/material">Material</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Member<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/member_directory">List Member</a></li>
+                        <li><a href="/member_add">Add Member</a></li>
+                        <li><a href="/member_edit">Edit Member</a></li>
+                        <li><a href="/member_delete">Delete Member</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/trainings">Trainings</a></li>
+                <li><a href="/billing">Billing</a></li>
+                <li><a href="/impressum">Impressum</a></li>
+                <li class="active"><a href="/contact">Contact</a></li>
+                <li><a href="/login">Login</a></li>
             </ul>
 
         </div><!--/.nav-collapse -->
     </div>
 </nav>
 
-
-<div class="container-fluid">
-
-    <div class="raw">
-        <div class="col-md-4"><img src="{% static '/images/logo_scm.jpg' %}"></div>
-        <div class="col-md-8"><h1>Smart Club Manager - Home</h1></div>
-        <div class="col-md-2">
-            <form>
-                <button type="button" id="logout">Logout</button>
-            </form>
+<div class="container">
+    <div class="jumbotron">
+        <div class="col-md-2 navbar-brand"><img class="logo img-rounded" src="{% static '/images/logo_scm.jpg' %}">
         </div>
-        <div class="col-md-2">
+        <div class="col-md-5 pull-left"><h2>Simple Club Manager</h2></div>
+        <div class="col-md-5 calendar pull-right">
             <p id="demo"></p>
             <script>
                 var d = new Date();
-                document.getElementById("demo").innerHTML = d.toDateString() + ", " + d.getUTCHours() + ":" + d.getUTCMinutes();
+                document.getElementById("demo").innerHTML = "<h2>" + d.toDateString() + ", " + d.getUTCHours() + ":" + d.getUTCMinutes() + "</h2>";
             </script>
 
+        </div>
+        <br>
+        <div class="col-md-12 pull-left">
+            <p>
+                <br>
+            <h2>Welcome</h2></p>
+        </div>
+        <br><br><br><br><br><br>
+    </div>
+
+    <div class="col-md-12">
+
+        This is the contact-site.
+
+        <div class="col-xs-3 sidebar-offcanvas pull-right" id="sidebar">
+            <section>
+                <h3>Datum - Uhrzeit</h3>
+                Datum - Uhrzeit
+            </section>
+
+            <section>
+                <h3>Nächste Spiele:</h3>
+                Spieldatum 1<br>
+                Spieldatum 2<br>
+                Spieldatum 3<br>
+
+            </section>
+
+            <section>
+                <h3>Geburtstage</h3>
+                GB 1<br>
+                GB 2<br>
+                GB3 <br>
+            </section>
         </div>
 
 
     </div>
-
-
-
-
-    {% comment %}
-    <aside>
-
-        <section>
-            <h3>Datum - Uhrzeit</h3>
-            Datum - Uhrzeit
-        </section>
-
-        <section>
-            <h3>Nächste Spiele:</h3>
-            Spieldatum 1<br>
-            Spieldatum 2<br>
-            Spieldatum 3<br>
-
-        </section>
-
-        <section>
-            <h3>Geburtstage</h3>
-            GB 1<br>
-            GB 2<br>
-            GB3 <br>
-        </section>
-
-    </aside>
-
-    <footer>
+    <footer class="footer col-md-12">
 
         &copy; SCM - Developer Team, Bern, 03.05.2020
-{% endcomment %}
 
     </footer>
 
@@ -115,6 +131,8 @@
 ================================================== -->
 <!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="{% static 'bootstrap/css/bootstrap.min.css' %}"></script>
+<script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static '/bootstrap/js/offcanvas.js' %}"></script>
+
 
 
