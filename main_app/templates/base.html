@@ -87,8 +87,13 @@
         <br>
         <div class="col-md-12 pull-left">
             <p>
-                <br>
-            <h2>Welcome</h2></p>
+                <br><br>
+            <h2>
+                {% block title %}
+                    <div>TITLE CONTENT PLACEHOLDER</div>
+                {% endblock title %}
+            </h2>
+            </p>
         </div>
         <br><br><br><br><br><br>
     </div>
@@ -96,7 +101,7 @@
     <main>
 
         {% block content %}
-            <div>BLOCK CONTENT PLACEHODER</div>
+            <div>BLOCK CONTENT PLACEHOLDER</div>
         {% endblock content %}
 
     </main>
