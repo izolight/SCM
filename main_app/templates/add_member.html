@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,27 +94,29 @@
     <div class="col-md-12">
         <div class="col-sm-7">
 
-            <form action="add_member">
+            <form method="post" novalidate>
+                {% csrf_token %}
+
                 <div class="form-group">
                     <label for="Text">Bitte tragen Sie die Daten des neuen Mitglied ein:</label>
                 </div>
                 <div class="form-group">
                     <label for="firstname">First Name</label>
-                    <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                    {% render_field form.first_name class="form-control" %}
                 </div>
                 <div class="form-group">
                     <label for="lastname">Last Name</label>
-                    <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                    {% render_field form.last_name class="form-control" %}
                 </div>
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <input type="text" class="form-control" id="address" placeholder="Adresse">
+                    {% render_field form.address class="form-control" %}
                 </div>
                 <div class="row">
                     <div class="col-xs-4">
                         <div clss="form-group">
                             <label for="city">City</label>
-                            <input type="text" class="form-control" id="city" placeholder="City">
+                            {% render_field form.city class="form-control" %}
                         </div>
                     </div>
                     <div class="col-xs-8">
@@ -128,51 +131,28 @@
                 </div>
                 <div class="form-group">
                     <label for="phonenumber">Phone Number</label>
-                    <input type="tel" class="form-control" id="phonenumber" placeholder="Phone Number">
+                    {% render_field form.phone_number class="form-control" %}
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    {% render_field form.email class="form-control" %}
                 </div>
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Username" required
-                           pattern="[a-zA-Z][a-zA-Z0-9]{1,20}$"
-                           title="Usernames are without punctuation marks. It contains one to twenty characters. Please, don't use 'ä', 'ö' and 'ü'">
+                    {% render_field form.username class="form-control" %}
                 </div>
                 <div class="form-group">
                     <label for="password1">Password</label>
-                    <input type="password" class="form-control" id="password1" placeholder="Password"
-                           required pattern="[a-zA-Z][a-zA-Z0-9.]{7,16}$"
-                           title="Your password must be alphanumeric, it must have a dot and you must take between 8 and 16 characters.">
+                    {% render_field form.password1 class="form-control" %}
                 </div>
                 <div class="form-group">
-                    <label for="password2">Password - Repeat</label>
-                    <input type="password" class="form-control" id="password2" placeholder="Password Repeat"
-                           required pattern="[a-zA-Z][a-zA-Z0-9.]{7,16}$"
-                           title="Your password must be alphanumeric, it must have a dot and you must take between 8 and 16 characters.">
+                    <label for="password1">Password</label>
+                    {% render_field form.password2 class="form-control" %}
                 </div>
 
                 <input type="Submit" class="btn btn-default col-xs-6" value="Submit">
                 <input type="Reset" class="btn btn-default col-xs-6" value="Reset">
                 <br><br><br><br>
-
-
-                <script>
-
-                    var alpha = document.querySelector('input[name=password1]');
-                    var beta = document.querySelector('input[name=password2]');
-
-                    beta.oninput = function () {
-                        if (alpha.value !== beta.value) {
-                            beta.setCustomValidity('Passwörter nicht identisch!');
-                        }
-                        else {
-                            beta.setCustomValidity('');
-                        }
-                    };
-
-                </script>
 
 
             </form>
