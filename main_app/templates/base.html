@@ -53,8 +53,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">Member<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/member_directory">List Member</a></li>
-                        <li><a href="/member_add">Add Member</a></li>
+                        <li><a href="/members">List Member</a></li>
+                        <li><a href="/members/add">Add Member</a></li>
                         <li><a href="/member_edit">Edit Member</a></li>
                         <li><a href="/member_delete">Delete Member</a></li>
 
@@ -99,11 +99,36 @@
     </div>
 
     <main>
+        <div class="col-md-12">
 
-        {% block content %}
-            <div>BLOCK CONTENT PLACEHOLDER</div>
-        {% endblock content %}
+            {% block content %}
+                <div>BLOCK CONTENT PLACEHOLDER</div>
+            {% endblock content %}
 
+
+            <div class="col-xs-3 sidebar-offcanvas pull-right" id="sidebar">
+
+                <section>
+                    <h3>Datum - Uhrzeit</h3>
+                    Datum - Uhrzeit
+                </section>
+
+                <section>
+                    <h3>Nächste Spiele:</h3>
+                    Spieldatum 1<br>
+                    Spieldatum 2<br>
+                    Spieldatum 3<br>
+
+                </section>
+
+                <section>
+                    <h3>Geburtstage</h3>
+                    GB 1<br>
+                    GB 2<br>
+                    GB3 <br>
+                </section>
+            </div>
+        </div>
     </main>
 
     <footer class="footer col-md-12">

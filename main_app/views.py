@@ -18,10 +18,10 @@ def add_member(request):
 #            user.member.city = form.cleaned_data.get('city')
             user.member.phone_number = form.cleaned_data.get('phone_number')
             user.save()
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=user.username, password=raw_password)
-            login(request, user)
-            return redirect('add_member')
+            # raw_password = form.cleaned_data.get('password1')
+            # user = authenticate(username=user.username, password=raw_password)
+            # login(request, user)
+            return redirect('list_members')
     else:
         form = NewMemberForm()
         return render(request, 'add_member.html', {
@@ -29,7 +29,7 @@ def add_member(request):
         })
 
 
-def member_directory(request):
+def list_members(request):
     return render(request, 'member_directory.html')
 
 
