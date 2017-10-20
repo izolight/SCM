@@ -1,11 +1,20 @@
 from django.shortcuts import render, redirect
 from .forms import NewMemberForm
 from django.contrib.auth import authenticate, login
+from .models import City
 
 
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
+
+
+def ajax_city_from_zip(request, zip):
+    cities = get_city_from_zip(zip)
+
+
+def get_city_from_zip(zip):
+    return City.objects.filter(zip_code=zip)
 
 
 def add_member(request):
@@ -15,6 +24,9 @@ def add_member(request):
             user = form.save()
             user.refresh_from_db()
             user.member.address = form.cleaned_data.get('address')
+            city = form.cleaned_data.get('city')
+            zip_code = form.cleaned_data.get('zip_code')
+
 #            user.member.city = form.cleaned_data.get('city')
             user.member.phone_number = form.cleaned_data.get('phone_number')
             user.save()

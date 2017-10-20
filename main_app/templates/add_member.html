@@ -36,10 +36,7 @@
                 <div class="col-xs-8">
                     <div class="form-group">
                         <label for="postale code">Postale Code</label>
-                        <input type="text" class="form-control" id="plz" placeholder="Postale Code" required
-                               pattern="[0-9]{4}"
-                               title="Bitte eine vierstellige Postleitzahl eingeben"
-                               inputmode="numeric">
+                        {% render_field form.zip_code class="form-control" %}
                     </div>
                 </div>
             </div>
