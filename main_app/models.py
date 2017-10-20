@@ -7,7 +7,7 @@ from django.dispatch import receiver
 
 class City(models.Model):
     zip_regex = RegexValidator(regex=r'^\d{4}$', message="Bitte vierstellige PLZ eingeben")
-    zip_code = models.PositiveSmallIntegerField(validators=[zip_regex], unique=True)
+    zip_code = models.PositiveSmallIntegerField(validators=[zip_regex])
     city = models.CharField(max_length=30)
 
 
