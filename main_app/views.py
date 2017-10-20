@@ -30,15 +30,15 @@ def add_member(request):
 
 
 def list_members(request):
-    return render(request, 'member_directory.html')
+    return render(request, 'list_member.html')
 
 
 def member_delete(request):
-    return render(request, 'member_delete.html')
+    return render(request, 'delete_member.html')
 
 
 def member_edit(request):
-    return render(request, 'member_edit.html')
+    return render(request, 'edit_member.html')
 
 
 def billing(request):
