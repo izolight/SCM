@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Login
+{% endblock title %}
+
+{% block content %}
+
+    <div class="col-sm-6">
+
+        <form action="add_member">
+            <div class="form-group">
+                <label for="Text">Bitte geben Sie für den Login Ihr Benutzernamen und Ihr Passwort ein:</label>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Username" required
+                       pattern="[a-zA-Z][a-zA-Z0-9]{1,20}$"
+                       title="Usernames are without punctuation marks. It contains one to twenty characters. Please, don't use 'ä', 'ö' and 'ü'">
+            </div>
+            <div class="form-group">
+                <label for="password1">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+            </div>
+
+
+            <input type="Submit" class="btn btn-default col-xs-6" value="Submit">
+            <input type="Reset" class="btn btn-default col-xs-6" value="Reset">
+            <br><br><br><br>
+
+
+            <script>
+
+                var alpha = document.querySelector('input[name=password1]');
+                var beta = document.querySelector('input[name=password2]');
+
+                beta.oninput = function () {
+                    if (alpha.value !== beta.value) {
+                        beta.setCustomValidity('Passwörter nicht identisch!');
+                    }
+                    else {
+                        beta.setCustomValidity('');
+                    }
+                };
+
+            </script>
+
+
+        </form>
+    </div>
+
+{% endblock content %}

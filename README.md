@@ -5,7 +5,7 @@ This application is for the "Project 1" class at BFH.
 
 bla
 
-## dev environment
+## Dev environment
 
 ### Requirements:
 
