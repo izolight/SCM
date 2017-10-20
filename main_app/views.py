@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import NewMemberForm
+from django.contrib.auth import authenticate, login
+from .models import City
 
 
 # Create your views here.
@@ -6,11 +9,39 @@ def index(request):
     return render(request, 'index.html')
 
 
-def member_add(request):
-    return render(request, 'member_add.html')
+def ajax_city_from_zip(request, zip):
+    cities = get_city_from_zip(zip)
 
 
-def member_directory(request):
+def get_city_from_zip(zip):
+    return City.objects.filter(zip_code=zip)
+
+
+def add_member(request):
+    if request.method == 'POST':
+        form = NewMemberForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()
+            user.member.address = form.cleaned_data.get('address')
+            city = form.cleaned_data.get('city')
+            zip_code = form.cleaned_data.get('zip_code')
+
+#            user.member.city = form.cleaned_data.get('city')
+            user.member.phone_number = form.cleaned_data.get('phone_number')
+            user.save()
+            # raw_password = form.cleaned_data.get('password1')
+            # user = authenticate(username=user.username, password=raw_password)
+            # login(request, user)
+            return redirect('list_members')
+    else:
+        form = NewMemberForm()
+        return render(request, 'add_member.html', {
+            'form': form
+        })
+
+
+def list_members(request):
     return render(request, 'member_directory.html')
 
 
