@@ -13,7 +13,7 @@ class City(models.Model):
 
 class Member(models.Model):
     address = models.CharField(max_length=50, null=True)
-    city = models.ForeignKey(City, related_name='members', null=True)
+    city = models.ForeignKey(City, related_name='member', null=True)
     phone_regex = RegexValidator(regex=r'^\+41\d{9}$', message="Bitte gültige Telefonnummer eingeben")
     phone_number = models.CharField(validators=[phone_regex], max_length=12, null=True)
     user_name = models.OneToOneField(User, on_delete=models.CASCADE, related_name='member')

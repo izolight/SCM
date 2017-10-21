@@ -47,21 +47,62 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Index</a></li>
-                <li><a href="/ice_management">Ice Management</a></li>
-                <li><a href="/material">Material</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Ice Management<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ice/plan">Ice Plan</a></li>
+                        <li><a href="/ice/add">Add Date</a></li>
+                        <li><a href="/ice/edit">Edit Date</a></li>
+                        <li><a href="/ice/delete">Delete Date</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Material<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/material/list">List Material</a></li>
+                        <li><a href="/material/add">Add Material</a></li>
+                        <li><a href="/material/edit">Edit Material</a></li>
+                        <li><a href="/material/reservate">Reservate Material</a></li>
+                        <li><a href="/material/delete">Delete Material</a></li>
+                    </ul>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">Member<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/members">List Member</a></li>
-                        <li><a href="/members/add">Add Member</a></li>
-                        <li><a href="/member_edit">Edit Member</a></li>
-                        <li><a href="/member_delete">Delete Member</a></li>
+                        <li><a href="/member/list">List Member</a></li>
+                        <li><a href="/member/add">Add Member</a></li>
+                        <li><a href="/member/edit">Edit Member</a></li>
+                        <li><a href="/member/delete">Delete Member</a></li>
 
                     </ul>
                 </li>
-                <li><a href="/trainings">Trainings</a></li>
-                <li><a href="/billing">Billing</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Trainings<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/training/list">List Training</a></li>
+                        <li><a href="/training/add">Add Training</a></li>
+                        <li><a href="/training/edit">Edit Training</a></li>
+                        <li><a href="/training/delete">Delete Training</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Billing<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/bill/list">List Bill</a></li>
+                        <li><a href="/bill/open">Open Bill</a></li>
+                        <li><a href="/bill/facturate">Facturate Bill</a></li>
+                        <li><a href="/bill/facturated">Facturated Bill</a></li>
+                        <li><a href="/bill/delayed">Delayed Bill</a></li>
+                        <li><a href="/bill/reminded">Reminded Bill</a></li>
+                        <li><a href="/bill/register">Register Paying</a></li>
+                        <li><a href="/bill/notpayed">Not Payed</a></li>
+                    </ul>
+                </li>
                 <li><a href="/impressum">Impressum</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="/login">Login</a></li>
@@ -125,7 +166,7 @@
                     <h3>Geburtstage</h3>
                     GB 1<br>
                     GB 2<br>
-                    GB3 <br>
+                    GB 3<br>
                 </section>
             </div>
         </div>
