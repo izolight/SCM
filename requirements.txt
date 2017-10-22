@@ -1,0 +1,5 @@
+Django >=1.11.5,< 2.0
+django-widget-tweaks
+mysqlclient
+PyYAML
+docker-compose
