@@ -78,7 +78,7 @@ def reminded_bill(request):
 
 
 def register_bill(request):
-    return render(request, 'register_bill.html')
+    return render(request, 'payed_bill.html')
 
 
 def notpayed_bill(request):
@@ -89,8 +89,8 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-def plan_ice(request):
-    return render(request, 'plan_ice.html')
+def list_ice(request):
+    return render(request, 'list_ice.html')
 
 
 def add_ice(request):
@@ -113,24 +113,8 @@ def login(request):
     return render(request, 'login.html')
 
 
-def list_material(request):
-    return render(request, 'list_material.html')
-
-
-def add_material(request):
-    return render(request, 'add_material.html')
-
-
-def edit_material(request):
-    return render(request, 'edit_material.html')
-
-
-def reservate_material(request):
-    return render(request, 'reservate_material.html')
-
-
-def delete_material(request):
-    return render(request, 'delete_material.html')
+def create_account(request):
+    return render(request, 'create_account.html')
 
 
 def list_training(request):

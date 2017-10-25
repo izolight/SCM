@@ -1,11 +1,57 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Willkommen
+    Training editieren
 {% endblock title %}
 
 {% block content %}
 
-    edit trainig
+<div class="col-sm-7">
+
+        <form action="add_member">
+            <div class="form-group">
+                <label for="Text">Bitte tragen Sie die Daten für das korrigierte Training ein:</label>
+            </div>
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" id="firstname" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" id="lastname" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="Adresse" required>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <div clss="form-group">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city" placeholder="City" required>
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <label for="postale code">Postale Code</label>
+                        <input type="text" class="form-control" id="plz" placeholder="Postale Code" required
+                               pattern="[0-9]{4}"
+                               title="Bitte eine vierstellige Postleitzahl eingeben"
+                               inputmode="numeric">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phonenumber">Phone Number</label>
+                <input type="tel" class="form-control" id="phonenumber" placeholder="Phone Number" required>
+            </div>
+
+            <input type="Submit" class="btn btn-default col-xs-6" value="Übertragen">
+            <input type="Reset" class="btn btn-default col-xs-6" value="Eingaben löschen">
+            <br><br><br><br>
+
+
+        </form>
+    </div>
 
 {% endblock content %}

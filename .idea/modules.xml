@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SimpleClubManager.iml" filepath="$PROJECT_DIR$/.idea/SimpleClubManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SimpleClubManager-SCM.iml" filepath="$PROJECT_DIR$/.idea/SimpleClubManager-SCM.iml" />
     </modules>
   </component>
 </project>

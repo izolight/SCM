@@ -1,11 +1,22 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Willkommen
+    Eisbelegung löschen
 {% endblock title %}
 
 {% block content %}
 
-    Oh no, don't do that! Don't delete the ice!
+    <b>Woll Sie die Eisbelegung wirklich löschen?</b>
+    <br><br>
+    Angaben der Eisbeleung (automatisch laden)
+    <br><br>
+    <a class="btn btn-default btn-sm" href="/ice/list" role="button">Löschen</a>
+    <button class="btn btn-default btn-sm" onclick="goBack()" role="button">Abbrechen</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
 {% endblock content %}

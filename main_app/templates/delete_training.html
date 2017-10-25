@@ -1,11 +1,22 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Willkommen
+    Training löschen
 {% endblock title %}
 
 {% block content %}
 
-   delete trainig
+    <b>Woll Sie das Training wirklich löschen?</b>
+    <br><br>
+    Trainingsdaten (automatisch laden)
+    <br><br>
+    <a class="btn btn-default btn-sm" href="/training/list" role="button">Löschen</a>
+    <button class="btn btn-default btn-sm" onclick="goBack()" role="button">Abbrechen</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
 {% endblock content %}
