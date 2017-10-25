@@ -36,9 +36,10 @@ def add_member(request):
             return redirect('list_member')
     else:
         form = NewMemberForm()
-        return render(request, 'add_member.html', {
-            'form': form
-        })
+
+    return render(request, 'add_member.html', {
+        'form': form
+    })
 
 
 def list_members(request):
