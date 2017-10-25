@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import NewMemberForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 from .models import City
 
 
@@ -21,22 +21,34 @@ def add_member(request):
     if request.method == 'POST':
         form = NewMemberForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            user.refresh_from_db()
-            user.member.address = form.cleaned_data.get('address')
-            city = form.cleaned_data.get('city')
-            zip_code = form.cleaned_data.get('zip_code')
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            username = form.cleaned_data['username']
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password1']
+            address = form.cleaned_data['address']
+            city = form.cleaned_data['city']
+            zip_code = form.cleaned_data['zip_code']
+            phone_number = form.cleaned_data['phone_number']
 
-#            user.member.city = form.cleaned_data.get('city')
-            user.member.phone_number = form.cleaned_data.get('phone_number')
+            user = User.objects.create_user(first_name=first_name,
+                                                last_name=last_name,
+                                                username=username,
+                                                email=email,
+                                                password=password)
             user.save()
-            # raw_password = form.cleaned_data.get('password1')
-            # user = authenticate(username=user.username, password=raw_password)
-            # login(request, user)
+            user.refresh_from_db()
+            user.member.address = address
+#            user.member.city = city
+            user.member.zip_code = zip_code
+            user.member.phone_number = phone_number
+
+            user.save()
             return redirect('list_members')
     else:
         form = NewMemberForm()
-        return render(request, 'add_member.html', {
+
+    return render(request, 'add_member.html', {
             'form': form
         })
 
@@ -45,11 +57,11 @@ def list_members(request):
     return render(request, 'list_member.html')
 
 
-def member_delete(request):
+def delete_member(request):
     return render(request, 'delete_member.html')
 
 
-def member_edit(request):
+def edit_member(request):
     return render(request, 'edit_member.html')
 
 
