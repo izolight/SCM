@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
                 ('phone_number', models.CharField(max_length=12, validators=[django.core.validators.RegexValidator(message='Bitte gültige Telefonnummer eingeben', regex='^\\+41\\d{9}$')])),
                 ('email', models.EmailField(max_length=200)),
                 ('website', models.URLField(blank=True, max_length=100)),
-                ('city', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='members', to='main_app.City')),
+                ('city', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='member', to='main_app.City')),
                 ('user_name', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
