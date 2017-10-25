@@ -41,8 +41,8 @@ def add_member(request):
         })
 
 
-def list_member(request):
-    return render(request, 'list_member.html')
+def list_members(request):
+    return render(request, 'list_members.html')
 
 
 def delete_member(request):
@@ -53,8 +53,8 @@ def edit_member(request):
     return render(request, 'edit_member.html')
 
 
-def list_bill(request):
-    return render(request, 'list_bill.html')
+def list_bills(request):
+    return render(request, 'list_bills.html')
 
 
 def open_bill(request):
@@ -117,8 +117,8 @@ def create_account(request):
     return render(request, 'create_account.html')
 
 
-def list_training(request):
-    return render(request, 'list_training.html')
+def list_trainings(request):
+    return render(request, 'list_trainings.html')
 
 
 def add_training(request):

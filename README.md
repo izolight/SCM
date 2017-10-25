@@ -21,7 +21,7 @@ git checkout develop
 python3 -m venv SimpleClubManager-SCM
 cd SimpleClubManager-SCM
 . bin/activate # windows -> \Scripts\activate.bat
-pip install django mysqlclient docker-compose
+pip install -r requirements.txt --upgrade
 ```
 
 ### start db
