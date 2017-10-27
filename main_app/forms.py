@@ -16,17 +16,13 @@ class NewMemberForm(forms.Form):
     email = forms.EmailField(label="E-Mail Address")
     username = forms.RegexField(regex=r'^[a-zA-Z][a-zA-Z0-9]{1,19}$', label="Username", error_messages={
         'invalid': "Usernames are without punctuation marks. It contains one to twenty characters. Please, don't use 'ä', 'ö' and 'ü'"})
-    password1 = forms.CharField(widget=forms.PasswordInput(), label="Password", required=False)
-    password2 = forms.CharField(widget=forms.PasswordInput(), label="Confirm password", required=False)
+    password1 = forms.CharField(widget=forms.PasswordInput(), label="Password", min_length=10)
+    password2 = forms.CharField(widget=forms.PasswordInput(), label="Confirm password", min_length=10)
 
     def clean(self):
-        pw1 = self.cleaned_data['password1']
-        pw2 = self.cleaned_data['password2']
+        cleaned_data = super(NewMemberForm, self).clean()
+        password1 = cleaned_data.get("password1")
+        password2 = cleaned_data.get("password2")
 
-        if len(pw1) < 10:
-            raise ValidationError("Password must be at least 10 characters")
-
-        if pw1 != pw2:
-            raise ValidationError(_('Passwords do not match'))
-
-        return self.cleaned_data
+        if password1 != password2:
+            self.add_error('password2', "Passwords do not match")
