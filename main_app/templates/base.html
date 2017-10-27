@@ -47,24 +47,54 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Index</a></li>
-                <li><a href="/ice_management">Ice Management</a></li>
-                <li><a href="/material">Material</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Ice Management<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ices">Ice Plan</a></li>
+                        <li><a href="/ices/add">Add Date</a></li>
+                        <li><a href="/ices/edit">Edit Date</a></li>
+                        <li><a href="/ices/delete">Delete Date</a></li>
+                    </ul>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">Member<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/members">List Member</a></li>
                         <li><a href="/members/add">Add Member</a></li>
-                        <li><a href="/member_edit">Edit Member</a></li>
-                        <li><a href="/member_delete">Delete Member</a></li>
+                        <li><a href="/members/edit">Edit Member</a></li>
+                        <li><a href="/members/delete">Delete Member</a></li>
 
                     </ul>
                 </li>
-                <li><a href="/trainings">Trainings</a></li>
-                <li><a href="/billing">Billing</a></li>
-                <li><a href="/impressum">Impressum</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/login">Login</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Trainings<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/trainings">List Training</a></li>
+                        <li><a href="/trainings/add">Add Training</a></li>
+                        <li><a href="/trainings/edit">Edit Training</a></li>
+                        <li><a href="/trainings/delete">Delete Training</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Billing<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/bills">List Bill</a></li>
+                        <li><a href="/bills/open">Open Bill</a></li>
+                        <li><a href="/bills/facturate">Facturate Bill</a></li>
+                        <li><a href="/bills/facturated">Facturated Bill</a></li>
+                        <li><a href="/bills/delayed">Delayed Bill</a></li>
+                        <li><a href="/bills/reminded">Reminded Bill</a></li>
+                        <li><a href="/bills/register">Register Paying</a></li>
+                        <li><a href="/bills/notpayed">Not Payed</a></li>
+                    </ul>
+                </li>
+                <li><a href="/impressums">Impressum</a></li>
+                <li><a href="/contacts">Contact</a></li>
+                <li><a href="/logins">Login</a></li>
             </ul>
 
         </div><!--/.nav-collapse -->
@@ -80,7 +110,7 @@
             <p id="demo"></p>
             <script>
                 var d = new Date();
-                document.getElementById("demo").innerHTML = "<h2>" + d.toDateString() + ", " + d.getUTCHours() + ":" + d.getUTCMinutes() + "</h2>";
+                document.getElementById("demo").innerHTML = "<h2>" + d.toDateString() + ", " + (d.getUTCHours()+2) + ":" + d.getUTCMinutes() + "</h2>";
             </script>
 
         </div>
@@ -125,7 +155,7 @@
                     <h3>Geburtstage</h3>
                     GB 1<br>
                     GB 2<br>
-                    GB3 <br>
+                    GB 3<br>
                 </section>
             </div>
         </div>

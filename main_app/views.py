@@ -49,12 +49,12 @@ def add_member(request):
         form = NewMemberForm()
 
     return render(request, 'add_member.html', {
-            'form': form
-        })
+        'form': form
+    })
 
 
 def list_members(request):
-    return render(request, 'list_member.html')
+    return render(request, 'list_members.html')
 
 
 def delete_member(request):
@@ -65,16 +65,56 @@ def edit_member(request):
     return render(request, 'edit_member.html')
 
 
-def billing(request):
-    return render(request, 'billing.html')
+def list_bills(request):
+    return render(request, 'list_bills.html')
+
+
+def open_bill(request):
+    return render(request, 'open_bill.html')
+
+
+def facturate_bill(request):
+    return render(request, 'facturate_bill.html')
+
+
+def facturated_bill(request):
+    return render(request, 'facturated_bill.html')
+
+
+def delayed_bill(request):
+    return render(request, 'delayed_bill.html')
+
+
+def reminded_bill(request):
+    return render(request, 'reminded_bill.html')
+
+
+def register_bill(request):
+    return render(request, 'payed_bill.html')
+
+
+def notpayed_bill(request):
+    return render(request, 'notpayed_bill.html')
 
 
 def contact(request):
     return render(request, 'contact.html')
 
 
-def ice_management(request):
-    return render(request, 'ice_management.html')
+def list_ice(request):
+    return render(request, 'list_ice.html')
+
+
+def add_ice(request):
+    return render(request, 'add_ice.html')
+
+
+def edit_ice(request):
+    return render(request, 'edit_ice.html')
+
+
+def delete_ice(request):
+    return render(request, 'delete_ice.html')
 
 
 def impressum(request):
@@ -85,9 +125,21 @@ def login(request):
     return render(request, 'login.html')
 
 
-def material(request):
-    return render(request, 'material.html')
+def create_account(request):
+    return render(request, 'create_account.html')
 
 
-def trainings(request):
-    return render(request, 'trainings.html')
+def list_trainings(request):
+    return render(request, 'list_trainings.html')
+
+
+def add_training(request):
+    return render(request, 'add_training.html')
+
+
+def edit_training(request):
+    return render(request, 'edit_training.html')
+
+
+def delete_training(request):
+    return render(request, 'delete_training.html')
