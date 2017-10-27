@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Die 3 Meta-Tags oben *müssen* zuerst im head stehen; jeglicher sonstiger head-Inhalt muss *nach* diesen Tags kommen -->
     <!-- Bootstrap-CSS -->
-    <link href="{% static '/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
     <!-- Besondere Stile für diese Vorlage -->
     <link href="{% static '/bootstrap/css/navbar-fixed-top.css' %}" rel="stylesheet">
     <link href="{% static '/bootstrap/css/css.css' %}" rel="stylesheet">
+    <link href="{% static '/bootstrap/css/bootstrap-select.css' %}" rel="stylesheet">
+    <link href="{% static '/bootstrap/css/bootstrap-select.min.css' %}" rel="stylesheet">
+
 
     {% comment %}    <!-- Besondere Stile für diese Vorlage -->
     <link href="jumbotron-narrow.css" rel="stylesheet">
@@ -19,7 +22,8 @@
     <link href="{% static '/bootstrap/css/blog.css' %}" rel="stylesheet">{% endcomment %}
 
     <!-- Custom styles for this template -->
-    <link href="offcanvas.css" rel="stylesheet">
+    <link href=" offcanvas.css
+    " rel="stylesheet">
 
     <!-- Unterstützung für Media Queries und HTML5-Elemente in IE8 über HTML5 shim und Respond.js -->
     <!--[if lt IE 9]>
@@ -110,7 +114,7 @@
             <p id="demo"></p>
             <script>
                 var d = new Date();
-                document.getElementById("demo").innerHTML = "<h2>" + d.toDateString() + ", " + (d.getUTCHours()+2) + ":" + d.getUTCMinutes() + "</h2>";
+                document.getElementById("demo").innerHTML = "<h2>" + d.toDateString() + ", " + (d.getUTCHours() + 2) + ":" + d.getUTCMinutes() + "</h2>";
             </script>
 
         </div>
@@ -176,6 +180,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static '/bootstrap/js/offcanvas.js' %}"></script>
+<script src="{% static '/bootstrap/js/bootstrap-select.min.js' %}"></script>
 
 
 
