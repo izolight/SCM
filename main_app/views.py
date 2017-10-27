@@ -104,7 +104,7 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-def list_ice(request):
+def list_ices(request):
     return render(request, 'list_ice.html')
 
 
