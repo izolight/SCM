@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import NewMemberForm
 from django.contrib.auth.models import User
-from .models import City
+from .models import City, Member
 
 
 # Create your views here.
@@ -32,14 +32,14 @@ def add_member(request):
             phone_number = form.cleaned_data['phone_number']
 
             user = User.objects.create_user(first_name=first_name,
-                                                last_name=last_name,
-                                                username=username,
-                                                email=email,
-                                                password=password)
+                                            last_name=last_name,
+                                            username=username,
+                                            email=email,
+                                            password=password)
             user.save()
             user.refresh_from_db()
             user.member.address = address
-#            user.member.city = city
+            #            user.member.city = city
             user.member.zip_code = zip_code
             user.member.phone_number = phone_number
 
@@ -54,7 +54,10 @@ def add_member(request):
 
 
 def list_members(request):
-    return render(request, 'list_members.html')
+    members = Member.objects.all()
+    return render(request, 'list_members.html', {
+        'members': members
+    })
 
 
 def delete_member(request):
