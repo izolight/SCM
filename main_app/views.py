@@ -33,7 +33,7 @@ def add_member(request):
             # raw_password = form.cleaned_data.get('password1')
             # user = authenticate(username=user.username, password=raw_password)
             # login(request, user)
-            return redirect('list_member')
+            return redirect('list_members')
     else:
         form = NewMemberForm()
 
@@ -90,8 +90,8 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-def list_ice(request):
-    return render(request, 'list_ice.html')
+def list_ices(request):
+    return render(request, 'list_ices.html')
 
 
 def add_ice(request):
