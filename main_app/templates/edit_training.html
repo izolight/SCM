@@ -6,44 +6,38 @@
 
 {% block content %}
 
-<div class="col-sm-7">
+    <div class="col-sm-7">
 
         <form action="add_member">
             <div class="form-group">
                 <label for="Text">Bitte tragen Sie die Daten für das korrigierte Training ein:</label>
             </div>
             <div class="form-group">
-                <label for="firstname">First Name</label>
-                <input type="text" class="form-control" id="firstname" placeholder="First Name" required>
+                <label for="training">Training</label>
+                {#                {% render_field form.first_name class="form-control" %}#}
             </div>
             <div class="form-group">
-                <label for="lastname">Last Name</label>
-                <input type="text" class="form-control" id="lastname" placeholder="Last Name" required>
+                <label for="trainer">Trainer</label>
+                {#                {% render_field form.last_name class="form-control" %}#}
             </div>
             <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" placeholder="Adresse" required>
-            </div>
-            <div class="row">
-                <div class="col-xs-4">
-                    <div clss="form-group">
-                        <label for="city">City</label>
-                        <input type="text" class="form-control" id="city" placeholder="City" required>
-                    </div>
-                </div>
-                <div class="col-xs-8">
-                    <div class="form-group">
-                        <label for="postale code">Postale Code</label>
-                        <input type="text" class="form-control" id="plz" placeholder="Postale Code" required
-                               pattern="[0-9]{4}"
-                               title="Bitte eine vierstellige Postleitzahl eingeben"
-                               inputmode="numeric">
-                    </div>
-                </div>
+                <label for="date">Datum</label>
+                <input class="datetime" type="datetime-local" name="date" id="date">
+                {#                {% render_field form.address class="form-control" %}#}
             </div>
             <div class="form-group">
-                <label for="phonenumber">Phone Number</label>
-                <input type="tel" class="form-control" id="phonenumber" placeholder="Phone Number" required>
+                <label for="add_player">Spieler auswählen</label>
+                <select class="selectpicker" multiple>
+                    <option>Stefan</option>
+                    <option>Tobias</option>
+                    <option>Michael</option>
+                    <option>Gregor</option>
+                    <option>etwas1</option>
+                    <option>etwas2</option>
+                    <option>jemand1</option>
+                    <option>jemand2</option>
+                </select>
+                {#                {% render_field form.phone_number class="form-control" %}#}
             </div>
 
             <input type="Submit" class="btn btn-default col-xs-6" value="Übertragen">

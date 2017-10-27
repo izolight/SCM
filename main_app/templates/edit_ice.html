@@ -6,13 +6,13 @@
 
 {% block content %}
 
- <div class="col-sm-7">
+    <div class="col-sm-7">
 
         <form action="add_member">
             <div class="form-group">
                 <label for="Text">Bitte tragen Sie die korrigierten Daten die Eisbelegung ein:</label>
             </div>
-           <div class="form-group">
+            <div class="form-group">
                 <label for="training">Training</label>
                 {#                {% render_field form.first_name class="form-control" %}#}
             </div>
@@ -25,20 +25,7 @@
                 <input class="datetime" type="datetime-local" name="date" id="date">
                 {#                {% render_field form.address class="form-control" %}#}
             </div>
-            <div class="form-group">
-                <label for="add_player">Spieler auswählen</label>
-                <select class="selectpicker" multiple>
-                    <option>Stefan</option>
-                    <option>Tobias</option>
-                    <option>Michael</option>
-                    <option>Gregor</option>
-                    <option>etwas1</option>
-                    <option>etwas2</option>
-                    <option>jemand1</option>
-                    <option>jemand2</option>
-                </select>
-                {#                {% render_field form.phone_number class="form-control" %}#}
-            </div>
+
 
             <input type="Submit" class="btn btn-default col-xs-6" value="Übertragen">
             <input type="Reset" class="btn btn-default col-xs-6" value="Eingaben löschen">
