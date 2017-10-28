@@ -108,6 +108,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Redirect to after successful login
+
+LOGIN_REDIRECT_URL = 'loginLandingPage'
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 

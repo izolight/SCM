@@ -1,12 +1,14 @@
 from django.conf.urls import url
 from . import views
 
+
 urlpatterns = [
-    url(r'^$', views.index),
+    url(r'^$', views.index, name='loginLandingPage'),
     url(r'^members/add/$', views.add_member, name='add_member'),
     url(r'^members$', views.list_members, name='list_members'),
     url(r'^members/delete/', views.delete_member),
     url(r'^members/edit/', views.edit_member),
+    url(r'^accounts/signup/$', views.sign_up, name='signup'),
     url(r'^bills$', views.list_bills),
     url(r'^bills/open/', views.open_bill),
     url(r'^bills/facturate/', views.facturate_bill),
@@ -21,7 +23,6 @@ urlpatterns = [
     url(r'^ices/edit/', views.edit_ice),
     url(r'^ices/delete/', views.delete_ice),
     url(r'^impressums/', views.impressum),
-    url(r'^logins/', views.login),
     url(r'^accounts/create', views.create_account),
     url(r'^trainings$', views.list_trainings),
     url(r'^trainings/add', views.add_training),
