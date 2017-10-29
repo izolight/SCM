@@ -1,8 +1,7 @@
-from .forms import NewMemberForm
-from .models import City
+from main_app.forms import NewMemberForm, SignUpForm
+from main_app.models import City
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import UserCreationForm
 
 
 # Create your views here.
@@ -41,6 +40,23 @@ def add_member(request):
     return render(request, 'add_member.html', {
         'form': form
     })
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()  # load the profile instance created by the signal
+            user.email = form.cleaned_data.get('email')
+            user.save()
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=user.username, password=raw_password)
+            login(request, user)
+            return redirect('loggedInLandingPage')
+    else:
+        form = SignUpForm()
+    return render(request, 'registration/sign_up.html', {'form': form})
 
 
 def list_members(request):
@@ -90,6 +106,8 @@ def notpayed_bill(request):
 def contact(request):
     return render(request, 'contact.html')
 
+def plan_ice(request):
+    return render(request, 'plan_ice.html')
 
 def list_ice(request):
     return render(request, 'list_ice.html')
@@ -130,17 +148,3 @@ def edit_training(request):
 def delete_training(request):
     return render(request, 'delete_training.html')
 
-
-def sign_up(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('loginLandingPage')
-    else:
-        form = UserCreationForm()
-    return render(request, 'registration/sign_up.html', {'form': form})

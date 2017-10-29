@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Redirect to after successful login
 
-LOGIN_REDIRECT_URL = 'loginLandingPage'
+LOGIN_REDIRECT_URL = 'loggedInLandingPage'
 
 
 # Internationalization

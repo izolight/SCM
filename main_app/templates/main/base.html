@@ -1,0 +1,89 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "main/html_header.html" %}
+</head>
+<body>
+
+{% include "main/navigation.html" %}
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="col-md-2 navbar-brand"><img class="logo img-rounded" src="{% static '/images/logo_scm.jpg' %}">
+        </div>
+        <div class="col-md-5 pull-left"><h2>Simple Club Manager</h2></div>
+        <div class="col-md-5 calendar pull-right">
+            <p id="demo"></p>
+            <script>
+                var d = new Date();
+                document.getElementById("demo").innerHTML = "<h2>" + d.toDateString() + ", " + (d.getUTCHours() + 2) + ":" + d.getUTCMinutes() + "</h2>";
+            </script>
+
+        </div>
+        <br>
+        <div class="col-md-12 pull-left">
+            <p>
+                <br><br>
+            <h2>
+                {% block title %}
+                    <div>TITLE CONTENT PLACEHOLDER</div>
+                {% endblock title %}
+            </h2>
+            </p>
+        </div>
+        <br><br><br><br><br><br>
+    </div>
+
+    <main>
+        <div class="col-md-12">
+
+            {% block content %}
+                <div>BLOCK CONTENT PLACEHOLDER</div>
+            {% endblock content %}
+
+            {% if user.is_authenticated %}
+                <div class="col-xs-3 sidebar-offcanvas pull-right" id="sidebar">
+
+                    <section>
+                        <h3>Datum - Uhrzeit</h3>
+                        Datum - Uhrzeit
+                    </section>
+
+                    <section>
+                        <h3>Nächste Spiele:</h3>
+                        Spieldatum 1<br>
+                        Spieldatum 2<br>
+                        Spieldatum 3<br>
+
+                    </section>
+
+                    <section>
+                        <h3>Geburtstage</h3>
+                        GB 1<br>
+                        GB 2<br>
+                        GB 3<br>
+                    </section>
+                </div>
+            {% endif %}
+        </div>
+    </main>
+
+    <footer class="footer col-md-12">
+
+        &copy; SCM - Developer Team, Bern, 03.05.2020
+
+    </footer>
+
+</div> <!-- /container -->
+
+
+<!-- Bootstrap-JavaScript
+================================================== -->
+<!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static '/bootstrap/js/offcanvas.js' %}"></script>
+
+
+
