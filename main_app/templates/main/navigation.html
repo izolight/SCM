@@ -33,15 +33,18 @@
                                 <li class="{% if url_name == 'plan_ice' %}active{% endif %}"><a
                                         href="{% url 'plan_ice' %}">Ice
                                     Plan</a></li>
+                                <li class="{% if url_name == 'list_ices' %}active{% endif %}"><a
+                                        href="{% url 'list_ices' %}">List
+                                    Ices</a></li>
                                 <li class="{% if url_name == 'add_ice' %}active{% endif %}"><a
                                         href="{% url 'add_ice' %}">Add
-                                    Date</a></li>
+                                    Ice</a></li>
                                 <li class="{% if url_name == 'edit_ice' %}active{% endif %}"><a
                                         href="{% url 'edit_ice' %}">Edit
-                                    Date</a></li>
+                                    Ice</a></li>
                                 <li class="{% if url_name == 'delete_ice' %}active{% endif %}"><a
                                         href="{% url 'delete_ice' %}">Delete
-                                    Date</a></li>
+                                    Ice</a></li>
                             </ul>
                         </li>
 
@@ -138,9 +141,11 @@
                             <a href="{% url 'logout' %}?next={{ request.path }}"><strong>Logout {{ user.get_username }}</strong></a>
                         </li>
                     {% else %}
-                        <li class="{% if url_name == 'login' %}active{% endif %}"><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
+                        <li class="{% if url_name == 'login' %}active{% endif %}"><a
+                                href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
 
-                        <li class="{% if url_name == 'signup' %}active{% endif %}"><a href="{% url 'signup' %}?next={{ request.path }}">Sign up</a></li>
+                        <li class="{% if url_name == 'signup' %}active{% endif %}"><a
+                                href="{% url 'signup' %}?next={{ request.path }}">Sign up</a></li>
                     {% endif %}
                 </ul>
 

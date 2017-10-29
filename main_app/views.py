@@ -123,8 +123,10 @@ def notpayed_bill(request):
 def contact(request):
     return render(request, 'contact.html')
 
+
 def plan_ice(request):
     return render(request, 'plan_ice.html')
+
 
 def list_ices(request):
     return render(request, 'list_ices.html')
@@ -164,4 +166,3 @@ def edit_training(request):
 
 def delete_training(request):
     return render(request, 'delete_training.html')
-
