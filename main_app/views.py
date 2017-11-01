@@ -124,10 +124,6 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-def plan_ice(request):
-    return render(request, 'plan_ice.html')
-
-
 def list_ices(request):
     return render(request, 'list_ices.html')
 

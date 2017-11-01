@@ -18,7 +18,6 @@ urlpatterns = [
     url(r'^bills/notpayed/', views.notpayed_bill, name='notpayed_bill'),
     url(r'^contacts/', views.contact, name='contact'),
     url(r'^ices$', views.list_ices, name='list_ices'),
-    url(r'^ices/plan/', views.plan_ice, name='plan_ice'),
     url(r'^ices/add/', views.add_ice, name='add_ice'),
     url(r'^ices/edit/', views.edit_ice, name='edit_ice'),
     url(r'^ices/delete/', views.delete_ice, name='delete_ice'),

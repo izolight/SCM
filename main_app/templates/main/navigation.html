@@ -21,7 +21,7 @@
                         </li>
 
                         <li class="dropdown
-                            {% if url_name == 'plan_ice' %}active{% endif %}
+                            {% if url_name == 'list_ices' %}active{% endif %}
                             {% if url_name == 'add_ice' %}active{% endif %}
                             {% if url_name == 'edit_ice' %}active{% endif %}
                             {% if url_name == 'delete_ice' %}active{% endif %}
@@ -30,9 +30,6 @@
                                aria-haspopup="true"
                                aria-expanded="false">Ice Management<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li class="{% if url_name == 'plan_ice' %}active{% endif %}"><a
-                                        href="{% url 'plan_ice' %}">Ice
-                                    Plan</a></li>
                                 <li class="{% if url_name == 'list_ices' %}active{% endif %}"><a
                                         href="{% url 'list_ices' %}">List
                                     Ices</a></li>
