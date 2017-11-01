@@ -43,28 +43,7 @@
             {% endblock content %}
 
             {% if user.is_authenticated %}
-                <div class="col-xs-3 sidebar-offcanvas pull-right" id="sidebar">
 
-                    <section>
-                        <h3>Datum - Uhrzeit</h3>
-                        Datum - Uhrzeit
-                    </section>
-
-                    <section>
-                        <h3>Nächste Spiele:</h3>
-                        Spieldatum 1<br>
-                        Spieldatum 2<br>
-                        Spieldatum 3<br>
-
-                    </section>
-
-                    <section>
-                        <h3>Geburtstage</h3>
-                        GB 1<br>
-                        GB 2<br>
-                        GB 3<br>
-                    </section>
-                </div>
             {% endif %}
         </div>
     </main>
@@ -84,6 +63,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static '/bootstrap/js/offcanvas.js' %}"></script>
+<script src="{% static '/bootstrap/js/bootstrap-select.min.js' %}"></script>
 
 
 
