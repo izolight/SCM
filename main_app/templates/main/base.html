@@ -9,30 +9,24 @@
 {% include "main/navigation.html" %}
 
 <div class="container">
-    <div class="jumbotron">
-        <div class="col-md-2 navbar-brand"><img class="logo img-rounded" src="{% static '/images/logo_scm.jpg' %}">
-        </div>
-        <div class="col-md-5 pull-left"><h2>Simple Club Manager</h2></div>
-        <div class="col-md-5 calendar pull-right">
-            <p id="demo"></p>
-            <script>
-                var d = new Date();
-                document.getElementById("demo").innerHTML = "<h2>" + d.toDateString() + ", " + (d.getUTCHours() + 2) + ":" + d.getUTCMinutes() + "</h2>";
-            </script>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <img class="img-rounded" src="{% static '/images/logo_scm.jpg' %}" width="100" height="75">
+            </div>
+
+            <div class="col-md-9 text-center">
+                <h2>
+                    Simple Club Manager -
+
+                    {% block title %}
+                        <div>TITLE CONTENT PLACEHOLDER</div>
+                    {% endblock title %}
+                </h2>
+            </div>
 
         </div>
-        <br>
-        <div class="col-md-12 pull-left">
-            <p>
-                <br><br>
-            <h2>
-                {% block title %}
-                    <div>TITLE CONTENT PLACEHOLDER</div>
-                {% endblock title %}
-            </h2>
-            </p>
-        </div>
-        <br><br><br><br><br><br>
+
     </div>
 
     <main>
