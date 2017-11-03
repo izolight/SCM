@@ -31,6 +31,14 @@ pip install -r requirements.txt --upgrade
 docker-compose up -d
 ```
 
+### trash db and re-create it 
+
+```bash
+docker rm -f simpleclubmanagerscm_scm-db-server_1 
+docker volume rm simpleclubmanagerscm_scm-db
+docker-compose up -d
+```
+
 ### setup django db
 
 ```bash
