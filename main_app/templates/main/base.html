@@ -1,4 +1,6 @@
 {% load staticfiles %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +40,8 @@
     <div class="row">
         <main>
             <div class="col">
+
+                <h1>{% trans "Test Translation" %}</h1>
 
                 {% block content %}
                     <div>BLOCK CONTENT PLACEHOLDER</div>

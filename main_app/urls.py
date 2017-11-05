@@ -2,7 +2,7 @@ from django.conf.urls import url
 from main_app import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='loggedInLandingPage'),
+    url(r'^/$', views.index, name='loggedInLandingPage'),
     url(r'^members/add/$', views.add_member, name='add_member'),
     url(r'^members$', views.list_members, name='list_members'),
     url(r'^members/delete/', views.delete_member, name='delete_member'),
