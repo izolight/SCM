@@ -3,6 +3,7 @@ FROM python:3.6
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         libmysqlclient-dev \
+	netcat-openbsd \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp
