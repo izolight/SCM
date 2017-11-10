@@ -8,7 +8,6 @@ RUN apt-get update \
 WORKDIR /usr/src/app
 COPY requirements.txt ./
 RUN pip install -r requirements.txt -U
-COPY . .
 RUN chmod u+x entrypoint.sh
 EXPOSE 8000
 CMD ["/bin/bash", "entrypoint.sh"]
