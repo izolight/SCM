@@ -5,9 +5,9 @@ RUN apt-get update \
         libmysqlclient-dev \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /usr/src/app
+WORKDIR /tmp
 COPY requirements.txt ./
 RUN pip install -r requirements.txt -U
-RUN chmod u+x entrypoint.sh
 EXPOSE 8000
+WORKDIR /usr/src/app
 CMD ["/bin/bash", "entrypoint.sh"]

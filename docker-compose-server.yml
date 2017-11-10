@@ -15,11 +15,13 @@ services:
       - scm-db:/var/lib/mysql
   scm-web:
     build: ./
-    image: izolight/scm:0.2
+    image: izolight/scm:0.3
     depends_on:
       - scm-db
     links:
       - scm-db
+    volumes:
+      - ./:/usr/src/app
     labels:
       - "traefik.enable=true"
       - "traefik.backend=scm"
