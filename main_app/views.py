@@ -1,7 +1,10 @@
-from django.shortcuts import render, redirect
-from .forms import NewMemberForm
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from .models import City, Member
+from django.shortcuts import render, redirect
+
+from main_app.forms import SignUpForm
+from main_app.forms import NewMemberForm
+from main_app.models import City, Member
 
 
 # Create your views here.
@@ -51,6 +54,23 @@ def add_member(request):
     return render(request, 'add_member.html', {
         'form': form
     })
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()  # load the profile instance created by the signal
+            user.email = form.cleaned_data.get('email')
+            user.save()
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=user.username, password=raw_password)
+            login(request, user)
+            return redirect('loggedInLandingPage')
+    else:
+        form = SignUpForm()
+    return render(request, 'registration/sign_up.html', {'form': form})
 
 
 def list_members(request):
@@ -105,7 +125,7 @@ def contact(request):
 
 
 def list_ices(request):
-    return render(request, 'list_ice.html')
+    return render(request, 'list_ices.html')
 
 
 def add_ice(request):
@@ -122,10 +142,6 @@ def delete_ice(request):
 
 def impressum(request):
     return render(request, 'impressum.html')
-
-
-def login(request):
-    return render(request, 'login.html')
 
 
 def create_account(request):

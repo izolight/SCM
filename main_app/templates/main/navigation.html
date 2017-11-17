@@ -1,0 +1,155 @@
+{% load i18n %}
+<!-- Fixierte Navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Navigation ein-/ausblenden</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Simple Club Manager</a>
+        </div>
+        {% with request.resolver_match.url_name as url_name %}
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    {% if user.is_authenticated %}
+
+                        <li class="{% if url_name == 'loggedInLandingPage' %}active{% endif %}"><a
+                                href="{% url 'loggedInLandingPage' %}">Index</a>
+                        </li>
+
+                        <li class="dropdown
+                            {% if url_name == 'list_ices' %}active{% endif %}
+                            {% if url_name == 'add_ice' %}active{% endif %}
+                            {% if url_name == 'edit_ice' %}active{% endif %}
+                            {% if url_name == 'delete_ice' %}active{% endif %}
+                        ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">Ice Management<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="{% if url_name == 'list_ices' %}active{% endif %}"><a
+                                        href="{% url 'list_ices' %}">List
+                                    Ices</a></li>
+                                <li class="{% if url_name == 'add_ice' %}active{% endif %}"><a
+                                        href="{% url 'add_ice' %}">Add
+                                    Ice</a></li>
+                                <li class="{% if url_name == 'edit_ice' %}active{% endif %}"><a
+                                        href="{% url 'edit_ice' %}">Edit
+                                    Ice</a></li>
+                                <li class="{% if url_name == 'delete_ice' %}active{% endif %}"><a
+                                        href="{% url 'delete_ice' %}">Delete
+                                    Ice</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="dropdown
+                            {% if url_name == 'list_members' %}active{% endif %}
+                            {% if url_name == 'add_member' %}active{% endif %}
+                            {% if url_name == 'edit_member' %}active{% endif %}
+                            {% if url_name == 'delete_member' %}active{% endif %}
+                        ">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">Member<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="{% if url_name == 'list_members' %}active{% endif %}"><a
+                                        href="{% url 'list_members' %}">List Member</a></li>
+                                <li class="{% if url_name == 'add_member' %}active{% endif %}"><a
+                                        href="{% url 'add_member' %}">Add Member</a></li>
+                                <li class="{% if url_name == 'edit_member' %}active{% endif %}"><a
+                                        href="{% url 'edit_member' %}">Edit Member</a></li>
+                                <li class="{% if url_name == 'delete_member' %}active{% endif %}"><a
+                                        href="{% url 'delete_member' %}">Delete Member</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="dropdown
+                            {% if url_name == 'list_trainings' %}active{% endif %}
+                            {% if url_name == 'add_training' %}active{% endif %}
+                            {% if url_name == 'edit_training' %}active{% endif %}
+                            {% if url_name == 'delete_training' %}active{% endif %}
+                        ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">Trainings<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="{% if url_name == 'list_trainings' %}active{% endif %}"><a
+                                        href="{% url 'list_trainings' %}">List Training</a></li>
+                                <li class="{% if url_name == 'add_training' %}active{% endif %}"><a
+                                        href="{% url 'add_training' %}">Add
+                                    Training</a></li>
+                                <li class="{% if url_name == 'edit_training' %}active{% endif %}"><a
+                                        href="{% url 'edit_training' %}">Edit Training</a></li>
+                                <li class="{% if url_name == 'delete_training' %}active{% endif %}"><a
+                                        href="{% url 'delete_training' %}">Delete Training</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown
+                            {% if url_name == 'list_bills' %}active{% endif %}
+                            {% if url_name == 'open_bill' %}active{% endif %}
+                            {% if url_name == 'facturate_bill' %}active{% endif %}
+                            {% if url_name == 'facturated_bill' %}active{% endif %}
+                            {% if url_name == 'delayed_bill' %}active{% endif %}
+                            {% if url_name == 'reminded_bill' %}active{% endif %}
+                            {% if url_name == 'register_bill' %}active{% endif %}
+                            {% if url_name == 'notpayed_bill' %}active{% endif %}
+                        ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">Billing<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="{% if url_name == 'list_bills' %}active{% endif %}"><a
+                                        href="{% url 'list_bills' %}">List Bill</a></li>
+                                <li class="{% if url_name == 'open_bill' %}active{% endif %}"><a
+                                        href="{% url 'open_bill' %}">Open Bill</a></li>
+                                <li class="{% if url_name == 'facturate_bill' %}active{% endif %}"><a
+                                        href="{% url 'facturate_bill' %}">Facturate Bill</a></li>
+                                <li class="{% if url_name == 'facturated_bill' %}active{% endif %}"><a
+                                        href="{% url 'facturated_bill' %}">Facturated Bill</a></li>
+                                <li class="{% if url_name == 'delayed_bill' %}active{% endif %}"><a
+                                        href="{% url 'delayed_bill' %}">Delayed Bill</a></li>
+                                <li class="{% if url_name == 'reminded_bill' %}active{% endif %}"><a
+                                        href="{% url 'reminded_bill' %}">Reminded Bill</a></li>
+                                <li class="{% if url_name == 'register_bill' %}active{% endif %}"><a
+                                        href="{% url 'register_bill' %}">Register Paying</a></li>
+                                <li class="{% if url_name == 'notpayed_bill' %}active{% endif %}"><a
+                                        href="{% url 'notpayed_bill' %}">Not Payed</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="{% if url_name == 'impressum' %}active{% endif %}"><a
+                                href="{% url 'impressum' %}">Impressum</a></li>
+
+                        <li class="{% if url_name == 'contact' %}active{% endif %}"><a
+                                href="{% url 'contact' %}">Contact</a>
+                        </li>
+
+                    {% endif %}
+
+                    {% if user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'logout' %}?next={{ request.path }}"><strong>Logout {{ user.get_username }}</strong></a>
+                        </li>
+                    {% else %}
+                        <li class="{% if url_name == 'login' %}active{% endif %}"><a
+                                href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
+
+                        <li class="{% if url_name == 'signup' %}active{% endif %}"><a
+                                href="{% url 'signup' %}?next={{ request.path }}">Sign up</a></li>
+
+                    {% endif %}
+
+                </ul>
+
+            </div><!--/.nav-collapse -->
+        {% endwith %}
+    </div>
+</nav>
