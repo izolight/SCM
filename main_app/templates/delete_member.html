@@ -5,18 +5,19 @@
 {% endblock title %}
 
 {% block content %}
+    <div class="col-sm-9">
+        <b>Woll Sie das Mitglied wirklich löschen?</b>
+        <br><br>
+        Nachname, Vorname (Vor- und Nachname automatisch laden)
+        <br><br>
+        <a class="btn btn-default btn-sm" href="/member/list" role="button">Löschen</a>
+        <button class="btn btn-default btn-sm" onclick="goBack()" role="button">Abbrechen</button>
 
-    <b>Woll Sie das Mitglied wirklich löschen?</b>
-    <br><br>
-    Nachname, Vorname (Vor- und Nachname automatisch laden)
-    <br><br>
-    <a class="btn btn-default btn-sm" href="/member/list" role="button">Löschen</a>
-    <button class="btn btn-default btn-sm" onclick="goBack()" role="button">Abbrechen</button>
-
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </div>
 
 {% endblock content %}
