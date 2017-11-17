@@ -15,8 +15,8 @@
                 <th>Vorname</th>
                 <th>Nachname</th>
                 <th>Benutzername</th>
-                <th>&nbsp;</th>
-                <th>&nbsp;</th>
+                <th class="hidden-xs">&nbsp;</th>
+                <th class="hidden-xs">&nbsp;</th>
             </tr>
             </thead>
             <tbody>
@@ -26,8 +26,16 @@
                     <td>{{ member.user_name.first_name }}</td>
                     <td>{{ member.user_name.last_name }}</td>
                     <td>{{ member.user_name.username }}</td>
-                    <td><a class="btn btn-default btn-sm" href="{% url 'edit_member' %}" role="button">Editieren</a></td>
-                    <td><a class="btn btn-default btn-sm" href="{% url 'delete_member' %}" role="button">Löschen</a></td>
+                    <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'edit_member' %}" role="button">Editieren</a>
+                    </td>
+                    <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delete_member' %}" role="button">Löschen</a>
+                    </td>
+                </tr>
+                <td class="hidden-sm hidden-md hidden-lg">
+                    <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'edit_member' %}" role="button">Editieren</a>
+                    </td>
+                    <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delete_member' %}" role="button">Löschen</a>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>
