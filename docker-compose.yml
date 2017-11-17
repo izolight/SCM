@@ -4,7 +4,7 @@ volumes:
   scm-db:
 
 services:
-  scm-db-server:
+  scm-db:
     image: mariadb
     command: --character-set-server=utf8 --collation-server=utf8_unicode_ci
     environment:
@@ -16,3 +16,13 @@ services:
       - 3306:3306
     volumes:
       - scm-db:/var/lib/mysql
+  scm-web:
+    image: izolight/scm:0.4
+    depends_on:
+      - scm-db
+    links:
+      - scm-db
+    ports:
+      - 8000:8000
+    volumes:
+      - ./:/usr/src/app

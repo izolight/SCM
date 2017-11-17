@@ -25,7 +25,7 @@ SECRET_KEY = 'a%7ligp^####6y*y+lc)p&xcb^hmz9(l8a5#mi#@q(dxhm1(r-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['simpleclubmanager.ch', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'simpleclubmanager',
         'USER': 'scm-admin',
         'PASSWORD': 'secret-scm-pw',
-        'HOST': '127.0.0.1',
+        'HOST': 'scm-db',
         'PORT': '3306',
     }
 }
