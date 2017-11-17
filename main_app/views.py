@@ -152,6 +152,10 @@ def list_trainings(request):
     return render(request, 'list_trainings.html')
 
 
+def view_training(request):
+    return render(request, 'view_training.html')
+
+
 def add_training(request):
     return render(request, 'add_training.html')
 
