@@ -8,5 +8,7 @@ done
 
 echo "Migrating db"
 python manage.py migrate
+echo "generating translations"
+python manage.py compilemessages
 echo "Starting server"
 python manage.py runserver 0.0.0.0:8000
