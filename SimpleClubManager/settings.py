@@ -119,6 +119,10 @@ LANGUAGES = [
     ('en', _('English')),
 ]
 
+LOCALE_PATHS = [
+    '/usr/src/app/locale'
+]
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
