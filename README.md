@@ -15,25 +15,61 @@ bla
 
 ### setup
 
+#### clone repository
+##### ssh 
+```bash
+git clone git@gitlab.com:ch.bfh.ti.keusa1/SimpleClubManager-SCM.git
+```
+##### http
 ```bash
 git clone https://gitlab.com/ch.bfh.ti.keusa1/SimpleClubManager-SCM
-git checkout develop
+```
+#### create python virtual env 
+```bash
 python3 -m venv SimpleClubManager-SCM
+```
+##### cd to dir and activate venv 
+###### Linux/macOS
+```bash
 cd SimpleClubManager-SCM
-. bin/activate # windows -> \Scripts\activate.bat
-pip install django mysqlclient docker-compose
+. bin/activate
+```
+###### Windows
+```bash
+cd SimpleClubManager-SCM
+Scripts\activate.bat
+```
+
+##### install requirements 
+```bash
+pip install -r requirements.txt --upgrade
 ```
 
 ### start db
-
+in SimpleClubManager-SCM directory:
 ```bash
-# in SimpleClubManager-SCM directory
 docker-compose up -d
 ```
 
 ### setup django db
 
 ```bash
+python manage.py migrate
+```
+
+### apply db modifications
+
+```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
+
+
+### trash db and re-create it 
+in SimpleClubManager-SCM directory:
+```bash
+docker rm -f simpleclubmanagerscm_scm-db-server_1 
+docker volume rm simpleclubmanagerscm_scm-db
+docker-compose up -d
+```
+
