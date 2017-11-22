@@ -16,7 +16,7 @@ services:
       - scm-db:/var/lib/mysql
   scm-web:
     build: ./
-    image: izolight/scm:0.6
+    image: izolight/scm:0.7
     depends_on:
       - scm-db
     links:
