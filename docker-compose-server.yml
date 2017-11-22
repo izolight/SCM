@@ -15,7 +15,6 @@ services:
     volumes:
       - scm-db:/var/lib/mysql
   scm-web:
-    build: ./
     image: izolight/scm:0.8
     depends_on:
       - scm-db
