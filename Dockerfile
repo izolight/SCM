@@ -12,5 +12,5 @@ COPY requirements.txt ./
 RUN pip install -r requirements.txt -U
 EXPOSE 8000
 WORKDIR /usr/src/app
-COPY entrypoint.sh ./
+COPY util/entrypoint.sh ./
 CMD ["/bin/bash", "entrypoint.sh"]
