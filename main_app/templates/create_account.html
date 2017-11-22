@@ -8,65 +8,84 @@
 
    <div class="col-sm-7">
 
-        <form method="post" novalidate>
-{#            {% csrf_token %}#}
+        <form method="post" novalidate class="form-horizontal">
+            {% csrf_token %}
 
             <div class="form-group">
-                <label for="Text">Bitte tragen Sie hier Ihre Daten ein um einen Account zu erstellen:</label>
+                <label for="Text">Bitte tragen Sie die Daten des neuen Mitglied ein:</label>
             </div>
             <div class="form-group">
-                <label for="firstname">First Name</label>
-{#                {% render_field form.first_name class="form-control" %}#}
+                {{ form.first_name.label_tag }}
+                {% render_field form.first_name class="form-control" %}
+                {{ form.first_name.errors }}
             </div>
             <div class="form-group">
-                <label for="lastname">Last Name</label>
-{#                {% render_field form.last_name class="form-control" %}#}
+                {{ form.last_name.label_tag }}
+                {% render_field form.last_name class="form-control" %}
+                {{ form.last_name.errors }}
             </div>
             <div class="form-group">
-                <label for="address">Address</label>
-{#                {% render_field form.address class="form-control" %}#}
+                {{ form.address.label_tag }}
+                {% render_field form.address class="form-control" %}
+                {{ form.address.errors }}
             </div>
-            <div class="row">
-                <div class="col-xs-4">
-                    <div clss="form-group">
-                        <label for="city">City</label>
-{#                        {% render_field form.city class="form-control" %}#}
+            <div class="form-group">
+                <div class="form-group row">
+                    <div class="col-sm-4">
+                        {{ form.city.label_tag }}
+                        {% render_field form.city class="form-control" %}
+                        {{ form.city.errors }}
+                    </div>
+                    <div class="col-sm-8">
+                        {{ form.zip_code.label_tag }}
+                        {% render_field form.zip_code class="form-control" %}
+                        {{ form.zip_code.errors }}
                     </div>
                 </div>
-                <div class="col-xs-8">
-                    <div class="form-group">
-                        <label for="postale code">Postale Code</label>
-{#                        {% render_field form.zip_code class="form-control" %}#}
-                    </div>
-                </div>
             </div>
             <div class="form-group">
-                <label for="phonenumber">Phone Number</label>
-{#                {% render_field form.phone_number class="form-control" %}#}
+                {{ form.phone_number.label_tag }}
+                {% render_field form.phone_number class="form-control" %}
+                {{ form.phone_number.errors }}
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-{#                {% render_field form.email class="form-control" %}#}
+                {{ form.email.label_tag }}
+                {% render_field form.email class="form-control" %}
+                {{ form.email.errors }}
             </div>
             <div class="form-group">
-                <label for="username">Username</label>
-{#                {% render_field form.username class="form-control" %}#}
+                {{ form.username.label_tag }}
+                {% render_field form.username class="form-control" %}
+                {{ form.username.errors }}
             </div>
             <div class="form-group">
-                <label for="password1">Password</label>
-{#                {% render_field form.password1 class="form-control" %}#}
+                {{ form.password1.label_tag }}
+                {% render_field form.password1 class="form-control" %}
+                {{ form.password1.errors }}
             </div>
             <div class="form-group">
-                <label for="password1">Password</label>
-{#                {% render_field form.password2 class="form-control" %}#}
+                {{ form.password2.label_tag }}
+                {% render_field form.password2 class="form-control" %}
+                {{ form.password2.errors }}
             </div>
-
-            <input type="Submit" class="btn btn-default col-xs-6" value="Eintragen">
-            <input type="Reset" class="btn btn-default col-xs-6" value="Zurücksetzen">
-            <br><br><br><br>
-
-
+            <div class="form-group">
+                <input type="Submit" class="btn btn-default col-sm-6" value="Submit" id="submit-add-member">
+                <input type="Reset" class="btn btn-default col-sm-6" value="Reset">
+            </div>
         </form>
+        <script>
+            var alpha = document.querySelector('input[name=password1]');
+            var beta = document.querySelector('input[name=password2]');
+            beta.oninput = function () {
+                if (alpha.value !== beta.value) {
+                    beta.setCustomValidity('Passwörter nicht identisch!');
+                }
+                else {
+                    beta.setCustomValidity('');
+                }
+            };
+
+        </script>
     </div>
 
 {% endblock content %}

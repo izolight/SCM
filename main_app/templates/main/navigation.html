@@ -144,7 +144,12 @@
 
                         <li class="{% if url_name == 'signup' %}active{% endif %}"><a
                                 href="{% url 'signup' %}?next={{ request.path }}">Sign up</a></li>
+                        <li class="{% if url_name == 'impressum' %}active{% endif %}"><a
+                                href="{% url 'impressum' %}">Impressum</a></li>
 
+                        <li class="{% if url_name == 'contact' %}active{% endif %}"><a
+                                href="{% url 'contact' %}">Contact</a>
+                        </li>
                     {% endif %}
 
                 </ul>

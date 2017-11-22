@@ -5,18 +5,19 @@
 {% endblock title %}
 
 {% block content %}
+    <div class="col-sm-9">
+        <b>Woll Sie das Training wirklich löschen?</b>
+        <br><br>
+        Trainingsdaten (automatisch laden)
+        <br><br>
+        <a class="btn btn-default btn-sm" href="/training/list" role="button">Löschen</a>
+        <button class="btn btn-default btn-sm" onclick="goBack()" role="button">Abbrechen</button>
 
-    <b>Woll Sie das Training wirklich löschen?</b>
-    <br><br>
-    Trainingsdaten (automatisch laden)
-    <br><br>
-    <a class="btn btn-default btn-sm" href="/training/list" role="button">Löschen</a>
-    <button class="btn btn-default btn-sm" onclick="goBack()" role="button">Abbrechen</button>
-
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </div>
 
 {% endblock content %}
