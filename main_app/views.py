@@ -1,10 +1,10 @@
-from main_app.forms import NewMemberForm, SignUpForm
-from main_app.models import City
-from django.shortcuts import render, redirect
-from .forms import NewMemberForm
-from django.contrib.auth.models import User
-from .models import City, Member
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+
+from main_app.forms import SignUpForm
+from main_app.forms import NewMemberForm
+from main_app.models import City, Member
 
 
 # Create your views here.
@@ -150,6 +150,10 @@ def create_account(request):
 
 def list_trainings(request):
     return render(request, 'list_trainings.html')
+
+
+def view_training(request):
+    return render(request, 'view_training.html')
 
 
 def add_training(request):

@@ -2,7 +2,7 @@ from django.conf.urls import url
 from main_app import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='loggedInLandingPage'),
+    url(r'^/$', views.index, name='loggedInLandingPage'),
     url(r'^members/add/$', views.add_member, name='add_member'),
     url(r'^members$', views.list_members, name='list_members'),
     url(r'^members/delete/', views.delete_member, name='delete_member'),
@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^impressums/', views.impressum, name='impressum'),
     url(r'^accounts/create', views.create_account, name='create_account'),
     url(r'^trainings$', views.list_trainings, name='list_trainings'),
+    url(r'^trainings/view', views.view_training, name='view_training'),
     url(r'^trainings/add', views.add_training, name='add_training'),
     url(r'^trainings/edit', views.edit_training, name='edit_training'),
     url(r'^trainings/delete', views.delete_training, name='delete_training'),
