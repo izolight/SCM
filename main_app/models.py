@@ -19,6 +19,7 @@ class Member(models.Model):
     user_name = models.OneToOneField(User, on_delete=models.CASCADE, related_name='member')
     website = models.URLField(max_length=100, blank=True, null=True)
 
+
 # see https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone
 @receiver(post_save, sender=User)
 def create_member(sender, instance, created, **kwargs):

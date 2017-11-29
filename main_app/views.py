@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
+from django.http import HttpResponseBadRequest
 
 from main_app.forms import SignUpForm
 from main_app.forms import NewMemberForm
@@ -80,11 +81,23 @@ def list_members(request):
     })
 
 
-def delete_member(request):
+def list_member(request, id):
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
+    # TODO logic for listing single member
+
+
+def delete_member(request, id):
+    if request.method != 'POST':
+        return HttpResponseBadRequest()
+    # TODO logic for deleting
     return render(request, 'delete_member.html')
 
 
-def edit_member(request):
+def edit_member(request, id):
+    if request.method != 'POST':
+        return HttpResponseBadRequest
+    # TODO logic for editing
     return render(request, 'edit_member.html')
 
 
