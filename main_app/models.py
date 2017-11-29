@@ -33,12 +33,40 @@ def save_member(sender, instance, **kwargs):
 
 
 class Invoice(models.Model):
+    number = models.IntegerField(primary_key=True)
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    amount = models.IntegerField()
+    due_date = models.DateField()
+    create_date = models.DateField()
+    paid_date = models.DateField()
 
 
 class Training(models.Model):
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    date = models.DateField()
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
 
 
-class Ice(models.Model):
+class IceSlot(models.Model):
+    date = models.DateField()
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
 
 
+class Subscription(models.Model):
+    type = models.ForeignKey('SubscriptionType')
+    price = models.IntegerField()
+    duration = models.IntegerField()
+    description = models.TextField()
 
+
+class SubscriptionType(models.Model):
+    name = models.CharField(max_length=50)
+
+
+class Club(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.TextField()
