@@ -30,3 +30,15 @@ def create_member(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_member(sender, instance, **kwargs):
     instance.member.save()
+
+
+class Invoice(models.Model):
+
+
+class Training(models.Model):
+
+
+class Ice(models.Model):
+
+
+

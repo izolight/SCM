@@ -89,7 +89,10 @@ def edit_member(request):
 
 
 def list_bills(request):
-    return render(request, 'list_bills.html')
+    invoices = Invoices.objects.all()
+    return render(request, 'list_bills.html', {
+        'invoices': invoices
+    })
 
 
 def open_bill(request):
