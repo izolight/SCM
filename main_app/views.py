@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from django.http import HttpResponseBadRequest
+from django.http import HttpResponseBadRequest, HttpResponseNotFound, HttpResponse
 
 from main_app.forms import SignUpForm
 from main_app.forms import NewMemberForm
@@ -85,20 +85,32 @@ def list_member(request, id):
     if request.method != 'GET':
         return HttpResponseBadRequest()
     # TODO logic for listing single member
+    member = Member.objects.get(pk=id)
+    if not member:
+        return HttpResponseNotFound()
+    return render(request, 'list_member.html', member=member)
 
 
 def delete_member(request, id):
     if request.method != 'POST':
         return HttpResponseBadRequest()
     # TODO logic for deleting
-    return render(request, 'delete_member.html')
+    member = Member.objects.get(pk=id)
+    if not member:
+        return HttpResponseNotFound()
+    member.delete()
+    return HttpResponse(status=204)
+#    return render(request, 'delete_member.html')
 
 
 def edit_member(request, id):
     if request.method != 'POST':
         return HttpResponseBadRequest
     # TODO logic for editing
-    return render(request, 'edit_member.html')
+    member = Member.objects.get(pk=id)
+    if not member:
+        return HttpResponseNotFound()
+    return render(request, 'edit_member.html', member=member)
 
 
 def list_bills(request):
