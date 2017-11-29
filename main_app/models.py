@@ -19,7 +19,6 @@ class Member(models.Model):
     user_name = models.OneToOneField(User, on_delete=models.CASCADE, related_name='member')
     website = models.URLField(max_length=100, blank=True, null=True)
 
-
 # see https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone
 @receiver(post_save, sender=User)
 def create_member(sender, instance, created, **kwargs):
@@ -40,6 +39,20 @@ class Invoice(models.Model):
     due_date = models.DateField()
     create_date = models.DateField()
     paid_date = models.DateField()
+    member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True)
+
+
+class Club(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.TextField()
+    members = models.ManyToManyField(Member)
+
+
+class IceSlot(models.Model):
+    date = models.DateField()
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
+    club = models.ForeignKey(Club, on_delete=models.CASCADE, null=True)
 
 
 class Training(models.Model):
@@ -48,25 +61,18 @@ class Training(models.Model):
     date = models.DateField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-
-
-class IceSlot(models.Model):
-    date = models.DateField()
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
-
-
-class Subscription(models.Model):
-    type = models.ForeignKey('SubscriptionType')
-    price = models.IntegerField()
-    duration = models.IntegerField()
-    description = models.TextField()
+    members = models.ManyToManyField(Member)
+    club = models.ForeignKey(Club, on_delete=models.CASCADE, null=True)
+    ice_slot = models.OneToOneField(IceSlot, on_delete=models.CASCADE, null=True)
 
 
 class SubscriptionType(models.Model):
     name = models.CharField(max_length=50)
 
 
-class Club(models.Model):
-    name = models.CharField(max_length=50)
+class Subscription(models.Model):
+    type = models.ForeignKey(SubscriptionType, on_delete=models.SET_NULL, null=True)
+    price = models.IntegerField()
+    duration = models.IntegerField()
     description = models.TextField()
+    invoice = models.ForeignKey(Invoice, on_delete=models.SET_NULL, null=True)
