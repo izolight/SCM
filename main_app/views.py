@@ -5,7 +5,7 @@ from django.http import HttpResponseBadRequest, HttpResponseNotFound, HttpRespon
 
 from main_app.forms import SignUpForm
 from main_app.forms import NewMemberForm
-from main_app.models import City, Member
+from main_app.models import City, Member, Invoice
 
 
 # Create your views here.
@@ -71,7 +71,9 @@ def signup(request):
             return redirect('loggedInLandingPage')
     else:
         form = SignUpForm()
-    return render(request, 'registration/sign_up.html', {'form': form})
+    return render(request, 'registration/sign_up.html', {
+        'form': form
+    })
 
 
 def list_members(request):
@@ -81,40 +83,46 @@ def list_members(request):
     })
 
 
-def list_member(request, id):
+def list_member(request, member_id):
     if request.method != 'GET':
         return HttpResponseBadRequest()
     # TODO logic for listing single member
-    member = Member.objects.get(pk=id)
+    member = Member.objects.get(pk=member_id)
     if not member:
         return HttpResponseNotFound()
-    return render(request, 'list_member.html', member=member)
+    return render(request, 'list_member.html', {
+        'member': member
+    })
 
 
-def delete_member(request, id):
+def delete_member(request, member_id):
     if request.method != 'POST':
         return HttpResponseBadRequest()
     # TODO logic for deleting
-    member = Member.objects.get(pk=id)
+    member = Member.objects.get(pk=member_id)
     if not member:
         return HttpResponseNotFound()
     member.delete()
     return HttpResponse(status=204)
+
+
 #    return render(request, 'delete_member.html')
 
 
-def edit_member(request, id):
+def edit_member(request, member_id):
     if request.method != 'POST':
         return HttpResponseBadRequest
     # TODO logic for editing
-    member = Member.objects.get(pk=id)
+    member = Member.objects.get(pk=member_id)
     if not member:
         return HttpResponseNotFound()
-    return render(request, 'edit_member.html', member=member)
+    return render(request, 'edit_member.html', {
+        'member': member
+    })
 
 
 def list_bills(request):
-    invoices = Invoices.objects.all()
+    invoices = Invoice.objects.all()
     return render(request, 'list_bills.html', {
         'invoices': invoices
     })
