@@ -12,23 +12,28 @@
             {#            {% csrf_token %}#}
 
             <div class="form-group">
-                <label for="Text">Bitte fügen Sie ein Training hinzu:</label>
+                <label for="Text">{% trans "Enter Training Data" %}</label>
+                {#                Bitte fügen Sie ein Training hinzu:#}
             </div>
             <div class="form-group">
-                <label for="training">Training</label>
+                <label for="training">{% trans "Enter Name Training" %}</label>
+                {#                Training#}
                 {#                {% render_field form.first_name class="form-control" %}#}
             </div>
             <div class="form-group">
-                <label for="trainer">Trainer</label>
+                <label for="trainer">{% trans "Enter Name Trainer" %}</label>
+                {#                Trainer#}
                 {#                {% render_field form.last_name class="form-control" %}#}
             </div>
             <div class="form-group">
-                <label for="date">Datum</label>
-                <input class="datetime" type="datetime-local" name="date" id="date"
+                <label for="date">{% trans "Enter Date Training" %}</label>
+                {#                Datum#}
+                <input class="datetime" type="datetime-local" name="date" id="date">
                 {#                {% render_field form.address class="form-control" %}#}
             </div>
             <div class="form-group">
-                <label for="add_player">Spieler auswählen</label>
+                <label for="add_player">{% trans "Choose Member" %}</label>
+                {#                Spieler auswählen#}
                 <select class="selectpicker" multiple>
                     <option>Stefan</option>
                     <option>Tobias</option>
@@ -42,8 +47,10 @@
                 {#                {% render_field form.phone_number class="form-control" %}#}
             </div>
 
-            <input type="Submit" class="btn btn-default col-sm-6" value="Eintragen">
-            <input type="Reset" class="btn btn-default col-sm-6" value="Zurücksetzen">
+            <input type="Submit" class="btn btn-default col-sm-6" value="{% trans "Submit" %}">
+            {#            Eintragen#}
+            <input type="Reset" class="btn btn-default col-sm-6" value="{% trans "Reset" %}">
+            {#            Zurücksetzen#}
             <br><br><br><br>
 
 
