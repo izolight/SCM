@@ -6,12 +6,13 @@
 
 {% block content %}
     <div class="col-sm-9">
-        <b>Woll Sie das Training wirklich löschen?</b>
+        <b>{% trans "Delete Training" %}</b>
+{#        Woll Sie das Training wirklich löschen?#}
         <br><br>
         Trainingsdaten (automatisch laden)
         <br><br>
-        <a class="btn btn-default btn-sm" href="/training/list" role="button">Löschen</a>
-        <button class="btn btn-default btn-sm" onclick="goBack()" role="button">Abbrechen</button>
+        <a class="btn btn-default btn-sm" href="/training/list" role="button">{% trans "Delete" %}</a>
+        <button class="btn btn-default btn-sm" onclick="goBack()" role="button">{% trans "Cancel" %}</button>
 
         <script>
             function goBack() {
