@@ -128,31 +128,31 @@ def list_bills(request):
     })
 
 
-def open_bill(request):
+def open_bill(request, invoice_id):
     return render(request, 'open_bill.html')
 
 
-def facturate_bill(request):
+def facturate_bill(request, invoice_id):
     return render(request, 'facturate_bill.html')
 
 
-def facturated_bill(request):
+def facturated_bill(request, invoice_id):
     return render(request, 'facturated_bill.html')
 
 
-def delayed_bill(request):
+def delayed_bill(request, invoice_id):
     return render(request, 'delayed_bill.html')
 
 
-def reminded_bill(request):
+def reminded_bill(request, invoice_id):
     return render(request, 'reminded_bill.html')
 
 
-def register_bill(request):
+def register_bill(request, invoice_id):
     return render(request, 'payed_bill.html')
 
 
-def notpayed_bill(request):
+def notpayed_bill(request, invoice_id):
     return render(request, 'notpayed_bill.html')
 
 
@@ -168,11 +168,11 @@ def add_ice(request):
     return render(request, 'add_ice.html')
 
 
-def edit_ice(request):
+def edit_ice(request, ice_slot_id):
     return render(request, 'edit_ice.html')
 
 
-def delete_ice(request):
+def delete_ice(request, ice_slot_id):
     return render(request, 'delete_ice.html')
 
 
@@ -188,7 +188,7 @@ def list_trainings(request):
     return render(request, 'list_trainings.html')
 
 
-def view_training(request):
+def view_training(request, training_id):
     return render(request, 'view_training.html')
 
 
@@ -196,9 +196,9 @@ def add_training(request):
     return render(request, 'add_training.html')
 
 
-def edit_training(request):
+def edit_training(request, training_id):
     return render(request, 'edit_training.html')
 
 
-def delete_training(request):
+def delete_training(request, training_id):
     return render(request, 'delete_training.html')
