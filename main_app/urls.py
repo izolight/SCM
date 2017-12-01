@@ -28,4 +28,5 @@ urlpatterns = [
     url(r'^trainings/add', views.add_training, name='add_training'),
     url(r'^trainings/edit', views.edit_training, name='edit_training'),
     url(r'^trainings/delete', views.delete_training, name='delete_training'),
+    url(r'^401', views.unauthorized401, name='unauthorized_401'),
 ]
