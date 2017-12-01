@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponseBadRequest, HttpResponseNotFound, HttpResponse
 
@@ -48,6 +49,7 @@ def add_member(request):
             user.member.phone_number = phone_number
 
             user.save()
+            messages.add_message(request, messages.SUCCESS, f'Added member {user.first_name} {user.last_name}')
             return redirect('list_members')
     else:
         form = NewMemberForm()
@@ -103,6 +105,7 @@ def delete_member(request, member_id):
     if not member:
         return HttpResponseNotFound()
     member.delete()
+    messages.add_message(request, messages.SUCCESS, f'Deleted member {member_id}')
     return HttpResponse(status=204)
 
 
@@ -183,6 +186,7 @@ def delete_ice(request, ice_slot_id):
     if not ice_slot:
         return HttpResponseNotFound()
     ice_slot.delete()
+    messages.add_message(request, messages.SUCCESS, f'Deleted ice_slot {ice_slot_id}')
     return HttpResponse(status=204)
     #return render(request, 'delete_ice.html')
 
@@ -222,5 +226,6 @@ def delete_training(request, training_id):
     if not training:
         return HttpResponseNotFound()
     training.delete()
+    messages.add_message(request, messages.SUCCESS, f'Delete training {training_id}')
     return HttpResponse(status=204)
     #return render(request, 'delete_training.html')
