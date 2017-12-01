@@ -5,7 +5,7 @@ from django.http import HttpResponseBadRequest, HttpResponseNotFound, HttpRespon
 
 from main_app.forms import SignUpForm
 from main_app.forms import NewMemberForm
-from main_app.models import City, Member, Invoice
+from main_app.models import City, Member, Invoice, IceSlot, Training
 
 
 # Create your views here.
@@ -161,7 +161,10 @@ def contact(request):
 
 
 def list_ices(request):
-    return render(request, 'list_ices.html')
+    ice_slots = IceSlot.objects.all()
+    return render(request, 'list_ices.html', {
+        'ice_slots': ice_slots
+    })
 
 
 def add_ice(request):
@@ -173,7 +176,15 @@ def edit_ice(request, ice_slot_id):
 
 
 def delete_ice(request, ice_slot_id):
-    return render(request, 'delete_ice.html')
+    if request.method != 'POST':
+        return HttpResponseBadRequest()
+    # TODO logic for deleting
+    ice_slot = IceSlot.objects.get(pk=ice_slot_id)
+    if not ice_slot:
+        return HttpResponseNotFound()
+    ice_slot.delete()
+    return HttpResponse(status=204)
+    #return render(request, 'delete_ice.html')
 
 
 def impressum(request):
@@ -185,7 +196,10 @@ def create_account(request):
 
 
 def list_trainings(request):
-    return render(request, 'list_trainings.html')
+    trainings = Training.objects.all()
+    return render(request, 'list_trainings.html', {
+        'trainings': trainings
+    })
 
 
 def view_training(request, training_id):
@@ -201,4 +215,12 @@ def edit_training(request, training_id):
 
 
 def delete_training(request, training_id):
-    return render(request, 'delete_training.html')
+    if request.method != 'POST':
+        return HttpResponseBadRequest()
+    # TODO logic for deleting
+    training = Training.objects.get(pk=training_id)
+    if not training:
+        return HttpResponseNotFound()
+    training.delete()
+    return HttpResponse(status=204)
+    #return render(request, 'delete_training.html')
