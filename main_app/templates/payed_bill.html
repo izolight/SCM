@@ -1,20 +1,22 @@
 {% extends "main/base.html" %}
 
 {% block title %}
-    Bezahlte Rechnungen
+    {% trans "Title Payed Bill" %}
+{#    Bezahlte Rechnungen#}
 {% endblock title %}
 
 {% block content %}
 
         <div class="col-sm-9">
-        <b>Diese Rechnungen sind bezahlt:</b><br>
+        <b>{% trans "Text Payed Bill" %}</b><br>
+{#            Diese Rechnungen sind bezahlt:#}
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
-                <th>Nr.</th>
-                <th>Vorname</th>
-                <th>Nachname</th>
-                <th>Benutzername</th>
+                <th>{% trans "Number" %}</th>
+                <th>{% trans "First Name" %}</th>
+                <th>{% trans "Last Name" %}</th>
+                <th>{% trans "Username" %}</th>
                 <th class="hidden-xs">&nbsp;</th>
                 <th class="hidden-xs">&nbsp;</th>
             </tr>
@@ -25,36 +27,36 @@
                 <td>V1</td>
                 <td>N1</td>
                 <td>B1</td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'facturate_bill' %}" role="button">Verrechnen</a></td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delayed_bill' %}" role="button">Mahnen</a></td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'facturate_bill' %}" role="button">{% trans "Offset" %}</a></td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delayed_bill' %}" role="button">{% trans "Remind" %}</a></td>
             </tr>
             <tr class="hidden-sm hidden-md hidden-lg">
-                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'facturate_bill' %}" role="button">Verrechnen</a></td>
-                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delayed_bill' %}" role="button">Mahnen</a></td>
+                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'facturate_bill' %}" role="button">{% trans "Offset" %}</a></td>
+                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delayed_bill' %}" role="button">{% trans "Remind" %}</a></td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>V2</td>
                 <td>N2</td>
                 <td>B2</td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'facturate_bill' %}" role="button">Verrechnen</a></td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delayed_bill' %}" role="button">Mahnen</a></td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'facturate_bill' %}" role="button">{% trans "Offset" %}</a></td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delayed_bill' %}" role="button">{% trans "Remind" %}</a></td>
             </tr>
             <tr class="hidden-sm hidden-md hidden-lg">
-                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'facturate_bill' %}" role="button">Verrechnen</a></td>
-                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delayed_bill' %}" role="button">Mahnen</a></td>
+                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'facturate_bill' %}" role="button">{% trans "Offset" %}</a></td>
+                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delayed_bill' %}" role="button">{% trans "Remind" %}</a></td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>V3</td>
                 <td>N3</td>
                 <td>B3</td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'facturate_bill' %}" role="button">Verrechnen</a></td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delayed_bill' %}" role="button">Mahnen</a></td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'facturate_bill' %}" role="button">{% trans "Offset" %}</a></td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delayed_bill' %}" role="button">{% trans "Remind" %}</a></td>
             </tr>
             <tr class="hidden-sm hidden-md hidden-lg">
-                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'facturate_bill' %}" role="button">Verrechnen</a></td>
-                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delayed_bill' %}" role="button">Mahnen</a></td>
+                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'facturate_bill' %}" role="button">{% trans "Offset" %}</a></td>
+                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delayed_bill' %}" role="button">{% trans "Remind" %}</a></td>
             </tr>
             </tbody>
 

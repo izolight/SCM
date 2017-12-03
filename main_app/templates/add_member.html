@@ -1,7 +1,7 @@
 {% extends "main/base.html" %}
 
 {% block title %}
-    {% trans "Add Member" %}
+    {% trans "Title Add Member" %}
     {#    Mitglied hinzufügen#}
 {% endblock title %}
 
@@ -13,7 +13,7 @@
             {% csrf_token %}
 
             <div class="form-group">
-                <label for="Text">{% trans "Enter Member Data" %}</label>
+                <label for="Text">{% trans "Text Member Data" %}</label>
                 {#                    Bitte tragen Sie die Daten des neuen Mitglied ein:#}
             </div>
             <div class="form-group">

@@ -7,13 +7,13 @@
 
 {% block content %}
     <div class="col-sm-9">
-        <b>{% trans "Delete Member" %}</b>
+        <b>{% trans "Text Delete Member" %}</b>
 {#        Woll Sie das Mitglied wirklich löschen?#}
         <br><br>
         Nachname, Vorname (Vor- und Nachname automatisch laden)
         <br><br>
         <a class="btn btn-default btn-sm" href="/member/list" role="button">{% trans "Delete" %}</a>
-        <button class="btn btn-default btn-sm" onclick="goBack()" role="button">{% trans "Cancel" %}</button>
+        <button class="btn btn-default btn-sm" onclick="goBack()" role="button">{% trans "Reset" %}</button>
 
         <script>
             function goBack() {
