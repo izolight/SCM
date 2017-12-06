@@ -113,12 +113,12 @@ def delete_member(request, member_id):
 
 
 def edit_member(request, member_id):
-    if request.method != 'POST':
-        return HttpResponseBadRequest
-    # TODO logic for editing
     member = Member.objects.get(pk=member_id)
     if not member:
         return HttpResponseNotFound()
+    if request.method == 'POST':
+        # TODO logic for editing
+        return redirect('list_members')
     return render(request, 'edit_member.html', {
         'member': member
     })
