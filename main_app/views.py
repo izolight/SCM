@@ -4,24 +4,28 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponseBadRequest, HttpResponseNotFound, HttpResponse
 
+from django.contrib.auth.decorators import login_required
+
 from main_app.forms import SignUpForm
 from main_app.forms import NewMemberForm
 from main_app.models import City, Member, Invoice, IceSlot, Training
 
 
-# Create your views here.
 def index(request):
     return render(request, 'index.html')
 
 
+@login_required()
 def ajax_city_from_zip(request, zip):
     cities = get_city_from_zip(zip)
 
 
+@login_required()
 def get_city_from_zip(zip):
     return City.objects.filter(zip_code=zip)
 
 
+@login_required()
 def add_member(request):
     if request.method == 'POST':
         form = NewMemberForm(request.POST)
@@ -78,6 +82,7 @@ def signup(request):
     })
 
 
+@login_required()
 def list_members(request):
     members = Member.objects.all()
     return render(request, 'list_members.html', {
@@ -85,6 +90,7 @@ def list_members(request):
     })
 
 
+@login_required()
 def list_member(request, member_id):
     if request.method != 'GET':
         return HttpResponseBadRequest()
@@ -96,7 +102,7 @@ def list_member(request, member_id):
         'member': member
     })
 
-
+@login_required()
 def delete_member(request, member_id):
     if request.method != 'POST':
         return HttpResponseBadRequest()
@@ -108,10 +114,9 @@ def delete_member(request, member_id):
     messages.add_message(request, messages.SUCCESS, f'Deleted member {member_id}')
     return HttpResponse(status=204)
 
-
 #    return render(request, 'delete_member.html')
 
-
+@login_required()
 def edit_member(request, member_id):
     member = Member.objects.get(pk=member_id)
     if not member:
@@ -124,6 +129,7 @@ def edit_member(request, member_id):
     })
 
 
+@login_required()
 def list_bills(request):
     invoices = Invoice.objects.all()
     return render(request, 'list_bills.html', {
@@ -131,30 +137,37 @@ def list_bills(request):
     })
 
 
+@login_required()
 def open_bill(request, invoice_id):
     return render(request, 'open_bill.html')
 
 
+@login_required()
 def facturate_bill(request, invoice_id):
     return render(request, 'facturate_bill.html')
 
 
+@login_required()
 def facturated_bill(request, invoice_id):
     return render(request, 'facturated_bill.html')
 
 
+@login_required()
 def delayed_bill(request, invoice_id):
     return render(request, 'delayed_bill.html')
 
 
+@login_required()
 def reminded_bill(request, invoice_id):
     return render(request, 'reminded_bill.html')
 
 
+@login_required()
 def register_bill(request, invoice_id):
     return render(request, 'payed_bill.html')
 
 
+@login_required()
 def notpayed_bill(request, invoice_id):
     return render(request, 'notpayed_bill.html')
 
@@ -163,6 +176,7 @@ def contact(request):
     return render(request, 'contact.html')
 
 
+@login_required()
 def list_ices(request):
     ice_slots = IceSlot.objects.all()
     return render(request, 'list_ices.html', {
@@ -170,14 +184,17 @@ def list_ices(request):
     })
 
 
+@login_required()
 def add_ice(request):
     return render(request, 'add_ice.html')
 
 
+@login_required()
 def edit_ice(request, ice_slot_id):
     return render(request, 'edit_ice.html')
 
 
+@login_required()
 def delete_ice(request, ice_slot_id):
     if request.method != 'POST':
         return HttpResponseBadRequest()
@@ -188,17 +205,19 @@ def delete_ice(request, ice_slot_id):
     ice_slot.delete()
     messages.add_message(request, messages.SUCCESS, f'Deleted ice_slot {ice_slot_id}')
     return HttpResponse(status=204)
-    #return render(request, 'delete_ice.html')
+    # return render(request, 'delete_ice.html')
 
 
 def impressum(request):
     return render(request, 'impressum.html')
 
 
+@login_required()
 def create_account(request):
     return render(request, 'create_account.html')
 
 
+@login_required()
 def list_trainings(request):
     trainings = Training.objects.all()
     return render(request, 'list_trainings.html', {
@@ -206,18 +225,22 @@ def list_trainings(request):
     })
 
 
+@login_required()
 def view_training(request, training_id):
     return render(request, 'view_training.html')
 
 
+@login_required()
 def add_training(request):
     return render(request, 'add_training.html')
 
 
+@login_required()
 def edit_training(request, training_id):
     return render(request, 'edit_training.html')
 
 
+@login_required()
 def delete_training(request, training_id):
     if request.method != 'POST':
         return HttpResponseBadRequest()
