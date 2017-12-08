@@ -97,7 +97,7 @@
 
                     {% if user.is_authenticated %}
                         <li>
-                            <a href="{% url 'logout' %}?next={{ request.path }}"><strong>Logout {{ user.get_username }}</strong></a>
+                            <a href="{% url 'logout' %}"><strong>Logout {{ user.get_username }}</strong></a>
                         </li>
                     {% else %}
                         <li class="{% if url_name == 'login' %}active{% endif %}"><a
