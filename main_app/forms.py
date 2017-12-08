@@ -5,8 +5,10 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
 
+from main_app.models import IceSlot
 
-class NewMemberForm(forms.Form):
+
+class AddMemberForm(forms.Form):
     first_name = forms.CharField(max_length=30, label="First Name")
     last_name = forms.CharField(max_length=30, label="Last Name")
     address = forms.CharField(max_length=50, label="Address")
@@ -22,7 +24,7 @@ class NewMemberForm(forms.Form):
     password2 = forms.CharField(widget=forms.PasswordInput(), label="Confirm password", min_length=10)
 
     def clean(self):
-        cleaned_data = super(NewMemberForm, self).clean()
+        cleaned_data = super(AddMemberForm, self).clean()
         password1 = cleaned_data.get("password1")
         password2 = cleaned_data.get("password2")
 
@@ -45,3 +47,9 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2',)
+
+
+class AddIceForm(forms.Form):
+    class Meta:
+        model = IceSlot
+        fields = ('date', 'start_time', 'end_time',)

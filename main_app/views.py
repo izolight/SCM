@@ -1,13 +1,12 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseBadRequest, HttpResponseNotFound, HttpResponse
 
 from django.contrib.auth.decorators import login_required
 
-from main_app.forms import SignUpForm
-from main_app.forms import NewMemberForm
+from main_app.forms import SignUpForm, AddMemberForm, AddIceForm
 from main_app.models import City, Member, Invoice, IceSlot, Training
 
 
@@ -28,7 +27,7 @@ def get_city_from_zip(zip):
 @login_required()
 def add_member(request):
     if request.method == 'POST':
-        form = NewMemberForm(request.POST)
+        form = AddMemberForm(request.POST)
         if form.is_valid():
             first_name = form.cleaned_data['first_name']
             last_name = form.cleaned_data['last_name']
@@ -56,7 +55,7 @@ def add_member(request):
             messages.add_message(request, messages.SUCCESS, f'Added member {user.first_name} {user.last_name}')
             return redirect('list_members')
     else:
-        form = NewMemberForm()
+        form = AddMemberForm()
 
     return render(request, 'add_member.html', {
         'form': form
@@ -102,6 +101,7 @@ def list_member(request, member_id):
         'member': member
     })
 
+
 @login_required()
 def delete_member(request, member_id):
     if request.method != 'POST':
@@ -113,6 +113,7 @@ def delete_member(request, member_id):
     member.delete()
     messages.add_message(request, messages.SUCCESS, f'Deleted member {member_id}')
     return HttpResponse(status=204)
+
 
 #    return render(request, 'delete_member.html')
 
@@ -160,69 +161,76 @@ def list_ices(request):
 
 @login_required()
 def add_ice(request):
-    return render(request, 'add_ice.html')
-
-
-@login_required()
-def edit_ice(request, ice_slot_id):
-    return render(request, 'edit_ice.html')
-
-
-@login_required()
-def delete_ice(request, ice_slot_id):
-    if request.method != 'POST':
-        return HttpResponseBadRequest()
-    # TODO logic for deleting
-    ice_slot = IceSlot.objects.get(pk=ice_slot_id)
-    if not ice_slot:
-        return HttpResponseNotFound()
-    ice_slot.delete()
-    messages.add_message(request, messages.SUCCESS, f'Deleted ice_slot {ice_slot_id}')
-    return HttpResponse(status=204)
-    # return render(request, 'delete_ice.html')
-
-
-def impressum(request):
-    return render(request, 'impressum.html')
-
-
-@login_required()
-def create_account(request):
-    return render(request, 'create_account.html')
-
-
-@login_required()
-def list_trainings(request):
-    trainings = Training.objects.all()
-    return render(request, 'list_trainings.html', {
-        'trainings': trainings
+    if request.method == 'POST':
+        form = AddIceForm(request.POST)
+        if form.is_valid():
+            ice_slot = IceSlot(
+                date=form.cleaned_data['date'],
+                start_time=form.cleaned_data['start_time'],
+                end_time=form.cleaned_data['end_time'],
+                club=request.user.member.club
+            )
+            ice_slot.save()
+            ice_slot.refresh_from_db()
+            messages.add_message(request, messages.SUCCESS,
+                                 f'Added ice_slot at {ice_slot.date} {ice_slot.start_time} for club {ice_slot.club.name}')
+            return redirect('list_ices')
+    else:
+        form = AddIceForm()
+    return render(request, 'add_ice.html', {
+        'form': form
     })
 
+    @login_required()
+    def edit_ice(request, ice_slot_id):
+        return render(request, 'edit_ice.html')
 
-@login_required()
-def view_training(request, training_id):
-    return render(request, 'view_training.html')
+    @login_required()
+    def delete_ice(request, ice_slot_id):
+        if request.method != 'POST':
+            return HttpResponseBadRequest()
+        # TODO logic for deleting
+        ice_slot = get_object_or_404(IceSlot, pk=ice_slot_id)
+        ice_slot.delete()
+        messages.add_message(request, messages.SUCCESS, f'Deleted ice_slot {ice_slot_id}')
+        return HttpResponse(status=204)
+        # return render(request, 'delete_ice.html')
 
+    def impressum(request):
+        return render(request, 'impressum.html')
 
-@login_required()
-def add_training(request):
-    return render(request, 'add_training.html')
+    @login_required()
+    def create_account(request):
+        return render(request, 'create_account.html')
 
+    @login_required()
+    def list_trainings(request):
+        trainings = Training.objects.all()
+        return render(request, 'list_trainings.html', {
+            'trainings': trainings
+        })
 
-@login_required()
-def edit_training(request, training_id):
-    return render(request, 'edit_training.html')
+    @login_required()
+    def view_training(request, training_id):
+        return render(request, 'view_training.html')
 
+    @login_required()
+    def add_training(request):
+        return render(request, 'add_training.html')
 
-@login_required()
-def delete_training(request, training_id):
-    if request.method != 'POST':
-        return HttpResponseBadRequest()
-    # TODO logic for deleting
-    training = Training.objects.get(pk=training_id)
-    if not training:
-        return HttpResponseNotFound()
-    training.delete()
-    messages.add_message(request, messages.SUCCESS, f'Delete training {training_id}')
-    return HttpResponse(status=204)
-    #return render(request, 'delete_training.html')
+    @login_required()
+    def edit_training(request, training_id):
+        return render(request, 'edit_training.html')
+
+    @login_required()
+    def delete_training(request, training_id):
+        if request.method != 'POST':
+            return HttpResponseBadRequest()
+        # TODO logic for deleting
+        training = Training.objects.get(pk=training_id)
+        if not training:
+            return HttpResponseNotFound()
+        training.delete()
+        messages.add_message(request, messages.SUCCESS, f'Delete training {training_id}')
+        return HttpResponse(status=204)
+        # return render(request, 'delete_training.html')

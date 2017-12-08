@@ -106,3 +106,4 @@ pip-selfcheck.json
 selenium/
 
 locale/*/LC_MESSAGES/*.mo
+projectFilesBackup/
