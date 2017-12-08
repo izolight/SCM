@@ -21,42 +21,16 @@
             </tr>
             </thead>
             <tbody>
+            {% for ice in ice_slots %}
             <tr>
-                <td>1</td>
-                <td>Junior 1</td>
-                <td>Sebastian</td>
-                <td>28.11.2017 - 09:00</td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'edit_ice' %}" role="button">Editieren</a></td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delete_ice' %}" role="button">Löschen</a></td>
+                <td>{{ ice.id }}</td>
+                <td>{{ ice.training.title }}</td>
+                <td>{{ ice.training.t }}</td>
+                <td>{{ ice.date }} {{ ice.start_time }}</td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'edit_ice' ice.id %}" role="button">Editieren</a></td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delete_ice' ice.id %}" role="button">Löschen</a></td>
             </tr>
-            <tr class="hidden-sm hidden-md hidden-lg">
-                <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'edit_ice' %}" role="button">Editieren</a></td>
-                <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delete_ice' %}" role="button">Löschen</a></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Ü 18</td>
-                <td>Gregor</td>
-                <td>28.11.2017 - 13:00</td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'edit_ice' %}" role="button">Editieren</a></td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delete_ice' %}" role="button">Löschen</a></td>
-            </tr>
-            <tr class="hidden-sm hidden-md hidden-lg">
-                <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'edit_ice' %}" role="button">Editieren</a></td>
-                <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delete_ice' %}" role="button">Löschen</a></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>A Liga</td>
-                <td>Sebastian</td>
-                <td>29.11.2017 - 10:00</td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'edit_ice' %}" role="button">Editieren</a></td>
-                <td class="hidden-xs"   ><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delete_ice' %}" role="button">Löschen</a></td>
-            </tr>
-            <tr class="hidden-sm hidden-md hidden-lg">
-                <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'edit_ice' %}" role="button">Editieren</a></td>
-                <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delete_ice' %}" role="button">Löschen</a></td>
-            </tr>
+            {% endfor %}
             </tbody>
 
         </table>

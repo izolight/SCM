@@ -20,42 +20,16 @@
             </tr>
             </thead>
             <tbody>
+            {% for invoice in invoices %}
             <tr>
-                <td>1</td>
-                <td>V1</td>
-                <td>N1</td>
-                <td>B1</td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'facturate_bill' %}" role="button">Verrechnen</a></td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delayed_bill' %}" role="button">Mahnen</a></td>
+                <td>{{ invoice.number }}</td>
+                <td>{{ invoice.member.user.first_name }}</td>
+                <td>{{ invoice.member.user.last_name }}</td>
+                <td>{{ invoice.member.user.email }}</td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'facturate_bill' invoice.id %}" role="button">Verrechnen</a></td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delayed_bill' invoice.id %}" role="button">Mahnen</a></td>
             </tr>
-            <tr class="hidden-sm hidden-md hidden-lg">
-                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'facturate_bill' %}" role="button">Verrechnen</a></td>
-                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delayed_bill' %}" role="button">Mahnen</a></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>V2</td>
-                <td>N2</td>
-                <td>B2</td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'facturate_bill' %}" role="button">Verrechnen</a></td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delayed_bill' %}" role="button">Mahnen</a></td>
-            </tr>
-            <tr class="hidden-sm hidden-md hidden-lg">
-                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'facturate_bill' %}" role="button">Verrechnen</a></td>
-                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delayed_bill' %}" role="button">Mahnen</a></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>V3</td>
-                <td>N3</td>
-                <td>B3</td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'facturate_bill' %}" role="button">Verrechnen</a></td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delayed_bill' %}" role="button">Mahnen</a></td>
-            </tr>
-            <tr class="hidden-sm hidden-md hidden-lg">
-                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'facturate_bill' %}" role="button">Verrechnen</a></td>
-                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delayed_bill' %}" role="button">Mahnen</a></td>
-            </tr>
+            {% endfor %}
             </tbody>
 
         </table>

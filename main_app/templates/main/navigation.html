@@ -24,8 +24,6 @@
                         <li class="dropdown
                             {% if url_name == 'list_ices' %}active{% endif %}
                             {% if url_name == 'add_ice' %}active{% endif %}
-                            {% if url_name == 'edit_ice' %}active{% endif %}
-                            {% if url_name == 'delete_ice' %}active{% endif %}
                         ">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true"
@@ -37,12 +35,6 @@
                                 <li class="{% if url_name == 'add_ice' %}active{% endif %}"><a
                                         href="{% url 'add_ice' %}">Add
                                     Ice</a></li>
-                                <li class="{% if url_name == 'edit_ice' %}active{% endif %}"><a
-                                        href="{% url 'edit_ice' %}">Edit
-                                    Ice</a></li>
-                                <li class="{% if url_name == 'delete_ice' %}active{% endif %}"><a
-                                        href="{% url 'delete_ice' %}">Delete
-                                    Ice</a></li>
                             </ul>
                         </li>
 
@@ -50,8 +42,6 @@
                         <li class="dropdown
                             {% if url_name == 'list_members' %}active{% endif %}
                             {% if url_name == 'add_member' %}active{% endif %}
-                            {% if url_name == 'edit_member' %}active{% endif %}
-                            {% if url_name == 'delete_member' %}active{% endif %}
                         ">
 
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -62,10 +52,6 @@
                                         href="{% url 'list_members' %}">List Member</a></li>
                                 <li class="{% if url_name == 'add_member' %}active{% endif %}"><a
                                         href="{% url 'add_member' %}">Add Member</a></li>
-                                <li class="{% if url_name == 'edit_member' %}active{% endif %}"><a
-                                        href="{% url 'edit_member' %}">Edit Member</a></li>
-                                <li class="{% if url_name == 'delete_member' %}active{% endif %}"><a
-                                        href="{% url 'delete_member' %}">Delete Member</a></li>
                             </ul>
                         </li>
 
@@ -73,8 +59,6 @@
                         <li class="dropdown
                             {% if url_name == 'list_trainings' %}active{% endif %}
                             {% if url_name == 'add_training' %}active{% endif %}
-                            {% if url_name == 'edit_training' %}active{% endif %}
-                            {% if url_name == 'delete_training' %}active{% endif %}
                         ">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true"
@@ -85,22 +69,12 @@
                                 <li class="{% if url_name == 'add_training' %}active{% endif %}"><a
                                         href="{% url 'add_training' %}">Add
                                     Training</a></li>
-                                <li class="{% if url_name == 'edit_training' %}active{% endif %}"><a
-                                        href="{% url 'edit_training' %}">Edit Training</a></li>
-                                <li class="{% if url_name == 'delete_training' %}active{% endif %}"><a
-                                        href="{% url 'delete_training' %}">Delete Training</a></li>
                             </ul>
                         </li>
 
                         <li class="dropdown
                             {% if url_name == 'list_bills' %}active{% endif %}
                             {% if url_name == 'open_bill' %}active{% endif %}
-                            {% if url_name == 'facturate_bill' %}active{% endif %}
-                            {% if url_name == 'facturated_bill' %}active{% endif %}
-                            {% if url_name == 'delayed_bill' %}active{% endif %}
-                            {% if url_name == 'reminded_bill' %}active{% endif %}
-                            {% if url_name == 'register_bill' %}active{% endif %}
-                            {% if url_name == 'notpayed_bill' %}active{% endif %}
                         ">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true"
@@ -109,19 +83,6 @@
                                 <li class="{% if url_name == 'list_bills' %}active{% endif %}"><a
                                         href="{% url 'list_bills' %}">List Bill</a></li>
                                 <li class="{% if url_name == 'open_bill' %}active{% endif %}"><a
-                                        href="{% url 'open_bill' %}">Open Bill</a></li>
-                                <li class="{% if url_name == 'facturate_bill' %}active{% endif %}"><a
-                                        href="{% url 'facturate_bill' %}">Facturate Bill</a></li>
-                                <li class="{% if url_name == 'facturated_bill' %}active{% endif %}"><a
-                                        href="{% url 'facturated_bill' %}">Facturated Bill</a></li>
-                                <li class="{% if url_name == 'delayed_bill' %}active{% endif %}"><a
-                                        href="{% url 'delayed_bill' %}">Delayed Bill</a></li>
-                                <li class="{% if url_name == 'reminded_bill' %}active{% endif %}"><a
-                                        href="{% url 'reminded_bill' %}">Reminded Bill</a></li>
-                                <li class="{% if url_name == 'register_bill' %}active{% endif %}"><a
-                                        href="{% url 'register_bill' %}">Register Paying</a></li>
-                                <li class="{% if url_name == 'notpayed_bill' %}active{% endif %}"><a
-                                        href="{% url 'notpayed_bill' %}">Not Payed</a></li>
                             </ul>
                         </li>
 
