@@ -73,17 +73,20 @@
                         </li>
 
                         <li class="dropdown
-                            {% if url_name == 'list_bills' %}active{% endif %}
-                            {% if url_name == 'open_bill' %}active{% endif %}
+                            {% if url_name == 'list_invoices' %}active{% endif %}
+                            {% if url_name == 'edit_invoice' %}active{% endif %}
+                            {% if url_name == 'create_invoice' %}active{% endif %}
                         ">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true"
-                               aria-expanded="false">Billing<span class="caret"></span></a>
+                               aria-expanded="false">Invoices<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li class="{% if url_name == 'list_bills' %}active{% endif %}"><a
-                                        href="{% url 'list_bills' %}">List Bill</a></li>
-                                <li class="{% if url_name == 'open_bill' %}active{% endif %}"><a
+                                <li class="{% if url_name == 'list_invoices' %}active{% endif %}"><a
+                                        href="{% url 'list_invoices' %}">List Invoices</a></li>
+                                <li class="{% if url_name == 'create_invoice' %}active{% endif %}"><a
+                                        href="{% url 'create_invoice' %}">Create Invoice</a></li>
                             </ul>
+                        </li>
                         </li>
 
                         <li class="{% if url_name == 'impressum' %}active{% endif %}"><a

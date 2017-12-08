@@ -1,0 +1,64 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+    Create a Invoice
+{% endblock title %}
+
+{% block content %}
+
+        <div class="col-sm-9">
+        <b>Diese Rechnungen sind bezahlt:</b><br>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Nr.</th>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th>Benutzername</th>
+                <th class="hidden-xs">&nbsp;</th>
+                <th class="hidden-xs">&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>V1</td>
+                <td>N1</td>
+                <td>B1</td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'create_invoice' %}" role="button">Verrechnen</a></td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'create_invoice' %}" role="button">Mahnen</a></td>
+            </tr>
+            <tr class="hidden-sm hidden-md hidden-lg">
+                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'create_invoice' %}" role="button">Verrechnen</a></td>
+                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'create_invoice' %}" role="button">Mahnen</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>V2</td>
+                <td>N2</td>
+                <td>B2</td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'create_invoice' %}" role="button">Verrechnen</a></td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'create_invoice' %}" role="button">Mahnen</a></td>
+            </tr>
+            <tr class="hidden-sm hidden-md hidden-lg">
+                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'create_invoice' %}" role="button">Verrechnen</a></td>
+                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'create_invoice' %}" role="button">Mahnen</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>V3</td>
+                <td>N3</td>
+                <td>B3</td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'create_invoice' %}" role="button">Verrechnen</a></td>
+                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'create_invoice' %}" role="button">Mahnen</a></td>
+            </tr>
+            <tr class="hidden-sm hidden-md hidden-lg">
+                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'create_invoice' %}" role="button">Verrechnen</a></td>
+                <td><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'create_invoice' %}" role="button">Mahnen</a></td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+{% endblock content %}

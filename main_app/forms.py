@@ -30,6 +30,13 @@ class NewMemberForm(forms.Form):
             self.add_error('password2', "Passwords do not match")
 
 
+class NewInvoiceForm(forms.Form):
+    title = forms.CharField(max_length=50, label="Title")
+    description = forms.Textarea()
+    amount = forms.IntegerField(None, 1)
+    due_date = forms.DateField()
+
+
 class SignUpForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
     last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')

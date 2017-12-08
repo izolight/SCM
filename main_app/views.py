@@ -128,48 +128,22 @@ def edit_member(request, member_id):
         'member': member
     })
 
+@login_required()
+def create_invoice(request):
+    return render(request, 'create_invoice.html')
+
 
 @login_required()
-def list_bills(request):
+def list_invoices(request):
     invoices = Invoice.objects.all()
-    return render(request, 'list_bills.html', {
+    return render(request, 'list_invoices.html', {
         'invoices': invoices
     })
 
 
 @login_required()
-def open_bill(request, invoice_id):
-    return render(request, 'open_bill.html')
-
-
-@login_required()
-def facturate_bill(request, invoice_id):
-    return render(request, 'facturate_bill.html')
-
-
-@login_required()
-def facturated_bill(request, invoice_id):
-    return render(request, 'facturated_bill.html')
-
-
-@login_required()
-def delayed_bill(request, invoice_id):
-    return render(request, 'delayed_bill.html')
-
-
-@login_required()
-def reminded_bill(request, invoice_id):
-    return render(request, 'reminded_bill.html')
-
-
-@login_required()
-def register_bill(request, invoice_id):
-    return render(request, 'payed_bill.html')
-
-
-@login_required()
-def notpayed_bill(request, invoice_id):
-    return render(request, 'notpayed_bill.html')
+def edit_invoice(request, invoice_id):
+    return render(request, 'edit_invoice.html')
 
 
 def contact(request):
