@@ -1,5 +1,5 @@
 {% extends "main/base.html" %}
-
+{% load i18n %}
 {% block title %}
     {% trans "Title Add Account" %}
 {#    Account erstellen#}
@@ -13,7 +13,7 @@
             {% csrf_token %}
 
             <div class="form-group">
-                <label for="Text">{% trans "Title Account Data" %}</label>
+                <label for="Text">{% trans "Text Account Data" %}</label>
 {#                Bitte tragen Sie die Daten des neuen Mitglied ein:#}
             </div>
             <div class="form-group">

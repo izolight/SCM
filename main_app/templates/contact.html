@@ -1,8 +1,8 @@
 {% extends "main/base.html" %}
-
+{% load i18n %}
 {% block title %}
     {% trans "Title Contact" %}
-{#    Kontakt#}
+    {#    Kontakt#}
 {% endblock title %}
 
 {% block content %}
@@ -10,8 +10,8 @@
     <div class="col-sm-9">
 
         <b>{% trans "Text Contact" %}</b><br><br>
-{#        Falls Sie uns kontaktieren wollen, hier die Angaben:#}
-<table class="table table-striped table-bordered table-hover">
+        {#        Falls Sie uns kontaktieren wollen, hier die Angaben:#}
+        <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
                 <th>{% trans "Number" %}</th>

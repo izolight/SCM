@@ -1,5 +1,5 @@
 {% extends "main/base.html" %}
-
+{% load i18n %}
 {% block title %}
     {% trans "Title Edit Training" %}
 {#    Training editieren#}
@@ -12,7 +12,7 @@
         <form action="add_member">
             <div class="form-group">
                 <label for="Text">{% trans "Text Edit Training" %}</label>
-                    Bitte tragen Sie die Daten für das korrigierte Training ein:
+{#                    Bitte tragen Sie die Daten für das korrigierte Training ein:#}
             </div>
             <div class="form-group">
                 <label for="training">{% trans "Enter Name Training" %}</label>
