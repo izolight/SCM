@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-08 09:08+0000\n"
+"POT-Creation-Date: 2017-12-08 09:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -278,7 +278,7 @@ msgid "Choose Players"
 msgstr ""
 
 #: main_app/templates/facturate_bill.html:4
-msgid "Create Bill"
+msgid "Title Create Bill"
 msgstr ""
 
 #: main_app/templates/facturate_bill.html:16
@@ -303,6 +303,7 @@ msgstr ""
 #: main_app/templates/list_bills.html:42 main_app/templates/list_bills.html:46
 #: main_app/templates/list_bills.html:54 main_app/templates/list_bills.html:58
 #: main_app/templates/notpayed_bill.html:30
+#: main_app/templates/notpayed_bill.html:34
 #: main_app/templates/notpayed_bill.html:42
 #: main_app/templates/notpayed_bill.html:54
 #: main_app/templates/open_bill.html:30 main_app/templates/open_bill.html:34
@@ -375,7 +376,7 @@ msgid "Text List Bills"
 msgstr ""
 
 #: main_app/templates/list_bills.html:11
-msgid "Create New Bill"
+msgid "Text New Bill"
 msgstr ""
 
 #: main_app/templates/list_bills.html:11
@@ -391,7 +392,7 @@ msgid "Text List Ice"
 msgstr ""
 
 #: main_app/templates/list_ices.html:11
-msgid "Add New Ice"
+msgid "Text New Ice"
 msgstr ""
 
 #: main_app/templates/list_ices.html:18
@@ -432,7 +433,7 @@ msgid "Text List Member"
 msgstr ""
 
 #: main_app/templates/list_members.html:10
-msgid "Add Member"
+msgid "Text New Member"
 msgstr ""
 
 #: main_app/templates/list_members.html:11
@@ -465,10 +466,6 @@ msgstr ""
 msgid "Amount"
 msgstr ""
 
-#: main_app/templates/main/base.html:46
-msgid "Test Translation"
-msgstr "Test EN"
-
 #: main_app/templates/notpayed_bill.html:4
 msgid "Title Unpayed Bill"
 msgstr ""
@@ -500,3 +497,6 @@ msgstr ""
 #: main_app/templates/reminded_bill.html:11
 msgid "Text Reminded Bills"
 msgstr ""
+
+#~ msgid "Test Translation"
+#~ msgstr "Test EN"
