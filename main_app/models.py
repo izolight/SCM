@@ -40,7 +40,7 @@ class Invoice(models.Model):
     due_date = models.DateField()
     create_date = models.DateField()
     paid_date = models.DateField()
-    member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True)
+    member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, related_name="invoices")
 
 
 class Club(models.Model):
@@ -53,7 +53,7 @@ class IceSlot(models.Model):
     date = models.DateField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    club = models.ForeignKey(Club, on_delete=models.CASCADE, null=True)
+    club = models.ForeignKey(Club, on_delete=models.CASCADE, null=True, related_name="ice_slots")
 
 
 class Training(models.Model):
@@ -65,7 +65,7 @@ class Training(models.Model):
     members = models.ManyToManyField(Member, related_name="trainings")
     trainer = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, related_name="trainings_as_trainer")
     club = models.ForeignKey(Club, on_delete=models.CASCADE, null=True, related_name="trainings")
-    ice_slot = models.OneToOneField(IceSlot, on_delete=models.SET_NULL, null=True)
+    ice_slot = models.OneToOneField(IceSlot, on_delete=models.SET_NULL, null=True, related_name="trainings")
 
 
 class SubscriptionType(models.Model):
@@ -73,8 +73,8 @@ class SubscriptionType(models.Model):
 
 
 class Subscription(models.Model):
-    type = models.ForeignKey(SubscriptionType, on_delete=models.SET_NULL, null=True)
+    type = models.ForeignKey(SubscriptionType, on_delete=models.SET_NULL, null=True, related_name="subscriptions")
     price = models.IntegerField()
     duration = models.IntegerField()
     description = models.TextField()
-    invoice = models.ForeignKey(Invoice, on_delete=models.SET_NULL, null=True)
+    invoice = models.ForeignKey(Invoice, on_delete=models.SET_NULL, null=True, related_name="subscriptions")
