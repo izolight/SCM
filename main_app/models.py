@@ -11,6 +11,11 @@ class City(models.Model):
     name = models.CharField(max_length=30)
 
 
+class Club(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.TextField()
+
+
 class Member(models.Model):
     address = models.CharField(max_length=50, null=True)
     city = models.ForeignKey(City, related_name='members', null=True)
@@ -18,6 +23,7 @@ class Member(models.Model):
     phone_number = models.CharField(validators=[phone_regex], max_length=12, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='member')
     website = models.URLField(max_length=100, blank=True, null=True)
+    club = models.ForeignKey(Club, on_delete=models.SET_NULL, null=True, related_name="members")
 
 
 # see https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone
@@ -41,12 +47,6 @@ class Invoice(models.Model):
     create_date = models.DateField()
     paid_date = models.DateField()
     member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, related_name="invoices")
-
-
-class Club(models.Model):
-    name = models.CharField(max_length=50)
-    description = models.TextField()
-    members = models.ManyToManyField(Member)
 
 
 class IceSlot(models.Model):
