@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-17 10:16+0100\n"
+"POT-Creation-Date: 2017-12-08 08:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,485 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: main_app/templates/main/base.html:44
+#: main_app/templates/add_ice.html:4
+msgid "Title Add Eisbelegung"
+msgstr ""
+
+#: main_app/templates/add_ice.html:16
+msgid "Text Ice Usage"
+msgstr ""
+
+#: main_app/templates/add_ice.html:20 main_app/templates/add_training.html:20
+#: main_app/templates/edit_ice.html:18 main_app/templates/edit_training.html:18
+msgid "Enter Name Training"
+msgstr ""
+
+#: main_app/templates/add_ice.html:25 main_app/templates/add_training.html:25
+#: main_app/templates/edit_ice.html:22 main_app/templates/edit_training.html:22
+msgid "Enter Name Trainer"
+msgstr ""
+
+#: main_app/templates/add_ice.html:30
+msgid "Enter Date Training"
+msgstr ""
+
+#: main_app/templates/add_ice.html:37 main_app/templates/add_member.html:64
+#: main_app/templates/add_training.html:51
+#: main_app/templates/create_account.html:74
+#: main_app/templates/edit_ice.html:32 main_app/templates/edit_member.html:51
+#: main_app/templates/edit_training.html:45
+#: main_app/templates/facturate_bill.html:66
+msgid "Submit"
+msgstr ""
+
+#: main_app/templates/add_ice.html:39 main_app/templates/add_member.html:67
+#: main_app/templates/add_training.html:53
+#: main_app/templates/create_account.html:75
+#: main_app/templates/delete_ice.html:16
+#: main_app/templates/delete_member.html:16
+#: main_app/templates/delete_training.html:16
+#: main_app/templates/edit_member.html:52
+#: main_app/templates/edit_training.html:46
+#: main_app/templates/facturate_bill.html:67
+msgid "Reset"
+msgstr ""
+
+#: main_app/templates/add_member.html:4
+msgid "Title Add Member"
+msgstr ""
+
+#: main_app/templates/add_member.html:16
+msgid "Text Member Data"
+msgstr ""
+
+#: main_app/templates/add_training.html:4
+msgid "Title Add Training"
+msgstr ""
+
+#: main_app/templates/add_training.html:16
+msgid "Text Training Data"
+msgstr ""
+
+#: main_app/templates/add_training.html:30 main_app/templates/edit_ice.html:26
+#: main_app/templates/edit_training.html:26
+msgid "Enter Date"
+msgstr ""
+
+#: main_app/templates/add_training.html:36
+msgid "Choose Member"
+msgstr ""
+
+#: main_app/templates/contact.html:4
+msgid "Title Contact"
+msgstr ""
+
+#: main_app/templates/contact.html:12
+msgid "Text Contact"
+msgstr ""
+
+#: main_app/templates/contact.html:17 main_app/templates/delayed_bill.html:16
+#: main_app/templates/facturated_bill.html:16
+#: main_app/templates/list_bills.html:16 main_app/templates/list_ices.html:17
+#: main_app/templates/list_members.html:16
+#: main_app/templates/list_trainings.html:16
+#: main_app/templates/notpayed_bill.html:16
+#: main_app/templates/open_bill.html:16 main_app/templates/payed_bill.html:16
+#: main_app/templates/reminded_bill.html:16
+msgid "Number"
+msgstr ""
+
+#: main_app/templates/contact.html:18 main_app/templates/delayed_bill.html:17
+#: main_app/templates/facturated_bill.html:17
+#: main_app/templates/list_bills.html:17
+#: main_app/templates/list_members.html:17
+#: main_app/templates/notpayed_bill.html:17
+#: main_app/templates/open_bill.html:17 main_app/templates/payed_bill.html:17
+#: main_app/templates/reminded_bill.html:17
+msgid "First Name"
+msgstr ""
+
+#: main_app/templates/contact.html:19 main_app/templates/delayed_bill.html:18
+#: main_app/templates/facturated_bill.html:18
+#: main_app/templates/list_bills.html:18
+#: main_app/templates/list_members.html:18
+#: main_app/templates/notpayed_bill.html:18
+#: main_app/templates/open_bill.html:18 main_app/templates/payed_bill.html:18
+#: main_app/templates/reminded_bill.html:18
+msgid "Last Name"
+msgstr ""
+
+#: main_app/templates/contact.html:20
+msgid "Email"
+msgstr ""
+
+#: main_app/templates/create_account.html:4
+msgid "Title Add Account"
+msgstr ""
+
+#: main_app/templates/create_account.html:16
+msgid "Title Account Data"
+msgstr ""
+
+#: main_app/templates/create_account.html:83
+msgid "Password Incorrect"
+msgstr ""
+
+#: main_app/templates/delayed_bill.html:4
+msgid "Title Delayed Bill"
+msgstr ""
+
+#: main_app/templates/delayed_bill.html:11
+msgid "Text Member To Remind"
+msgstr ""
+
+#: main_app/templates/delayed_bill.html:19
+msgid "User Name"
+msgstr ""
+
+#: main_app/templates/delayed_bill.html:30
+#: main_app/templates/delayed_bill.html:36
+#: main_app/templates/delayed_bill.html:46
+#: main_app/templates/delayed_bill.html:52
+#: main_app/templates/delayed_bill.html:62
+#: main_app/templates/delayed_bill.html:68
+msgid "To Pay"
+msgstr ""
+
+#: main_app/templates/delayed_bill.html:32
+#: main_app/templates/delayed_bill.html:38
+#: main_app/templates/delayed_bill.html:48
+#: main_app/templates/delayed_bill.html:54
+#: main_app/templates/delayed_bill.html:64
+#: main_app/templates/delayed_bill.html:70
+msgid "To Remind"
+msgstr ""
+
+#: main_app/templates/delete_ice.html:4
+msgid "Title Delete Ice"
+msgstr ""
+
+#: main_app/templates/delete_ice.html:10
+msgid "Text Delete Ice"
+msgstr ""
+
+#: main_app/templates/delete_ice.html:15
+#: main_app/templates/delete_member.html:15
+#: main_app/templates/delete_training.html:15
+#: main_app/templates/edit_ice.html:33 main_app/templates/list_ices.html:32
+#: main_app/templates/list_ices.html:36 main_app/templates/list_ices.html:44
+#: main_app/templates/list_ices.html:48 main_app/templates/list_ices.html:56
+#: main_app/templates/list_ices.html:60 main_app/templates/list_members.html:33
+#: main_app/templates/list_members.html:39
+#: main_app/templates/list_trainings.html:33
+#: main_app/templates/list_trainings.html:37
+#: main_app/templates/list_trainings.html:46
+#: main_app/templates/list_trainings.html:50
+#: main_app/templates/list_trainings.html:59
+#: main_app/templates/list_trainings.html:63
+msgid "Delete"
+msgstr ""
+
+#: main_app/templates/delete_member.html:4
+msgid "Title Delete Member"
+msgstr ""
+
+#: main_app/templates/delete_member.html:10
+msgid "Text Delete Member"
+msgstr ""
+
+#: main_app/templates/delete_training.html:4
+msgid "Title Delete Training"
+msgstr ""
+
+#: main_app/templates/delete_training.html:10
+msgid "Text Delete Training"
+msgstr ""
+
+#: main_app/templates/edit_ice.html:4
+msgid "Title Edit Ice"
+msgstr ""
+
+#: main_app/templates/edit_ice.html:14
+msgid "Text Edit Ice"
+msgstr ""
+
+#: main_app/templates/edit_member.html:4
+msgid "Title Edit Member"
+msgstr ""
+
+#: main_app/templates/edit_member.html:14
+msgid "Text Edit Member"
+msgstr ""
+
+#: main_app/templates/edit_member.html:18
+msgid "Enter First Name"
+msgstr ""
+
+#: main_app/templates/edit_member.html:22
+msgid "Enter Last Name"
+msgstr ""
+
+#: main_app/templates/edit_member.html:26
+msgid "Enter Address"
+msgstr ""
+
+#: main_app/templates/edit_member.html:32
+msgid "Enter City Name"
+msgstr ""
+
+#: main_app/templates/edit_member.html:38
+msgid "Enter Postale Code"
+msgstr ""
+
+#: main_app/templates/edit_member.html:41
+msgid "Enter Postale Code Spezified"
+msgstr ""
+
+#: main_app/templates/edit_member.html:47
+msgid "Enter Phone Number"
+msgstr ""
+
+#: main_app/templates/edit_training.html:4
+msgid "Title Edit Training"
+msgstr ""
+
+#: main_app/templates/edit_training.html:14
+msgid "Text Edit Training"
+msgstr ""
+
+#: main_app/templates/edit_training.html:31
+msgid "Choose Players"
+msgstr ""
+
+#: main_app/templates/facturate_bill.html:4
+msgid "Create Bill"
+msgstr ""
+
+#: main_app/templates/facturate_bill.html:16
+msgid "Text Create Bill"
+msgstr ""
+
+#: main_app/templates/facturated_bill.html:4
+msgid "Title Sendet Bills"
+msgstr ""
+
+#: main_app/templates/facturated_bill.html:11
+msgid "Text Sendet Bills"
+msgstr ""
+
+#: main_app/templates/facturated_bill.html:19
+#: main_app/templates/list_bills.html:19
+#: main_app/templates/list_members.html:19
+#: main_app/templates/notpayed_bill.html:19
+#: main_app/templates/open_bill.html:19 main_app/templates/payed_bill.html:19
+#: main_app/templates/reminded_bill.html:19
+msgid "Username"
+msgstr ""
+
+#: main_app/templates/facturated_bill.html:30
+#: main_app/templates/facturated_bill.html:34
+#: main_app/templates/facturated_bill.html:42
+#: main_app/templates/facturated_bill.html:46
+#: main_app/templates/facturated_bill.html:54
+#: main_app/templates/facturated_bill.html:58
+#: main_app/templates/list_bills.html:30 main_app/templates/list_bills.html:34
+#: main_app/templates/list_bills.html:42 main_app/templates/list_bills.html:46
+#: main_app/templates/list_bills.html:54 main_app/templates/list_bills.html:58
+#: main_app/templates/notpayed_bill.html:30
+#: main_app/templates/notpayed_bill.html:42
+#: main_app/templates/notpayed_bill.html:54
+#: main_app/templates/open_bill.html:30 main_app/templates/open_bill.html:34
+#: main_app/templates/open_bill.html:42 main_app/templates/open_bill.html:46
+#: main_app/templates/open_bill.html:54 main_app/templates/open_bill.html:58
+#: main_app/templates/payed_bill.html:30 main_app/templates/payed_bill.html:34
+#: main_app/templates/payed_bill.html:42 main_app/templates/payed_bill.html:46
+#: main_app/templates/payed_bill.html:54 main_app/templates/payed_bill.html:58
+#: main_app/templates/reminded_bill.html:30
+#: main_app/templates/reminded_bill.html:34
+#: main_app/templates/reminded_bill.html:42
+#: main_app/templates/reminded_bill.html:46
+#: main_app/templates/reminded_bill.html:54
+#: main_app/templates/reminded_bill.html:58
+msgid "Offset"
+msgstr ""
+
+#: main_app/templates/facturated_bill.html:31
+#: main_app/templates/facturated_bill.html:35
+#: main_app/templates/facturated_bill.html:43
+#: main_app/templates/facturated_bill.html:47
+#: main_app/templates/facturated_bill.html:55
+#: main_app/templates/facturated_bill.html:59
+#: main_app/templates/list_bills.html:31 main_app/templates/list_bills.html:35
+#: main_app/templates/list_bills.html:43 main_app/templates/list_bills.html:47
+#: main_app/templates/list_bills.html:55 main_app/templates/list_bills.html:59
+#: main_app/templates/notpayed_bill.html:31
+#: main_app/templates/notpayed_bill.html:35
+#: main_app/templates/notpayed_bill.html:43
+#: main_app/templates/notpayed_bill.html:47
+#: main_app/templates/notpayed_bill.html:55
+#: main_app/templates/notpayed_bill.html:59
+#: main_app/templates/open_bill.html:31 main_app/templates/open_bill.html:35
+#: main_app/templates/open_bill.html:43 main_app/templates/open_bill.html:47
+#: main_app/templates/open_bill.html:55 main_app/templates/open_bill.html:59
+#: main_app/templates/payed_bill.html:31 main_app/templates/payed_bill.html:35
+#: main_app/templates/payed_bill.html:43 main_app/templates/payed_bill.html:47
+#: main_app/templates/payed_bill.html:55 main_app/templates/payed_bill.html:59
+#: main_app/templates/reminded_bill.html:31
+#: main_app/templates/reminded_bill.html:35
+#: main_app/templates/reminded_bill.html:43
+#: main_app/templates/reminded_bill.html:47
+#: main_app/templates/reminded_bill.html:55
+#: main_app/templates/reminded_bill.html:59
+msgid "Remind"
+msgstr ""
+
+#: main_app/templates/impressum.html:4
+msgid "Title Impressum"
+msgstr ""
+
+#: main_app/templates/impressum.html:11
+msgid "Impressum"
+msgstr ""
+
+#: main_app/templates/index.html:4 main_app/templates/index.html:11
+msgid "Title Welcome"
+msgstr ""
+
+#: main_app/templates/index.html:13
+msgid "Welcome Text"
+msgstr ""
+
+#: main_app/templates/list_bills.html:4
+msgid "Title List Bills"
+msgstr ""
+
+#: main_app/templates/list_bills.html:11
+msgid "Text List Bills"
+msgstr ""
+
+#: main_app/templates/list_bills.html:11
+msgid "Create New Bill"
+msgstr ""
+
+#: main_app/templates/list_bills.html:11
+msgid "Button New Bill"
+msgstr ""
+
+#: main_app/templates/list_ices.html:4
+msgid "Title List Ice"
+msgstr ""
+
+#: main_app/templates/list_ices.html:11
+msgid "Text List Ice"
+msgstr ""
+
+#: main_app/templates/list_ices.html:11
+msgid "Add New Ice"
+msgstr ""
+
+#: main_app/templates/list_ices.html:18
+#: main_app/templates/list_trainings.html:17
+msgid "Training"
+msgstr ""
+
+#: main_app/templates/list_ices.html:19
+#: main_app/templates/list_trainings.html:18
+msgid "Trainer"
+msgstr ""
+
+#: main_app/templates/list_ices.html:20
+#: main_app/templates/list_trainings.html:19
+msgid "Date"
+msgstr ""
+
+#: main_app/templates/list_ices.html:31 main_app/templates/list_ices.html:35
+#: main_app/templates/list_ices.html:43 main_app/templates/list_ices.html:47
+#: main_app/templates/list_ices.html:55 main_app/templates/list_ices.html:59
+#: main_app/templates/list_members.html:31
+#: main_app/templates/list_members.html:37
+#: main_app/templates/list_trainings.html:32
+#: main_app/templates/list_trainings.html:36
+#: main_app/templates/list_trainings.html:45
+#: main_app/templates/list_trainings.html:49
+#: main_app/templates/list_trainings.html:58
+#: main_app/templates/list_trainings.html:62
+msgid "Edit"
+msgstr ""
+
+#: main_app/templates/list_members.html:4
+msgid "Title List Member"
+msgstr ""
+
+#: main_app/templates/list_members.html:10
+msgid "Text List Member"
+msgstr ""
+
+#: main_app/templates/list_members.html:10
+msgid "Add Member"
+msgstr ""
+
+#: main_app/templates/list_members.html:11
+msgid "Add New Member"
+msgstr ""
+
+#: main_app/templates/list_trainings.html:4
+#, fuzzy
+#| msgid "Test Translation"
+msgid "Title List Training"
+msgstr "Test DE"
+
+#: main_app/templates/list_trainings.html:11
+#, fuzzy
+#| msgid "Test Translation"
+msgid "Text List Training"
+msgstr "Test DE"
+
+#: main_app/templates/list_trainings.html:11
+#, fuzzy
+#| msgid "Test Translation"
+msgid "Text Add Training"
+msgstr "Test DE"
+
+#: main_app/templates/list_trainings.html:11
+msgid "Button Add Training"
+msgstr ""
+
+#: main_app/templates/list_trainings.html:20
+msgid "Amount"
+msgstr ""
+
+#: main_app/templates/main/base.html:46
 msgid "Test Translation"
 msgstr "Test DE"
+
+#: main_app/templates/notpayed_bill.html:4
+msgid "Title Unpayed Bill"
+msgstr ""
+
+#: main_app/templates/notpayed_bill.html:11
+msgid "Text Unpayed Bill"
+msgstr ""
+
+#: main_app/templates/open_bill.html:4
+msgid "Title Open Bills"
+msgstr ""
+
+#: main_app/templates/open_bill.html:11
+msgid "Text Open Bills"
+msgstr ""
+
+#: main_app/templates/payed_bill.html:4
+msgid "Title Payed Bill"
+msgstr ""
+
+#: main_app/templates/payed_bill.html:11
+msgid "Text Payed Bill"
+msgstr ""
+
+#: main_app/templates/reminded_bill.html:4
+msgid "Title Reminded Bills"
+msgstr ""
+
+#: main_app/templates/reminded_bill.html:11
+msgid "Text Reminded Bills"
+msgstr ""
