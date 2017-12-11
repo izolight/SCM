@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-11 10:26+0000\n"
+"POT-Creation-Date: 2017-12-11 11:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,26 +26,26 @@ msgstr ""
 
 #: main_app/templates/add_ice.html:4
 msgid "Title Add Eisbelegung"
-msgstr ""
+msgstr "Add Ice Reservation"
 
 #: main_app/templates/add_ice.html:16
 msgid "Text Ice Usage"
-msgstr ""
+msgstr "Here you can plan the ice reservation"
 
 #: main_app/templates/add_ice.html:20 main_app/templates/add_training.html:20
 #: main_app/templates/edit_ice.html:18 main_app/templates/edit_training.html:18
 msgid "Enter Name Training"
-msgstr ""
+msgstr "Name of the training"
 
 #: main_app/templates/add_ice.html:25 main_app/templates/add_training.html:25
 #: main_app/templates/edit_ice.html:22 main_app/templates/edit_training.html:22
 msgid "Enter Name Trainer"
-msgstr ""
+msgstr "Name of the trainer"
 
 #: main_app/templates/add_ice.html:30 main_app/templates/add_training.html:30
 #: main_app/templates/edit_ice.html:26 main_app/templates/edit_training.html:26
 msgid "Enter Date"
-msgstr ""
+msgstr "Date:"
 
 #: main_app/templates/add_ice.html:37 main_app/templates/add_member.html:64
 #: main_app/templates/add_training.html:51
@@ -56,7 +55,7 @@ msgstr ""
 #: main_app/templates/facturate_bill.html:66
 #: main_app/templates/registration/password_reset_form.html:24
 msgid "Submit"
-msgstr ""
+msgstr "Submit"
 
 #: main_app/templates/add_ice.html:39 main_app/templates/add_member.html:67
 #: main_app/templates/add_training.html:53
@@ -68,46 +67,46 @@ msgstr ""
 #: main_app/templates/edit_training.html:46
 #: main_app/templates/facturate_bill.html:67
 msgid "Reset"
-msgstr ""
+msgstr "Reset"
 
 #: main_app/templates/add_member.html:4
 msgid "Title Add Member"
-msgstr ""
+msgstr "Add Member"
 
 #: main_app/templates/add_member.html:16
 msgid "Text Member Data"
-msgstr ""
+msgstr "Here are listed the data of the members."
 
 #: main_app/templates/add_training.html:4
 msgid "Title Add Training"
-msgstr ""
+msgstr "Add Training"
 
 #: main_app/templates/add_training.html:16
 msgid "Text Training Data"
-msgstr ""
+msgstr "Here is the list of all trainings."
 
 #: main_app/templates/add_training.html:36
 msgid "Choose Member"
-msgstr ""
+msgstr "Choose a player"
 
 #: main_app/templates/contact.html:4
 msgid "Title Contact"
-msgstr ""
+msgstr "Contakt"
 
 #: main_app/templates/contact.html:12
 msgid "Text Contact"
-msgstr ""
+msgstr "If you want to contact us, here are the informations: "
 
 #: main_app/templates/contact.html:17 main_app/templates/delayed_bill.html:16
 #: main_app/templates/facturated_bill.html:16
-#: main_app/templates/list_bills.html:16 main_app/templates/list_ices.html:17
+#: main_app/templates/list_bills.html:16 main_app/templates/list_ices.html:19
 #: main_app/templates/list_members.html:16
 #: main_app/templates/list_trainings.html:16
 #: main_app/templates/notpayed_bill.html:16
 #: main_app/templates/open_bill.html:16 main_app/templates/payed_bill.html:16
 #: main_app/templates/reminded_bill.html:16
 msgid "Number"
-msgstr ""
+msgstr "Number"
 
 #: main_app/templates/contact.html:18 main_app/templates/delayed_bill.html:17
 #: main_app/templates/facturated_bill.html:17
@@ -117,7 +116,7 @@ msgstr ""
 #: main_app/templates/open_bill.html:17 main_app/templates/payed_bill.html:17
 #: main_app/templates/reminded_bill.html:17
 msgid "First Name"
-msgstr ""
+msgstr "First Name"
 
 #: main_app/templates/contact.html:19 main_app/templates/delayed_bill.html:18
 #: main_app/templates/facturated_bill.html:18
@@ -127,31 +126,31 @@ msgstr ""
 #: main_app/templates/open_bill.html:18 main_app/templates/payed_bill.html:18
 #: main_app/templates/reminded_bill.html:18
 msgid "Last Name"
-msgstr ""
+msgstr "Last Name"
 
 #: main_app/templates/contact.html:20
 msgid "Email"
-msgstr ""
+msgstr "Emailaddress"
 
 #: main_app/templates/create_account.html:4
 msgid "Title Add Account"
-msgstr ""
+msgstr "Acc Account"
 
 #: main_app/templates/create_account.html:16
 msgid "Text Account Data"
-msgstr ""
+msgstr "Please enter the data of the new member:"
 
 #: main_app/templates/create_account.html:83
 msgid "Password Incorrect"
-msgstr ""
+msgstr "Password incorrect"
 
 #: main_app/templates/delayed_bill.html:4
 msgid "Title Delayed Bill"
-msgstr ""
+msgstr "Delayed Bills"
 
 #: main_app/templates/delayed_bill.html:11
 msgid "Text Member To Remind"
-msgstr ""
+msgstr "This members has to be reminded:"
 
 #: main_app/templates/delayed_bill.html:19
 #: main_app/templates/facturated_bill.html:19
@@ -161,7 +160,7 @@ msgstr ""
 #: main_app/templates/open_bill.html:19 main_app/templates/payed_bill.html:19
 #: main_app/templates/reminded_bill.html:19
 msgid "Username"
-msgstr ""
+msgstr "Username"
 
 #: main_app/templates/delayed_bill.html:30
 #: main_app/templates/delayed_bill.html:36
@@ -170,7 +169,7 @@ msgstr ""
 #: main_app/templates/delayed_bill.html:62
 #: main_app/templates/delayed_bill.html:68
 msgid "To Pay"
-msgstr ""
+msgstr "To pay"
 
 #: main_app/templates/delayed_bill.html:32
 #: main_app/templates/delayed_bill.html:38
@@ -179,23 +178,23 @@ msgstr ""
 #: main_app/templates/delayed_bill.html:64
 #: main_app/templates/delayed_bill.html:70
 msgid "To Remind"
-msgstr ""
+msgstr "To remind"
 
 #: main_app/templates/delete_ice.html:4
 msgid "Title Delete Ice"
-msgstr ""
+msgstr "Delete Ice Reservation"
 
 #: main_app/templates/delete_ice.html:10
 msgid "Text Delete Ice"
-msgstr ""
+msgstr "Do you really want delete this ice reservation?"
 
 #: main_app/templates/delete_ice.html:15
 #: main_app/templates/delete_member.html:15
 #: main_app/templates/delete_training.html:15
-#: main_app/templates/edit_ice.html:33 main_app/templates/list_ices.html:32
-#: main_app/templates/list_ices.html:36 main_app/templates/list_ices.html:44
-#: main_app/templates/list_ices.html:48 main_app/templates/list_ices.html:56
-#: main_app/templates/list_ices.html:60 main_app/templates/list_members.html:33
+#: main_app/templates/edit_ice.html:33 main_app/templates/list_ices.html:34
+#: main_app/templates/list_ices.html:38 main_app/templates/list_ices.html:46
+#: main_app/templates/list_ices.html:50 main_app/templates/list_ices.html:58
+#: main_app/templates/list_ices.html:62 main_app/templates/list_members.html:33
 #: main_app/templates/list_members.html:39
 #: main_app/templates/list_trainings.html:33
 #: main_app/templates/list_trainings.html:37
@@ -204,95 +203,95 @@ msgstr ""
 #: main_app/templates/list_trainings.html:59
 #: main_app/templates/list_trainings.html:63
 msgid "Delete"
-msgstr ""
+msgstr "Delete"
 
 #: main_app/templates/delete_member.html:4
 msgid "Title Delete Member"
-msgstr ""
+msgstr "Delete Member"
 
 #: main_app/templates/delete_member.html:10
 msgid "Text Delete Member"
-msgstr ""
+msgstr "Do you really want delete this member?"
 
 #: main_app/templates/delete_training.html:4
 msgid "Title Delete Training"
-msgstr ""
+msgstr "Delete Training"
 
 #: main_app/templates/delete_training.html:10
 msgid "Text Delete Training"
-msgstr ""
+msgstr "Do you really want delete this training?"
 
 #: main_app/templates/edit_ice.html:4
 msgid "Title Edit Ice"
-msgstr ""
+msgstr "Edit Ice Reservation"
 
 #: main_app/templates/edit_ice.html:14
 msgid "Text Edit Ice"
-msgstr ""
+msgstr "Please enter the correct Data for the reservervation:"
 
 #: main_app/templates/edit_member.html:4
 msgid "Title Edit Member"
-msgstr ""
+msgstr "Edit Member"
 
 #: main_app/templates/edit_member.html:14
 msgid "Text Edit Member"
-msgstr ""
+msgstr "Please enter the data of the new member:"
 
 #: main_app/templates/edit_member.html:18
 msgid "Enter First Name"
-msgstr ""
+msgstr "First Name"
 
 #: main_app/templates/edit_member.html:22
 msgid "Enter Last Name"
-msgstr ""
+msgstr "Last Name"
 
 #: main_app/templates/edit_member.html:26
 msgid "Enter Address"
-msgstr ""
+msgstr "Address"
 
 #: main_app/templates/edit_member.html:32
 msgid "Enter City Name"
-msgstr ""
+msgstr "City"
 
 #: main_app/templates/edit_member.html:38
 msgid "Enter Postale Code"
-msgstr ""
+msgstr "Postale Code"
 
 #: main_app/templates/edit_member.html:41
 msgid "Enter Postale Code Spezified"
-msgstr ""
+msgstr "Postale Code"
 
 #: main_app/templates/edit_member.html:47
 msgid "Enter Phone Number"
-msgstr ""
+msgstr "Phone Number"
 
 #: main_app/templates/edit_training.html:4
 msgid "Title Edit Training"
-msgstr ""
+msgstr "Edit Training"
 
 #: main_app/templates/edit_training.html:14
 msgid "Text Edit Training"
-msgstr ""
+msgstr "Please enter the new data for this training:"
 
 #: main_app/templates/edit_training.html:31
 msgid "Choose Players"
-msgstr ""
+msgstr "Player"
 
 #: main_app/templates/facturate_bill.html:4
 msgid "Title Create Bill"
-msgstr ""
+msgstr "Create Bill"
 
 #: main_app/templates/facturate_bill.html:16
 msgid "Text Create Bill"
-msgstr ""
+msgstr "Create bill"
 
 #: main_app/templates/facturated_bill.html:4
 msgid "Title Sendet Bills"
-msgstr ""
+msgstr "Sendet Bills"
 
 #: main_app/templates/facturated_bill.html:11
 msgid "Text Sendet Bills"
-msgstr ""
+msgstr "Sendet bills"
 
 #: main_app/templates/facturated_bill.html:30
 #: main_app/templates/facturated_bill.html:34
@@ -322,7 +321,7 @@ msgstr ""
 #: main_app/templates/reminded_bill.html:54
 #: main_app/templates/reminded_bill.html:58
 msgid "Offset"
-msgstr ""
+msgstr "Offset"
 
 #: main_app/templates/facturated_bill.html:31
 #: main_app/templates/facturated_bill.html:35
@@ -352,70 +351,84 @@ msgstr ""
 #: main_app/templates/reminded_bill.html:55
 #: main_app/templates/reminded_bill.html:59
 msgid "Remind"
-msgstr ""
+msgstr "Remind"
 
 #: main_app/templates/impressum.html:4
 msgid "Title Impressum"
-msgstr ""
+msgstr "Impressum"
 
 #: main_app/templates/impressum.html:11
 msgid "Impressum"
-msgstr ""
+msgstr "All your rights are belong to the team!"
 
 #: main_app/templates/index.html:4 main_app/templates/index.html:11
 msgid "Title Welcome"
-msgstr ""
+msgstr "Welcome"
 
 #: main_app/templates/index.html:13
 msgid "Welcome Text"
 msgstr ""
+"With this brilliant tool you can manage your club in the most easiest way "
+"without taking care about the stuff in the background.<br><br>You can see in "
+"the Navigation these points: Ice Management, Member, Training, Billing, "
+"Impressumg Contact, Login. Each of this points speaks for itself and "
+"contains everything neede.d<br><br>For further questions please contact "
+"Gabor Tanz and/or Alain Keusen. :-)"
 
 #: main_app/templates/list_bills.html:4
 msgid "Title List Bills"
-msgstr ""
+msgstr "List Bills"
 
 #: main_app/templates/list_bills.html:11
 msgid "Text List Bills"
-msgstr ""
+msgstr "List bills"
 
 #: main_app/templates/list_bills.html:11
 msgid "Text New Bill"
-msgstr ""
+msgstr "To create a new bill: "
 
 #: main_app/templates/list_bills.html:11
 msgid "Button New Bill"
-msgstr ""
+msgstr "Create new bill"
 
 #: main_app/templates/list_ices.html:4
 msgid "Title List Ice"
-msgstr ""
+msgstr "List Ice"
 
 #: main_app/templates/list_ices.html:11
 msgid "Text List Ice"
-msgstr ""
+msgstr "Here is a list for the ice reservations"
 
-#: main_app/templates/list_ices.html:11
-msgid "Text New Ice"
-msgstr ""
+#: main_app/templates/list_ices.html:13
+#, fuzzy
+#| msgid "Text New Bill"
+msgid "Text New Ice Button"
+msgstr "To create a new bill: "
 
-#: main_app/templates/list_ices.html:18
-#: main_app/templates/list_trainings.html:17
-msgid "Training"
-msgstr ""
-
-#: main_app/templates/list_ices.html:19
-#: main_app/templates/list_trainings.html:18
-msgid "Trainer"
-msgstr ""
+#: main_app/templates/list_ices.html:15
+#, fuzzy
+#| msgid "Text Ice Usage"
+msgid "Button New Ice Usage"
+msgstr "New Ice Reservations"
 
 #: main_app/templates/list_ices.html:20
+#: main_app/templates/list_trainings.html:17
+msgid "Training"
+msgstr "Training"
+
+#: main_app/templates/list_ices.html:21
+#: main_app/templates/list_trainings.html:18
+msgid "Trainer"
+msgstr "Trainer"
+
+#: main_app/templates/list_ices.html:22
 #: main_app/templates/list_trainings.html:19
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
-#: main_app/templates/list_ices.html:31 main_app/templates/list_ices.html:35
-#: main_app/templates/list_ices.html:43 main_app/templates/list_ices.html:47
-#: main_app/templates/list_ices.html:55 main_app/templates/list_ices.html:59
+#: main_app/templates/list_ices.html:33 main_app/templates/list_ices.html:37
+#: main_app/templates/list_ices.html:45 main_app/templates/list_ices.html:49
+#: main_app/templates/list_ices.html:57 main_app/templates/list_ices.html:61
 #: main_app/templates/list_members.html:31
 #: main_app/templates/list_members.html:37
 #: main_app/templates/list_trainings.html:32
@@ -425,168 +438,158 @@ msgstr ""
 #: main_app/templates/list_trainings.html:58
 #: main_app/templates/list_trainings.html:62
 msgid "Edit"
-msgstr ""
+msgstr "Edit"
 
 #: main_app/templates/list_members.html:4
 msgid "Title List Member"
-msgstr ""
+msgstr "List Member"
 
 #: main_app/templates/list_members.html:10
 msgid "Text List Member"
-msgstr ""
+msgstr "Here is the overview over the members."
 
 #: main_app/templates/list_members.html:10
 msgid "Text New Member"
-msgstr ""
+msgstr "To add a new member: "
 
 #: main_app/templates/list_members.html:11
 msgid "Add New Member"
-msgstr ""
+msgstr "Add new member"
 
 #: main_app/templates/list_trainings.html:4
-#, fuzzy
-#| msgid "Test Translation"
 msgid "Title List Training"
-msgstr "Test EN"
+msgstr "List Training"
 
 #: main_app/templates/list_trainings.html:11
-#, fuzzy
-#| msgid "Test Translation"
 msgid "Text List Training"
-msgstr "Test EN"
+msgstr "Here is a list of all trainins."
 
 #: main_app/templates/list_trainings.html:11
-#, fuzzy
-#| msgid "Test Translation"
 msgid "Text Add Training"
-msgstr "Test EN"
+msgstr "To add a new training: "
 
 #: main_app/templates/list_trainings.html:11
 msgid "Button Add Training"
-msgstr ""
+msgstr "Add training"
 
 #: main_app/templates/list_trainings.html:20
 msgid "Amount"
-msgstr ""
+msgstr "Amount"
 
 #: main_app/templates/notpayed_bill.html:4
 msgid "Title Unpayed Bill"
-msgstr ""
+msgstr "Unpayed Bill"
 
 #: main_app/templates/notpayed_bill.html:11
 msgid "Text Unpayed Bill"
-msgstr ""
+msgstr "This members didn't pay the warning. They can be kicked out of the club."
 
 #: main_app/templates/open_bill.html:4
 msgid "Title Open Bills"
-msgstr ""
+msgstr "Open Bills"
 
 #: main_app/templates/open_bill.html:11
 msgid "Text Open Bills"
-msgstr ""
+msgstr "This members has to send a bill."
 
 #: main_app/templates/payed_bill.html:4
 msgid "Title Payed Bill"
-msgstr ""
+msgstr "Payed Bill"
 
 #: main_app/templates/payed_bill.html:11
 msgid "Text Payed Bill"
-msgstr ""
+msgstr "Payed bills."
 
 #: main_app/templates/registration/logged_out.html:4
 msgid "Title Logged Out"
-msgstr ""
+msgstr "logged out"
 
 #: main_app/templates/registration/logged_out.html:10
 msgid "Text Logged Out"
-msgstr ""
+msgstr "You are logged out."
 
 #: main_app/templates/registration/logged_out.html:11
 #: main_app/templates/registration/password_reset_complete.html:12
 msgid "Login Again"
-msgstr ""
+msgstr "New login"
 
 #: main_app/templates/registration/login.html:4
-#, fuzzy
-#| msgid "Test Translation"
 msgid "Title Login"
-msgstr "Test EN"
+msgstr "Login"
 
 #: main_app/templates/registration/login.html:11
 msgid "Text Login Failed"
-msgstr ""
+msgstr "Your username and password didn't match. Please try again."
 
 #: main_app/templates/registration/login.html:17
 msgid "Text No Access"
-msgstr ""
+msgstr "Your account doesn't have access to this page. To proceed, please login with an account that has access."
 
 #: main_app/templates/registration/login.html:21
 msgid "Text Try New Login"
-msgstr ""
+msgstr "Please login to see this page."
 
 #: main_app/templates/registration/login.html:44
 msgid "Lost Password"
-msgstr ""
+msgstr "Lost Password?"
 
 #: main_app/templates/registration/password_reset_complete.html:4
 #: main_app/templates/registration/password_reset_confirm.html:4
 #: main_app/templates/registration/password_reset_done.html:4
 msgid "Title Password Reset"
-msgstr ""
+msgstr "Password Reset"
 
 #: main_app/templates/registration/password_reset_complete.html:10
 msgid "Text Password Reset Complete"
-msgstr ""
+msgstr "The password has been changed!"
 
 #: main_app/templates/registration/password_reset_confirm.html:11
 msgid "Text Password Reset"
-msgstr ""
+msgstr "Please enter (and confirm) your new password."
 
 #: main_app/templates/registration/password_reset_confirm.html:35
 msgid "Password Reset Failed"
-msgstr ""
+msgstr "Password reset failed"
 
 #: main_app/templates/registration/password_reset_confirm.html:37
 msgid "Text Password Reset Link Invalid"
-msgstr ""
+msgstr "The password reset link was invalid, possibly because it has already been used. Please request a new password reset."
 
 #: main_app/templates/registration/password_reset_done.html:10
 msgid "Password Reset Instructions"
-msgstr ""
+msgstr "We've emailed you instructions for setting your password. If they haven't arrived in a few minutes, check your spam folder."
 
 #: main_app/templates/registration/password_reset_email.html:2
 msgid "Text Password Reset Question"
-msgstr ""
+msgstr "Someone asked for password reset for email "
 
 #: main_app/templates/registration/password_reset_email.html:5
 msgid "Text Passwort Reset Follow Link"
-msgstr ""
+msgstr " . Follow the link below:"
 
 #: main_app/templates/registration/password_reset_form.html:4
 msgid "Title Passwort Reset"
-msgstr ""
+msgstr "Password Reset"
 
 #: main_app/templates/registration/password_reset_form.html:14
 msgid "Text Enter Email"
-msgstr ""
+msgstr "Please enter your email address: "
 
 #: main_app/templates/registration/sign_up.html:4
-#, fuzzy
-#| msgid "Test Translation"
 msgid "Title Sign Up"
-msgstr "Test EN"
+msgstr "Sign Up for the SCM"
 
 #: main_app/templates/registration/sign_up.html:32
 msgid "Text Sign Up"
-msgstr ""
+msgstr "Sign Up for the SCM-App"
 
 #: main_app/templates/reminded_bill.html:4
 msgid "Title Reminded Bills"
-msgstr ""
+msgstr "Reminded Bills"
 
 #: main_app/templates/reminded_bill.html:11
 msgid "Text Reminded Bills"
-msgstr ""
+msgstr "This members has been warned."
 
 #~ msgid "Test Translation"
 #~ msgstr "Test EN"

@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
- 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-11 10:26+0000\n"
+"POT-Creation-Date: 2017-12-11 11:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,7 +100,7 @@ msgstr "Falls Sie uns kontaktieren wollen, hier die Angaben:"
 
 #: main_app/templates/contact.html:17 main_app/templates/delayed_bill.html:16
 #: main_app/templates/facturated_bill.html:16
-#: main_app/templates/list_bills.html:16 main_app/templates/list_ices.html:17
+#: main_app/templates/list_bills.html:16 main_app/templates/list_ices.html:19
 #: main_app/templates/list_members.html:16
 #: main_app/templates/list_trainings.html:16
 #: main_app/templates/notpayed_bill.html:16
@@ -139,9 +138,8 @@ msgid "Title Add Account"
 msgstr "Account erstellen"
 
 #: main_app/templates/create_account.html:16
-#| msgid "Text Contact"
 msgid "Text Account Data"
-msgstr "Falls Sie uns kontaktieren wollen, hier die Angaben:"
+msgstr "Bitte tragen Sie die Daten des neuen Mitglied ein:"
 
 #: main_app/templates/create_account.html:83
 msgid "Password Incorrect"
@@ -185,7 +183,7 @@ msgstr "Mahnung stellen"
 
 #: main_app/templates/delete_ice.html:4
 msgid "Title Delete Ice"
-msgstr "Eisbelegung löschne"
+msgstr "Eisbelegung löschen"
 
 #: main_app/templates/delete_ice.html:10
 msgid "Text Delete Ice"
@@ -194,10 +192,10 @@ msgstr "Wollen Sie die Eisbelegung wirklich löschen?"
 #: main_app/templates/delete_ice.html:15
 #: main_app/templates/delete_member.html:15
 #: main_app/templates/delete_training.html:15
-#: main_app/templates/edit_ice.html:33 main_app/templates/list_ices.html:32
-#: main_app/templates/list_ices.html:36 main_app/templates/list_ices.html:44
-#: main_app/templates/list_ices.html:48 main_app/templates/list_ices.html:56
-#: main_app/templates/list_ices.html:60 main_app/templates/list_members.html:33
+#: main_app/templates/edit_ice.html:33 main_app/templates/list_ices.html:34
+#: main_app/templates/list_ices.html:38 main_app/templates/list_ices.html:46
+#: main_app/templates/list_ices.html:50 main_app/templates/list_ices.html:58
+#: main_app/templates/list_ices.html:62 main_app/templates/list_members.html:33
 #: main_app/templates/list_members.html:39
 #: main_app/templates/list_trainings.html:33
 #: main_app/templates/list_trainings.html:37
@@ -281,7 +279,6 @@ msgid "Choose Players"
 msgstr "Spielerauswahl"
 
 #: main_app/templates/facturate_bill.html:4
-#| msgid "Title Delayed Bill"
 msgid "Title Create Bill"
 msgstr "In Verzug"
 
@@ -390,7 +387,6 @@ msgstr ""
 "Hier sehen Sie eine Übersicht über den Status der einzelnen Mitglieder:"
 
 #: main_app/templates/list_bills.html:11
-#| msgid "Create New Bill"
 msgid "Text New Bill"
 msgstr "Um eine neue Rechnungen zu erstellen:"
 
@@ -404,33 +400,38 @@ msgstr "Eisverwaltung"
 
 #: main_app/templates/list_ices.html:11
 msgid "Text List Ice"
-msgstr ""
-"Hier ist eine Übersicht über den Eisbelegungsplan:Um eine neue Eisbelegung "
-"zu planen:"
+msgstr "Hier ist eine Übersicht über den Eisbelegungsplan:"
 
-#: main_app/templates/list_ices.html:11
-#| msgid "Text Delete Ice"
-msgid "Text New Ice"
-msgstr "Wollen Sie die Eisbelegung wirklich löschen?"
+#: main_app/templates/list_ices.html:13
+#, fuzzy
+#| msgid "Text New Ice"
+msgid "Text New Ice Button"
+msgstr "Um eine neue Eisbelegung zu planen:"
 
-#: main_app/templates/list_ices.html:18
+#: main_app/templates/list_ices.html:15
+#, fuzzy
+#| msgid "Text Ice Usage"
+msgid "Button New Ice Usage"
+msgstr "Neue Eisbelegung"
+
+#: main_app/templates/list_ices.html:20
 #: main_app/templates/list_trainings.html:17
 msgid "Training"
 msgstr "Training"
 
-#: main_app/templates/list_ices.html:19
+#: main_app/templates/list_ices.html:21
 #: main_app/templates/list_trainings.html:18
 msgid "Trainer"
 msgstr "Trainer"
 
-#: main_app/templates/list_ices.html:20
+#: main_app/templates/list_ices.html:22
 #: main_app/templates/list_trainings.html:19
 msgid "Date"
 msgstr "Datum"
 
-#: main_app/templates/list_ices.html:31 main_app/templates/list_ices.html:35
-#: main_app/templates/list_ices.html:43 main_app/templates/list_ices.html:47
-#: main_app/templates/list_ices.html:55 main_app/templates/list_ices.html:59
+#: main_app/templates/list_ices.html:33 main_app/templates/list_ices.html:37
+#: main_app/templates/list_ices.html:45 main_app/templates/list_ices.html:49
+#: main_app/templates/list_ices.html:57 main_app/templates/list_ices.html:61
 #: main_app/templates/list_members.html:31
 #: main_app/templates/list_members.html:37
 #: main_app/templates/list_trainings.html:32
@@ -451,32 +452,24 @@ msgid "Text List Member"
 msgstr "Hier ist eine Übersicht über die einzelnen Mitglieder:"
 
 #: main_app/templates/list_members.html:10
- 
-#| msgid "Text Delete Member"
 msgid "Text New Member"
-msgstr "Wollen Sie dieses Mitglied wirklich löschen?"
+msgstr "Um ein Mitglied hinzuzufügen: "
 
 #: main_app/templates/list_members.html:11
 msgid "Add New Member"
 msgstr "Neues Mitglied erstellen"
 
 #: main_app/templates/list_trainings.html:4
- 
-#| msgid "Test Translation"
 msgid "Title List Training"
 msgstr "Trainingsverwaltung"
 
 #: main_app/templates/list_trainings.html:11
- 
-#| msgid "Test Translation"
 msgid "Text List Training"
 msgstr "Hier sehen Sie eine Übersicht über die geplanten Trainings:"
 
 #: main_app/templates/list_trainings.html:11
- 
-#| msgid "Test Translation"
 msgid "Text Add Training"
-msgstr "Um ein neues Mitglied hinzuzufügen:"
+msgstr "Um ein neues Training hinzuzufügen:"
 
 #: main_app/templates/list_trainings.html:11
 msgid "Button Add Training"
@@ -513,8 +506,6 @@ msgid "Text Payed Bill"
 msgstr "Diese Rechnungen sind bezahlt:"
 
 #: main_app/templates/registration/logged_out.html:4
- 
-#| msgid "Title Add Account"
 msgid "Title Logged Out"
 msgstr "Ausgeloggt"
 
@@ -528,30 +519,22 @@ msgid "Login Again"
 msgstr "Neu Einloggen"
 
 #: main_app/templates/registration/login.html:4
- 
-#| msgid "Title Contact"
 msgid "Title Login"
 msgstr "Login"
 
 #: main_app/templates/registration/login.html:11
- 
-#| msgid "Text List Bills"
 msgid "Text Login Failed"
 msgstr ""
 "Ihr Username oder Ihr Passwort war nicht korrekt. Bitte korrigieren Sie Ihre "
 "Angaben."
 
 #: main_app/templates/registration/login.html:17
- 
-#| msgid "Text Delete Ice"
 msgid "Text No Access"
 msgstr ""
 "Sie haben keine Zutrittsberechtigung zu dieser Seite. Bitte logen Sie sich "
 "zuerst ein."
 
 #: main_app/templates/registration/login.html:21
- 
-#| msgid "Create New Bill"
 msgid "Text Try New Login"
 msgstr "Bitte loggen Sie sich ein, um diese Seite angezeit zu bekommen."
 
@@ -584,8 +567,6 @@ msgstr ""
 "Passwort schon einmal verwendet. Bitte probieren Sie ein Neues."
 
 #: main_app/templates/registration/password_reset_done.html:10
- 
-#| msgid "Password Incorrect"
 msgid "Password Reset Instructions"
 msgstr ""
 "Wir haben Ihnen ein Email mit den Passwortzurücksetungsinstruktionen "
@@ -603,20 +584,14 @@ msgid "Text Passwort Reset Follow Link"
 msgstr ". Wenn dies Sie waren, folgen Sie diesem Link: "
 
 #: main_app/templates/registration/password_reset_form.html:4
- 
-#| msgid "Title Password Reset"
 msgid "Title Passwort Reset"
 msgstr "Passwort zurücksetzen"
 
 #: main_app/templates/registration/password_reset_form.html:14
- 
-#| msgid "Text Create Bill"
 msgid "Text Enter Email"
 msgstr "Bitte geben Sie Ihre Emailadresse ein."
 
 #: main_app/templates/registration/sign_up.html:4
- 
-#| msgid "Title Contact"
 msgid "Title Sign Up"
 msgstr "Einschreiben SCM-App"
 
@@ -632,7 +607,9 @@ msgstr "Gemahnte Rechnungen"
 msgid "Text Reminded Bills"
 msgstr "Diese Mitglieder wurden gemahnt:"
 
- 
+#~ msgid "Text New Ice"
+#~ msgstr "Um eine neue Eisbelegung zu planen:"
+
 #~| msgid "Password Incorrect"
 #~ msgid "Passwort Reset"
 #~ msgstr "Falsches Passwort"
