@@ -1,13 +1,14 @@
 {% extends "main/base.html" %}
-
+{% load i18n %}
 {% block title %}
-    Logout
+{% trans "Title Logged Out" %}
+{#    Logout#}
 {% endblock title %}
 
 {% block content %}
     <div class="col-sm-7">
-        <p>Logged out!</p>
-        <a href="{% url 'login' %}">Click here to login again.</a>
+        <p>{% trans "Text Logged Out" %}</p>
+        <a href="{% url 'login' %}">{% trans "Login Again" %} }</a>
     </div>
 {% endblock %}
 
