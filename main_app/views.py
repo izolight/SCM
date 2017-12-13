@@ -237,9 +237,7 @@ def delete_training(request, training_id):
     if request.method != 'POST':
         return HttpResponseBadRequest()
     # TODO logic for deleting
-    training = Training.objects.get(pk=training_id)
-    if not training:
-        return HttpResponseNotFound()
+    training = get_object_or_404(Training, pk=training_id)
     training.delete()
     messages.add_message(request, messages.SUCCESS, f'Delete training {training_id}')
     return HttpResponse(status=204)
