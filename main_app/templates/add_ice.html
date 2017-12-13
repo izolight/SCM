@@ -1,7 +1,8 @@
 {% extends "main/base.html" %}
-
+{% load i18n %}
 {% block title %}
-    Eisbelegung hinzufügen
+    {% trans "Title Add Eisbelegung" %}
+{#    Eisbelegung hinzufügen#}
 {% endblock title %}
 
 {% block content %}
@@ -12,25 +13,31 @@
             {#            {% csrf_token %}#}
 
             <div class="form-group">
-                <label for="Text">Bitte tragen Sie eine neue Eisbelegung ein:</label>
+                <label for="Text">{% trans "Text Ice Usage" %}</label>
+{#                    Bitte tragen Sie eine neue Eisbelegung ein:#}
             </div>
             <div class="form-group">
-                <label for="training">Training</label>
+                <label for="training">{% trans "Enter Name Training" %}</label>
+{#                Training#}
                 {#                {% render_field form.first_name class="form-control" %}#}
             </div>
             <div class="form-group">
-                <label for="trainer">Trainer</label>
+                <label for="trainer">{% trans "Enter Name Trainer" %}</label>
+{#                Trainer#}
                 {#                {% render_field form.last_name class="form-control" %}#}
             </div>
             <div class="form-group">
-                <label for="date">Datum</label>
+                <label for="date">{% trans "Enter Date" %}</label>
+{#                Datum#}
                 <input class="datetime" type="datetime-local" name="date" id="date">
                 {#                {% render_field form.address class="form-control" %}#}
             </div>
 
 
-            <input type="Submit" class="btn btn-default col-sm-6" value="Eintragen">
-            <input type="Reset" class="btn btn-default col-sm-6" value="Zurücksetzen">
+            <input type="Submit" class="btn btn-default col-sm-6" value="{% trans "Submit" %}">
+            {#            Eintragen#}
+            <input type="Reset" class="btn btn-default col-sm-6" value="{% trans "Reset" %}">
+            {#            Zurücksetzen#}
             <br><br><br><br>
 
 

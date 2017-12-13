@@ -1,7 +1,8 @@
 {% extends "main/base.html" %}
-
+{% load i18n %}
 {% block title %}
-    Mitglied hinzufügen
+    {% trans "Title Add Member" %}
+    {#    Mitglied hinzufügen#}
 {% endblock title %}
 
 {% block content %}
@@ -12,7 +13,8 @@
             {% csrf_token %}
 
             <div class="form-group">
-                <label for="Text">Bitte tragen Sie die Daten des neuen Mitglied ein:</label>
+                <label for="Text">{% trans "Text Member Data" %}</label>
+                {#                    Bitte tragen Sie die Daten des neuen Mitglied ein:#}
             </div>
             <div class="form-group">
                 {{ form.first_name.label_tag }}
@@ -59,8 +61,11 @@
                 {{ form.username.errors }}
             </div>
             <div class="form-group">
-                <input type="Submit" class="btn btn-default col-sm-6" value="Submit" id="submit-add-member">
-                <input type="Reset" class="btn btn-default col-sm-6" value="Reset">
+                <input type="Submit" class="btn btn-default col-sm-6" value="{% trans "Submit" %}"
+                       id="submit-add-member">
+                {#                Übertragen#}
+                <input type="Reset" class="btn btn-default col-sm-6" value="{% trans "Reset" %}">
+                {#                Zurücksetzen#}
             </div>
         </form>
         <script>

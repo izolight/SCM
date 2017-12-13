@@ -1,7 +1,8 @@
 {% extends "main/base.html" %}
-
+{% load i18n %}
 {% block title %}
-    Eisbelegung editieren
+    {% trans "Title Edit Ice" %}
+{#    Eisbelegung editieren#}
 {% endblock title %}
 
 {% block content %}
@@ -10,25 +11,26 @@
 
         <form action="add_member">
             <div class="form-group">
-                <label for="Text">Bitte tragen Sie die korrigierten Daten die Eisbelegung ein:</label>
+                <label for="Text">{% trans "Text Edit Ice" %}</label>
+{#                    Bitte tragen Sie die korrigierten Daten die Eisbelegung ein:#}
             </div>
             <div class="form-group">
-                <label for="training">Training</label>
+                <label for="training">{% trans "Enter Name Training" %}</label>
                 {#                {% render_field form.first_name class="form-control" %}#}
             </div>
             <div class="form-group">
-                <label for="trainer">Trainer</label>
+                <label for="trainer">{% trans "Enter Name Trainer" %}</label>
                 {#                {% render_field form.last_name class="form-control" %}#}
             </div>
             <div class="form-group">
-                <label for="date">Datum</label>
+                <label for="date">{% trans "Enter Date" %}</label>
                 <input class="datetime" type="datetime-local" name="date" id="date">
                 {#                {% render_field form.address class="form-control" %}#}
             </div>
 
 
-            <input type="Submit" class="btn btn-default col-sm-6" value="Übertragen">
-            <input type="Reset" class="btn btn-default col-sm-6" value="Eingaben löschen">
+            <input type="Submit" class="btn btn-default col-sm-6" value="{% trans "Submit" %}">
+            <input type="Reset" class="btn btn-default col-sm-6" value="{% trans "Delete" %}">
             <br><br><br><br>
 
 

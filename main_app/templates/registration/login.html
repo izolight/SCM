@@ -1,21 +1,25 @@
 {% extends "main/base.html" %}
-
+{% load i18n %}
 {% block title %}
-    Login
+    {% trans "Title Login" %}
+{#    Login#}
 {% endblock title %}
 
 {% block content %}
     <div class="col-sm-7">
         {% if form.errors %}
-            <p>Your username and password didn't match. Please try again.</p>
+            <p>{% trans "Text Login Failed" %}</p>
+{#            Your username and password didn't match. Please try again.#}
         {% endif %}
 
         {% if next %}
             {% if user.is_authenticated %}
-                <p>Your account doesn't have access to this page. To proceed,
-                    please login with an account that has access.</p>
+                <p>{% trans "Text No Access" %}</p>
+{#                Your account doesn't have access to this page. To proceed,#}
+{#                    please login with an account that has access.#}
             {% else %}
-                <p>Please login to see this page.</p>
+                <p>{% trans "Text Try New Login" %}</p>
+{#                Please login to see this page.#}
             {% endif %}
         {% endif %}
 
@@ -37,6 +41,6 @@
         </form>
 
         {# Assumes you setup the password_reset view in your URLconf #}
-        <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+        <p><a href="{% url 'password_reset' %}">{% trans "Lost Password" %}</a></p>
     </div>
 {% endblock %}

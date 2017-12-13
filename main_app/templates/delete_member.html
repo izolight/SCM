@@ -1,17 +1,19 @@
 {% extends "main/base.html" %}
-
+{% load i18n %}
 {% block title %}
-    Mitglied löschen
+    {% trans "Title Delete Member" %}
+{#    Mitglied löschen#}
 {% endblock title %}
 
 {% block content %}
     <div class="col-sm-9">
-        <b>Woll Sie das Mitglied wirklich löschen?</b>
+        <b>{% trans "Text Delete Member" %}</b>
+{#        Woll Sie das Mitglied wirklich löschen?#}
         <br><br>
         Nachname, Vorname (Vor- und Nachname automatisch laden)
         <br><br>
-        <a class="btn btn-default btn-sm" href="/member/list" role="button">Löschen</a>
-        <button class="btn btn-default btn-sm" onclick="goBack()" role="button">Abbrechen</button>
+        <a class="btn btn-default btn-sm" href="/members" role="button">{% trans "Delete" %}</a>
+        <button class="btn btn-default btn-sm" onclick="goBack()" role="button">{% trans "Reset" %}</button>
 
         <script>
             function goBack() {

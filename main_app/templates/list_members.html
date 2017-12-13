@@ -1,20 +1,23 @@
 {% extends "main/base.html" %}
-
+{% load i18n %}
 {% block title %}
-    Mitgliederverwaltung
+    {% trans "Title List Member" %}
+    {#    Mitgliederverwaltung#}
 {% endblock title %}
 
 {% block content %}
     <div class="col-sm-9">
-        <b>Hier ist eine Übersicht über die einzelnen Mitglieder:</b><br>Um ein neues Mitglied hinzuzufügen: <a
-            class="btn btn-default btn-sm" href="{% url 'add_member' %}" role="button">Neues Mitglied</a><br><br>
+        <b>{% trans "Text List Member" %}</b><br> {% trans "Text New Member" %}<a
+            class="btn btn-default btn-sm" href="{% url 'add_member' %}"
+            role="button">{% trans "Add New Member" %}</a><br><br>
+        {#    Hier ist eine Übersicht über die einzelnen Mitglieder:Um ein neues Mitglied hinzuzufügen:#}
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
-                <th>Nr.</th>
-                <th>Vorname</th>
-                <th>Nachname</th>
-                <th>Benutzername</th>
+                <th>{% trans "Number" %}</th>
+                <th>{% trans "First Name" %}</th>
+                <th>{% trans "Last Name" %}</th>
+                <th>{% trans "Username" %}</th>
                 <th class="hidden-xs">&nbsp;</th>
                 <th class="hidden-xs">&nbsp;</th>
             </tr>
@@ -26,14 +29,23 @@
                     <td>{{ member.user_name.first_name }}</td>
                     <td>{{ member.user_name.last_name }}</td>
                     <td>{{ member.user_name.username }}</td>
-                    <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'edit_member' %}" role="button">Editieren</a>
+                    <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs"
+                                             href="{% url 'edit_member' member.id %}"
+                                             role="button">{% trans "Edit" %}</a>
                     </td>
-                    <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delete_member' %}" role="button">Löschen</a>
+                    <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs"
+                                             href="{% url 'delete_member' member.id %}"
+                                             role="button">{% trans "Delete" %}</a>
                     </td>
                     <td class="hidden-sm hidden-md hidden-lg">
-                    <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'edit_member' %}" role="button">Editieren</a>
+                    <td class="hidden-sm hidden-md hidden-lg"><a
+                            class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg"
+                            href="{% url 'edit_member' member.id %}"
+                            role="button">{% trans "Edit" %}</a>
                     </td>
-                    <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delete_member' %}" role="button">Löschen</a>
+                    <td class="hidden-sm hidden-md hidden-lg"><a
+                            class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg"
+                            href="{% url 'delete_member' member.id %}" role="button">{% trans "Delete" %}</a>
                     </td>
                 </tr>
             {% endfor %}
