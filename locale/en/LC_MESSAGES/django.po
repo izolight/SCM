@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-11 11:54+0000\n"
+"POT-Creation-Date: 2017-12-13 17:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,7 +134,7 @@ msgstr "Emailaddress"
 
 #: main_app/templates/create_account.html:4
 msgid "Title Add Account"
-msgstr "Acc Account"
+msgstr "Add Account"
 
 #: main_app/templates/create_account.html:16
 msgid "Text Account Data"
@@ -367,8 +367,7 @@ msgstr "Welcome"
 
 #: main_app/templates/index.html:13
 msgid "Welcome Text"
-msgstr ""
-"With this brilliant tool you can manage your club in the most easiest way "
+msgstr "With this brilliant tool you can manage your club in the most easiest way "
 "without taking care about the stuff in the background.<br><br>You can see in "
 "the Navigation these points: Ice Management, Member, Training, Billing, "
 "Impressumg Contact, Login. Each of this points speaks for itself and "
@@ -400,13 +399,11 @@ msgid "Text List Ice"
 msgstr "Here is a list for the ice reservations"
 
 #: main_app/templates/list_ices.html:13
-#, fuzzy
 #| msgid "Text New Bill"
 msgid "Text New Ice Button"
 msgstr "To create a new bill: "
 
 #: main_app/templates/list_ices.html:15
-#, fuzzy
 #| msgid "Text Ice Usage"
 msgid "Button New Ice Usage"
 msgstr "New Ice Reservations"
@@ -523,7 +520,8 @@ msgstr "Your username and password didn't match. Please try again."
 
 #: main_app/templates/registration/login.html:17
 msgid "Text No Access"
-msgstr "Your account doesn't have access to this page. To proceed, please login with an account that has access."
+msgstr "Your account doesn't have access to this page. To proceed, please login with "
+"an account that has access."
 
 #: main_app/templates/registration/login.html:21
 msgid "Text Try New Login"
@@ -553,11 +551,13 @@ msgstr "Password reset failed"
 
 #: main_app/templates/registration/password_reset_confirm.html:37
 msgid "Text Password Reset Link Invalid"
-msgstr "The password reset link was invalid, possibly because it has already been used. Please request a new password reset."
+msgstr "The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
 
 #: main_app/templates/registration/password_reset_done.html:10
 msgid "Password Reset Instructions"
-msgstr "We've emailed you instructions for setting your password. If they haven't arrived in a few minutes, check your spam folder."
+msgstr "We've emailed you instructions for setting your password. If they haven't "
+"arrived in a few minutes, check your spam folder."
 
 #: main_app/templates/registration/password_reset_email.html:2
 msgid "Text Password Reset Question"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-11 11:54+0000\n"
+"POT-Creation-Date: 2017-12-13 17:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -383,8 +383,7 @@ msgstr "Rechnungswesen"
 
 #: main_app/templates/list_bills.html:11
 msgid "Text List Bills"
-msgstr ""
-"Hier sehen Sie eine Übersicht über den Status der einzelnen Mitglieder:"
+msgstr "Hier sehen Sie eine Übersicht über den Status der einzelnen Mitglieder:"
 
 #: main_app/templates/list_bills.html:11
 msgid "Text New Bill"
@@ -403,13 +402,11 @@ msgid "Text List Ice"
 msgstr "Hier ist eine Übersicht über den Eisbelegungsplan:"
 
 #: main_app/templates/list_ices.html:13
-#, fuzzy
 #| msgid "Text New Ice"
 msgid "Text New Ice Button"
 msgstr "Um eine neue Eisbelegung zu planen:"
 
 #: main_app/templates/list_ices.html:15
-#, fuzzy
 #| msgid "Text Ice Usage"
 msgid "Button New Ice Usage"
 msgstr "Neue Eisbelegung"
@@ -485,8 +482,7 @@ msgstr "Unbezahlte Rechnungen"
 
 #: main_app/templates/notpayed_bill.html:11
 msgid "Text Unpayed Bill"
-msgstr ""
-"Diese Mitglieder haben trotz Mahung ihren Beitrag nicht gezahlt und können "
+msgstr "Diese Mitglieder haben trotz Mahung ihren Beitrag nicht gezahlt und können "
 "aus dem Verein geschmissen werden:"
 
 #: main_app/templates/open_bill.html:4
@@ -524,14 +520,11 @@ msgstr "Login"
 
 #: main_app/templates/registration/login.html:11
 msgid "Text Login Failed"
-msgstr ""
-"Ihr Username oder Ihr Passwort war nicht korrekt. Bitte korrigieren Sie Ihre "
-"Angaben."
+msgstr "Ihr Username oder Ihr Passwort war nicht korrekt. Bitte korrigieren Sie Ihre Angaben."
 
 #: main_app/templates/registration/login.html:17
 msgid "Text No Access"
-msgstr ""
-"Sie haben keine Zutrittsberechtigung zu dieser Seite. Bitte logen Sie sich "
+msgstr "Sie haben keine Zutrittsberechtigung zu dieser Seite. Bitte logen Sie sich "
 "zuerst ein."
 
 #: main_app/templates/registration/login.html:21
@@ -562,21 +555,18 @@ msgstr "Das Zurücksetzen des Passworts ist leider fehlgeschlagen."
 
 #: main_app/templates/registration/password_reset_confirm.html:37
 msgid "Text Password Reset Link Invalid"
-msgstr ""
-"Der Passwortzurücksetzunslink war leider ungültig. Evtl. haben Sie dieses "
+msgstr "Der Passwortzurücksetzunslink war leider ungültig. Evtl. haben Sie dieses "
 "Passwort schon einmal verwendet. Bitte probieren Sie ein Neues."
 
 #: main_app/templates/registration/password_reset_done.html:10
 msgid "Password Reset Instructions"
-msgstr ""
-"Wir haben Ihnen ein Email mit den Passwortzurücksetungsinstruktionen "
+msgstr "Wir haben Ihnen ein Email mit den Passwortzurücksetungsinstruktionen "
 "gesendet. Falls Sie dieses nicht erhalten haben, werfen Sie bitte einen "
 "Blick in den Spamordner."
 
 #: main_app/templates/registration/password_reset_email.html:2
 msgid "Text Password Reset Question"
-msgstr ""
-"Es gab eine Anfrage für eine Passwortzurücksetzung unter dieser "
+msgstr "Es gab eine Anfrage für eine Passwortzurücksetzung unter dieser "
 "Emailadresse: "
 
 #: main_app/templates/registration/password_reset_email.html:5
