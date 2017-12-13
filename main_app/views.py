@@ -6,7 +6,7 @@ from django.http import HttpResponseBadRequest, HttpResponseNotFound, HttpRespon
 
 from django.contrib.auth.decorators import login_required
 
-from main_app.forms import SignUpForm, AddMemberForm, AddIceForm
+from main_app.forms import SignUpForm, AddMemberForm, AddIceForm, CreateInvoiceForm
 from main_app.models import City, Member, Invoice, IceSlot, Training
 
 
@@ -132,7 +132,25 @@ def edit_member(request, member_id):
 
 @login_required()
 def create_invoice(request):
-    return render(request, 'create_invoice.html')
+    if request.method == 'POST':
+        form = CreateInvoiceForm(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            description = form.cleaned_data['description']
+            amount = form.cleaned_data['amount']
+            due_date = form.cleaned_data['due_date']
+
+            invoice = Invoice.objects.create(title=title,
+                                             description=description,
+                                             amount=amount,
+                                             due_date=due_date)
+            invoice.save()
+            messages.add_message(request, messages.SUCCESS, f'Invoice have been created')
+            return redirect('create_invoice')
+    else:
+        form = CreateInvoiceForm()
+
+    return render(request, 'create_invoice.html', {'form': form})
 
 
 @login_required()

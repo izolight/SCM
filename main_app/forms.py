@@ -32,9 +32,9 @@ class AddMemberForm(forms.Form):
             self.add_error('password2', "Passwords do not match")
 
 
-class NewInvoiceForm(forms.Form):
+class CreateInvoiceForm(forms.Form):
     title = forms.CharField(max_length=50, label="Title")
-    description = forms.Textarea()
+    description = forms.CharField(widget=forms.Textarea())
     amount = forms.IntegerField(None, 1)
     due_date = forms.DateField()
 
