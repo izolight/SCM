@@ -67,3 +67,14 @@ class AddIceForm(forms.ModelForm):
 
         if start_time.date() != end_time.date():
             self.add_error('end_time', "Must be on the same day as start")
+
+        ice_slots = IceSlot.objects.filter(start_time__day=start_time.day,
+                                           start_time__month=start_time.month,
+                                           start_time__year=start_time.year)
+        for i in ice_slots:
+            if start_time >= i.start_time and start_time < i.end_time:
+                self.add_error('start_time',
+                               f"There is already a slot between {i.start_time: %H:%M} - {i.end_time: %H:%M}")
+            if end_time > i.start_time and end_time <= i.end_time:
+                self.add_error('end_time',
+                               f"There is already a slot between {i.start_time: %H:%M} - {i.end_time: %H:%M}")
