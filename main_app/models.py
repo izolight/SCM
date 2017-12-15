@@ -51,18 +51,16 @@ class Invoice(models.Model):
 
 
 class IceSlot(models.Model):
-    date = models.DateField()
-    start_time = models.TimeField()
-    end_time = models.TimeField()
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
     club = models.ForeignKey(Club, on_delete=models.CASCADE, null=True, related_name="ice_slots")
 
 
 class Training(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField()
-    date = models.DateField()
-    start_time = models.TimeField()
-    end_time = models.TimeField()
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
     members = models.ManyToManyField(Member, related_name="trainings")
     trainer = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, related_name="trainings_as_trainer")
     club = models.ForeignKey(Club, on_delete=models.CASCADE, null=True, related_name="trainings")
