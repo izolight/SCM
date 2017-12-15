@@ -65,5 +65,5 @@ class AddIceForm(forms.ModelForm):
         if end_time <= start_time:
             self.add_error('end_time', "Must be greater than start")
 
-        if start_time.day != end_time.day or start_time.month != end_time.month or start_time.year != end_time.year:
+        if start_time.date() != end_time.date():
             self.add_error('end_time', "Must be on the same day as start")
