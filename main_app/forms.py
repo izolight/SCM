@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
 
+from datetime import datetime, timedelta
+
 from main_app.models import IceSlot
 
 
@@ -50,8 +52,8 @@ class SignUpForm(UserCreationForm):
 
 
 class AddIceForm(forms.ModelForm):
-    start_time = forms.DateTimeField()
-    end_time = forms.DateTimeField()
+    start_time = forms.DateTimeField(initial=datetime.now)
+    end_time = forms.DateTimeField(initial=datetime.now() + timedelta(hours=1))
 
     class Meta:
         model = IceSlot
