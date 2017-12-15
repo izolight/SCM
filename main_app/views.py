@@ -184,7 +184,6 @@ def add_ice(request):
         form = AddIceForm(request.POST)
         if form.is_valid():
             ice_slot = IceSlot(
-                date=form.cleaned_data['date'],
                 start_time=form.cleaned_data['start_time'],
                 end_time=form.cleaned_data['end_time'],
                 club=request.user.member.club
@@ -192,7 +191,7 @@ def add_ice(request):
             ice_slot.save()
             ice_slot.refresh_from_db()
             messages.add_message(request, messages.SUCCESS,
-                                 f'Added ice_slot at {ice_slot.date} {ice_slot.start_time} for club {ice_slot.club.name}')
+                                 f'Added ice_slot at {ice_slot.start_time} for club {ice_slot.club.name}')
             return redirect('list_ices')
     else:
         form = AddIceForm()

@@ -49,7 +49,18 @@ class SignUpForm(UserCreationForm):
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2',)
 
 
-class AddIceForm(forms.Form):
+class AddIceForm(forms.ModelForm):
+    start_time = forms.DateTimeField()
+    end_time = forms.DateTimeField()
+
     class Meta:
         model = IceSlot
-        fields = ('date', 'start_time', 'end_time',)
+        fields = ('start_time', 'end_time',)
+
+    def clean(self):
+        cleaned_data = super(AddIceForm, self).clean()
+        start_time = cleaned_data.get('start_time')
+        end_time = cleaned_data.get('end_time')
+
+        if end_time <= start_time:
+            self.add_error('end_time', "Must be greater than start")
