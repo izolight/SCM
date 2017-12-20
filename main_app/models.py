@@ -63,7 +63,7 @@ class Training(models.Model):
     members = models.ManyToManyField(Member, related_name="trainings")
     trainer = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, related_name="trainings_as_trainer")
     club = models.ForeignKey(Club, on_delete=models.CASCADE, null=True, related_name="trainings")
-    ice_slot = models.OneToOneField(IceSlot, on_delete=models.SET_NULL, null=True, related_name="trainings")
+    ice_slot = models.ForeignKey(IceSlot, on_delete=models.SET_NULL, null=True, related_name="trainings")
 
 
 class SubscriptionType(models.Model):
