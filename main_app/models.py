@@ -46,7 +46,7 @@ class Invoice(models.Model):
     create_date = models.DateField()
     paid_date = models.DateField(null=True)
     canceled = models.BooleanField(default=False)
-    member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, related_name="invoices")
+    member = models.ForeignKey(Member, on_delete=models.PROTECT, related_name="invoices")
 
 
 class IceSlot(models.Model):
