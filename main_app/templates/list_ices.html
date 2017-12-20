@@ -34,14 +34,14 @@
                 <tr>
                     <td>{{ ice.id }}</td>
                     <td>
-                        {% for t in ice.trainings %}
-                            {{ t.title }}
-                        {% endfor %}
+{#                        {% for t in ice.trainings %}#}
+{#                            {{ t.title }}#}
+{#                        {% endfor %}#}
                     </td>
                     <td>
-                        {% for t in ice.trainings %}
-                            {{ t.trainer.user.first_name }}
-                        {% endfor %}
+{#                        {% for t in ice.trainings %}#}
+{#                            {{ t.trainer.user.first_name }}#}
+{#                        {% endfor %}#}
                     </td>
                     <td>{{ ice.start_time }} - {{ ice.end_time }}</td>
                     <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'edit_ice' ice.id %}"

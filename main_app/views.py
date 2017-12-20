@@ -6,7 +6,7 @@ from django.http import HttpResponseBadRequest, HttpResponseNotFound, HttpRespon
 
 from django.contrib.auth.decorators import login_required
 
-from main_app.forms import SignUpForm, AddMemberForm, AddIceForm, CreateInvoiceForm
+from main_app.forms import SignUpForm, AddMemberForm, AddIceForm, CreateInvoiceForm, AddTrainingForm
 from main_app.models import City, Member, Invoice, IceSlot, Training
 
 
@@ -241,7 +241,16 @@ def view_training(request, training_id):
 
 @login_required()
 def add_training(request):
-    return render(request, 'add_training.html')
+    if request.method == 'POST':
+        form = AddTrainingForm(request.POST)
+        messages.add_message(request, messages.SUCCESS,
+                             f'Added ice_slot at {ice_slot.start_time} for club {ice_slot.club.name}')
+        return redirect('list_ices')
+    else:
+        form = AddTrainingForm(club=request.user.member.club)
+    return render(request, 'add_training.html', {
+        'form': form
+    })
 
 
 @login_required()
