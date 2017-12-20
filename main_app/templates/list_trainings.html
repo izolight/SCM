@@ -2,14 +2,16 @@
 {% load i18n %}
 {% block title %}
     {% trans "Title List Training" %}
-{#    Trainingsverwaltung#}
+    {#    Trainingsverwaltung#}
 {% endblock title %}
 
 {% block content %}
 
     <div class="col-sm-9">
-    <b>{% trans "Text List Training" %}</b><br>{% trans "Text Add Training" %}<a class="btn btn-default btn-sm" href="{% url 'add_training' %}" role="button">{% trans "Button Add Training" %}</a><br><br>
-{#        Hier sehen Sie eine Übersicht über die geplanten Trainings:Um ein neues Mitglied hinzuzufügen: #}
+        <b>{% trans "Text List Training" %}</b><br>{% trans "Text Add Training" %}<a class="btn btn-default btn-sm"
+                                                                                     href="{% url 'add_training' %}"
+                                                                                     role="button">{% trans "Button Add Training" %}</a><br><br>
+        {#        Hier sehen Sie eine Übersicht über die geplanten Trainings:Um ein neues Mitglied hinzuzufügen: #}
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
@@ -23,45 +25,29 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>Junior 1</td>
-                <td>Sebastian</td>
-                <td>28.11.2017 - 09:00</td>
-                <td>14</td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'edit_training' %}" role="button">{% trans "Edit" %}</a></td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delete_training' %}" role="button">{% trans "Delete" %}</a></td>
-            </tr>
-            <tr class="hidden-sm hidden-md hidden-lg">
-                <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'edit_training' %}" role="button">{% trans "Edit" %}</a></td>
-                <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delete_training' %}" role="button">{% trans "Delete" %}</a></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Ü 18</td>
-                <td>Gregor</td>
-                <td>28.11.2017 - 13:00</td>
-                <td>19</td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'edit_training' %}" role="button">{% trans "Edit" %}</a></td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delete_training' %}" role="button">{% trans "Delete" %}</a></td>
-            </tr>
-            <tr class="hidden-sm hidden-md hidden-lg">
-                <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'edit_training' %}" role="button">{% trans "Edit" %}</a></td>
-                <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delete_training' %}" role="button">{% trans "Delete" %}</a></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>A Liga</td>
-                <td>Sebastian</td>
-                <td>29.11.2017 - 10:00</td>
-                <td>9</td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'edit_training' %}" role="button">{% trans "Edit" %}</a></td>
-                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delete_training' %}" role="button">{% trans "Delete" %}</a></td>
-            </tr>
-            <tr class="hidden-sm hidden-md hidden-lg">
-                <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'edit_training' %}" role="button">{% trans "Edit" %}</a></td>
-                <td class="hidden-sm hidden-md hidden-lg"><a class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg" href="{% url 'delete_training' %}" role="button">{% trans "Delete" %}</a></td>
-            </tr>
+            {% for t in trainings %}
+                <tr>
+                    <td>{{ t.id }}</td>
+                    <td>{{ t.description }}</td>
+                    <td>{{ t.trainer.user.first_name }}</td>
+                    <td>{{ t.start_time }} {{ t.end_time }}</td>
+                    <td></td>
+                    <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs"
+                                             href="{% url 'edit_training' t.id %}" role="button">{% trans "Edit" %}</a>
+                    </td>
+                    <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs"
+                                             href="{% url 'delete_training' t.id %}"
+                                             role="button">{% trans "Delete" %}</a></td>
+                </tr>
+                <tr class="hidden-sm hidden-md hidden-lg">
+                    <td class="hidden-sm hidden-md hidden-lg"><a
+                            class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg"
+                            href="{% url 'edit_training' t.id %}" role="button">{% trans "Edit" %}</a></td>
+                    <td class="hidden-sm hidden-md hidden-lg"><a
+                            class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg"
+                            href="{% url 'delete_training' t.id %}" role="button">{% trans "Delete" %}</a></td>
+                </tr>
+            {% endfor %}
             </tbody>
 
         </table>
