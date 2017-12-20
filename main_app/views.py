@@ -213,7 +213,7 @@ def delete_ice(request, ice_slot_id):
     ice_slot = get_object_or_404(IceSlot, pk=ice_slot_id)
     ice_slot.delete()
     messages.add_message(request, messages.SUCCESS, f'Deleted ice_slot {ice_slot_id}')
-    return HttpResponse(status=204)
+    return redirect('list_ices')
     # return render(request, 'delete_ice.html')
 
 
