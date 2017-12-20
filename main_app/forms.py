@@ -7,7 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from datetime import datetime, timedelta
 
-from main_app.models import IceSlot
+from main_app.models import IceSlot, Training, Member, Club
 
 
 class AddMemberForm(forms.Form):
@@ -81,3 +81,20 @@ class AddIceForm(forms.ModelForm):
             if i.start_time < end_time <= i.end_time:
                 self.add_error('end_time',
                                f"There is already a slot between {i.start_time: %H:%M} - {i.end_time: %H:%M}")
+
+
+class AddTrainingForm(forms.ModelForm):
+    start_time = forms.DateTimeField(initial=datetime.now)
+    end_time = forms.DateTimeField(initial=datetime.now() + timedelta(hours=1))
+
+    class Meta:
+        model = Training
+        fields = ['title', 'description', 'start_time', 'end_time',
+                  'members', 'trainer', 'ice_slot']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__()
+        club = kwargs['club']
+        self.members = forms.ModelMultipleChoiceField(queryset=Member.objects.filter(club=club))
+        self.trainer = forms.ModelChoiceField(queryset=Member.objects.filter(club=club))
+        self.ice_slot = forms.ModelChoiceField(queryset=IceSlot.objects.filter(club=club))
