@@ -13,7 +13,10 @@
         <a class="btn btn-default btn-sm" href="{% url 'add_ice' %}"
            role="button">{% trans "Button New Ice Usage" %}</a><br><br>
         {% for m in messages %}
-            <p>{{ m }}</p>
+            <div class="alert alert-{{ m.tags }} alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>{{ m }}</strong>
+            </div>
         {% endfor %}
         <table class="table table-striped table-bordered table-hover">
             <thead>
