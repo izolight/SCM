@@ -39,7 +39,6 @@ def save_member(sender, instance, **kwargs):
 
 
 class Invoice(models.Model):
-    number = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=50)
     description = models.TextField()
     amount = models.IntegerField()
