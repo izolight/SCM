@@ -25,6 +25,9 @@ class Member(models.Model):
     website = models.URLField(max_length=100, blank=True, null=True)
     club = models.ForeignKey(Club, on_delete=models.SET_NULL, null=True, related_name="members")
 
+    def __str__(self):
+        return f'{self.user.first_name} {self.user.last_name}'
+
 
 # see https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone
 @receiver(post_save, sender=User)
@@ -54,6 +57,9 @@ class IceSlot(models.Model):
     end_time = models.DateTimeField()
     club = models.ForeignKey(Club, on_delete=models.CASCADE, null=True, related_name="ice_slots")
 
+    def __str__(self):
+        return f'{self.start_time} - {self.end_time}'
+
 
 class Training(models.Model):
     title = models.CharField(max_length=50)
@@ -64,6 +70,9 @@ class Training(models.Model):
     trainer = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, related_name="trainings_as_trainer")
     club = models.ForeignKey(Club, on_delete=models.CASCADE, null=True, related_name="trainings")
     ice_slot = models.ForeignKey(IceSlot, on_delete=models.SET_NULL, null=True, related_name="trainings")
+
+    def __str__(self):
+        return self.title
 
 
 class SubscriptionType(models.Model):
