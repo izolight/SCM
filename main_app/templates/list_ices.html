@@ -33,8 +33,16 @@
             {% for ice in ice_slots %}
                 <tr>
                     <td>{{ ice.id }}</td>
-                    <td>{{ ice.training.title }}</td>
-                    <td>{{ ice.training.t }}</td>
+                    <td>
+                        {% for t in ice.trainings %}
+                            {{ t.title }}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for t in ice.trainings %}
+                            {{ t.trainer.user.first_name }}
+                        {% endfor %}
+                    </td>
                     <td>{{ ice.start_time }} - {{ ice.end_time }}</td>
                     <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'edit_ice' ice.id %}"
                                              role="button">{% trans "Edit" %}</a></td>
