@@ -40,11 +40,11 @@ def save_member(sender, instance, **kwargs):
 
 class Invoice(models.Model):
     title = models.CharField(max_length=50)
-    description = models.TextField()
+    description = models.TextField(null=True)
     amount = models.IntegerField()
     due_date = models.DateField()
     create_date = models.DateField()
-    paid_date = models.DateField()
+    paid_date = models.DateField(null=True)
     canceled = models.BooleanField(default=False)
     member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, related_name="invoices")
 
