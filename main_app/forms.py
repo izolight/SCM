@@ -21,7 +21,8 @@ class AddMemberForm(forms.Form):
                                     error_messages={'invalid': 'Enter a valid phone number'})
     email = forms.EmailField(label="E-Mail Address")
     username = forms.RegexField(regex=r'^[a-zA-Z][a-zA-Z0-9]{1,19}$', label="Username", error_messages={
-        'invalid': "Usernames are without punctuation marks. It contains one to twenty characters. Please, don't use 'ä', 'ö' and 'ü'"})
+        'invalid': "Usernames are without punctuation marks. It contains one to twenty characters. Please, don't use "
+                   "'ä', 'ö' and 'ü'"})
     password1 = forms.CharField(widget=forms.PasswordInput(), label="Password", min_length=10)
     password2 = forms.CharField(widget=forms.PasswordInput(), label="Confirm password", min_length=10)
 
@@ -74,9 +75,9 @@ class AddIceForm(forms.ModelForm):
                                            start_time__month=start_time.month,
                                            start_time__year=start_time.year)
         for i in ice_slots:
-            if start_time >= i.start_time and start_time < i.end_time:
+            if i.start_time <= start_time < i.end_time:
                 self.add_error('start_time',
                                f"There is already a slot between {i.start_time: %H:%M} - {i.end_time: %H:%M}")
-            if end_time > i.start_time and end_time <= i.end_time:
+            if i.start_time < end_time <= i.end_time:
                 self.add_error('end_time',
                                f"There is already a slot between {i.start_time: %H:%M} - {i.end_time: %H:%M}")
