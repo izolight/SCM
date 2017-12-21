@@ -2,9 +2,6 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-from django.core.exceptions import ValidationError
-from django.utils.translation import ugettext_lazy as _
-
 from datetime import datetime, timedelta
 
 from main_app.models import IceSlot, Training, Member, Club
@@ -39,7 +36,20 @@ class CreateInvoiceForm(forms.Form):
     title = forms.CharField(max_length=50, label="Title")
     description = forms.CharField(widget=forms.Textarea())
     amount = forms.IntegerField(None, 1)
-    due_date = forms.DateField()
+    # create_date = forms.DateTimeField(initial=datetime.now)
+    due_date = forms.DateTimeField(initial=datetime.now)
+
+    CHOICES = [('1', 'First',), ('2', 'Second',)]
+    member = forms.ChoiceField(widget=forms.Select, choices=CHOICES)
+
+    member2 = forms.ModelChoiceField(queryset=User.objects.all().all(), required=True)
+
+    # def clean(self):
+    #     cleaned_data = super(CreateInvoiceForm, self).clean()
+    #     title = cleaned_data.get('title')
+    #     description = cleaned_data.get('description')
+    #     amount = cleaned_data.get('amount')
+    #     due_date = cleaned_data.get('due_date')
 
 
 class SignUpForm(UserCreationForm):

@@ -1,3 +1,4 @@
+import datetime
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -137,12 +138,18 @@ def create_invoice(request):
         if form.is_valid():
             title = form.cleaned_data['title']
             description = form.cleaned_data['description']
+            member = form.cleaned_data['member']
+            # member_obj = User.objects.get(username=member)
+            # member_id = member_obj.id
             amount = form.cleaned_data['amount']
             due_date = form.cleaned_data['due_date']
+            create_date = datetime.date.today()
 
             invoice = Invoice.objects.create(title=title,
                                              description=description,
+                                             member_id=member,
                                              amount=amount,
+                                             create_date=create_date,
                                              due_date=due_date)
             invoice.save()
             messages.add_message(request, messages.SUCCESS, f'Invoice have been created')
