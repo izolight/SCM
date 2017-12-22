@@ -1,9 +1,14 @@
+{% comment %}
+This ist the base template. It bounds navigation and all header related *.html files.
+Any site will use this base construct.
+{% endcomment %}
 {% load staticfiles %}
 {% load i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {# for better readability header information is handled in a separate file and is included here #}
     {% include "main/html_header.html" %}
 </head>
 <body>
@@ -27,7 +32,7 @@
                 <div class="col-sm-9 text-center">
                     <h2>
                         Simple Club Manager -
-
+                        {# Jumbotron title holder #}
                         {% block title %}
                             <div>TITLE CONTENT PLACEHOLDER</div>
                         {% endblock title %}
@@ -42,7 +47,7 @@
     <div class="row">
         <main>
             <div class="col">
-
+                {# This is the place where the side content will be loaded #}
                 {% block content %}
                     <div>BLOCK CONTENT PLACEHOLDER</div>
                 {% endblock content %}
@@ -62,12 +67,8 @@
             </footer>
         </div>
     </div>
-</div> <!-- /container -->
+</div>
 
-
-<!-- Bootstrap-JavaScript
-================================================== -->
-<!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
 
 
 

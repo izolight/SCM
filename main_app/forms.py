@@ -1,3 +1,7 @@
+"""
+forms.py hold all forms classes which will give over to related views
+"""
+
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -8,6 +12,9 @@ from main_app.models import IceSlot, Training, Member, Club
 
 
 class AddMemberForm(forms.Form):
+    """
+    Form for new member.
+    """
     first_name = forms.CharField(max_length=30, label="First Name")
     last_name = forms.CharField(max_length=30, label="Last Name")
     address = forms.CharField(max_length=50, label="Address")
@@ -24,6 +31,9 @@ class AddMemberForm(forms.Form):
     password2 = forms.CharField(widget=forms.PasswordInput(), label="Confirm password", min_length=10)
 
     def clean(self):
+        """
+        logic for own user input checks
+        """
         cleaned_data = super(AddMemberForm, self).clean()
         password1 = cleaned_data.get("password1")
         password2 = cleaned_data.get("password2")
