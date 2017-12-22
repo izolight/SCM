@@ -1,5 +1,5 @@
 """
-forms.py hold all forms classes which will give over to related views
+forms.py: hold all forms classes which will give over to related views
 """
 
 from django import forms
