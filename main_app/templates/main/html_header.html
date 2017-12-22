@@ -26,6 +26,10 @@ any other head content must * come after * these tags.
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+{% comment %}
+This are the JavaScripts which we have to import for our site. Without the animations wouldn't work.
+The imports are also for the formulars and the layouts necessary.
+{% endcomment %}
 <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'bootstrap/js/offcanvas.js' %}"></script>
@@ -33,4 +37,5 @@ any other head content must * come after * these tags.
 <script type="text/javascript" src="{% static 'js/moment.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.daterangepicker.js' %}"></script>
 
+{#This is the HTML-Title of out site which appears on the top of the window.#}
 <title>Simple Club Manager</title>

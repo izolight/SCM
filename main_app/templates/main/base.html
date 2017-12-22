@@ -5,6 +5,10 @@ Any site will use this base construct.
 {% load staticfiles %}
 {% load i18n %}
 
+{% comment %}
+This is the HTML-Header for our side. Here we have the skeleton for our content and navigation.
+For the content we have this mainparts: jumbotron as visible header, navigation, content and footer.
+{% endcomment %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +17,7 @@ Any site will use this base construct.
 </head>
 <body>
 <div class="container">
+{#Here we include the navigation.#}
     <div class="row">
         <div class="col-sm-3 col-md-6 col-lg-9 col-xl-12">
             <nav>
@@ -23,6 +28,7 @@ Any site will use this base construct.
 
 
     <div class="row">
+{#    This is the jumbotron. The jumbotron is for the overview necessary because here you see allways where you are on the site. It disappears when you visite the site with a smartphone. #}
         <div class="jumbotron hidden-xs">
             <div class="row">
                 <div class="col-sm-3 text-center">
@@ -45,6 +51,7 @@ Any site will use this base construct.
     </div>
 
     <div class="row">
+{#    Here is the content area.#}
         <main>
             <div class="col">
                 {# This is the place where the side content will be loaded #}
@@ -59,10 +66,11 @@ Any site will use this base construct.
         </main>
     </div>
     <div class="row">
+{#        This is the footer with our fictive release date#}
         <div class="col-sm-9">
             <footer class="footer">
 
-                &copy; SCM - Developer Team, Bern, 03.05.2020
+                &copy; SCM - Developer Team, Bern, 01.02.2018
 
             </footer>
         </div>

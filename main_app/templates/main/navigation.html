@@ -1,7 +1,11 @@
 {% load i18n %}
 {# Fixierte Navbar #}
+{% comment %}
+This is the navigation. We are working with a layout from bootstrap for the responsive design. Also we use Django and Pycharm for the animations and the activated field in the navigation.
+{% endcomment %}
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
+{#    This part is necessary for the navigation bar header. #}
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                     aria-expanded="false" aria-controls="navbar">
@@ -13,6 +17,7 @@
             <a class="navbar-brand" href="#">Simple Club Manager</a>
         </div>
         {% with request.resolver_match.url_name as url_name %}
+{#            This part includes the navigation content which is collapseable. #}
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     {% if user.is_authenticated %}
