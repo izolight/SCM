@@ -1,8 +1,11 @@
+{# If you have to create invoices you can enter the informations here and the bills are going to be created. Normally they should be sended directly by email. #}
+
+{% endcomment %}
 {% extends "main/base.html" %}
 {% load i18n %}
+{#This is the changing part of the title in the jumbotron#}
 {% block title %}
     {% trans "Title Payed Bill" %}
-    {#    Bezahlte Rechnungen#}
 {% endblock title %}
 
 {% block content %}
