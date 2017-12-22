@@ -19,11 +19,16 @@ from django.conf.urls.i18n import i18n_patterns
 from main_app import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include('django.contrib.auth.urls')),
-    url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^admin/', admin.site.urls),  # redirect to django admin page
+    url(r'^accounts/', include('django.contrib.auth.urls')),  # self manage profiles page
+    url(r'^i18n/', include('django.conf.urls.i18n')),  # does the langauge check (1st browser, then user input)
 ]
 
+"""
+Routing for all app specific pages and function like to delete a member.
+e.g.: members/(?P<member_id>[0-9]+)/$
+all url's are named to have access to them within the code in other locations like views.py
+"""
 urlpatterns += i18n_patterns(
     url(r'^$', views.index, name='loggedInLandingPage'),
     url(r'^members/add/$', views.add_member, name='add_member'),
