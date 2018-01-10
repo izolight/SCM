@@ -27,9 +27,9 @@
             {% for member in members %}
                 <tr>
                     <td>{{ member.id }}</td>
-                    <td>{{ member.user_name.first_name }}</td>
-                    <td>{{ member.user_name.last_name }}</td>
-                    <td>{{ member.user_name.username }}</td>
+                    <td>{{ member.user.first_name }}</td>
+                    <td>{{ member.user.last_name }}</td>
+                    <td>{{ member.user.username }}</td>
                     <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs"
                                              href="{% url 'edit_member' member.id %}"
                                              role="button">{% trans "Edit" %}</a>
