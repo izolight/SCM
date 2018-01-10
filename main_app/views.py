@@ -54,40 +54,45 @@ def add_member(request):
     if request.method == 'POST':
         form = AddMemberForm(request.POST)
         if form.is_valid():
-            first_name = form.cleaned_data['first_name']
-            last_name = form.cleaned_data['last_name']
-            username = form.cleaned_data['username']
-            email = form.cleaned_data['email']
-            password = form.cleaned_data['password1']
-            address = form.cleaned_data['address']
-            city = form.cleaned_data['city']
-            zip_code = form.cleaned_data['zip_code']
-            phone_number = form.cleaned_data['phone_number']
-
-            user = User.objects.create_user(first_name=first_name,
-                                            last_name=last_name,
-                                            username=username,
-                                            email=email,
-                                            password=password)
-            user.save()
-            user.refresh_from_db()
-            user.member.address = address
-            db_city = City.objects.filter(name=city).filter(zip_code=zip_code).first()
-            if db_city is None:
-                db_city = City.objects.create(name=city, zip_code=zip_code)
-                db_city.save()
-                db_city.refresh_from_db()
-            user.member.city = db_city
-            user.member.phone_number = phone_number
-            user.save()
+            user, password = create_member(form)
             messages.add_message(request, messages.SUCCESS, f'Added member {user.first_name} {user.last_name}')
             return redirect('list_members')
     else:
         form = AddMemberForm()
-
     return render(request, 'add_member.html', {
         'form': form
     })
+
+
+def create_member(form):
+    first_name = form.cleaned_data['first_name']
+    last_name = form.cleaned_data['last_name']
+    username = form.cleaned_data['username']
+    email = form.cleaned_data['email']
+    password = form.cleaned_data['password1']
+    address = form.cleaned_data['address']
+    city = form.cleaned_data['city']
+    zip_code = form.cleaned_data['zip_code']
+    phone_number = form.cleaned_data['phone_number']
+
+    user = User.objects.create_user(first_name=first_name,
+                                    last_name=last_name,
+                                    username=username,
+                                    email=email,
+                                    password=password)
+    user.save()
+    user.refresh_from_db()
+    user.member.address = address
+    db_city = City.objects.filter(name=city).filter(zip_code=zip_code).first()
+    if db_city is None:
+        db_city = City.objects.create(name=city, zip_code=zip_code)
+        db_city.save()
+        db_city.refresh_from_db()
+    user.member.city = db_city
+    user.member.phone_number = phone_number
+    user.save()
+
+    return user, password
 
 
 def signup(request):
@@ -97,19 +102,15 @@ def signup(request):
     :return: sign up form page
     """
     if request.method == 'POST':
-        form = SignUpForm(request.POST)
+        form = AddMemberForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            user.refresh_from_db()  # load the profile instance created by the signal
-            user.email = form.cleaned_data.get('email')
-            user.save()
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=user.username, password=raw_password)
+            user, password = create_member(form)
+            user = authenticate(username=user.username, password=password)
             login(request, user)
             return redirect('loggedInLandingPage')
     else:
-        form = SignUpForm()
-    return render(request, 'registration/sign_up.html', {
+        form = AddMemberForm()
+    return render(request, 'add_member.html', {
         'form': form
     })
 
