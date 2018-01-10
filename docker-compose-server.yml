@@ -38,3 +38,10 @@ services:
       - /project/traefik/acme.json:/acme.json
       - /project/traefik/traefik.toml:/traefik.toml
       - /project/traefik/log:/log
+    networks:
+      - mystorebox_default
+      - default
+
+networks:
+  mystorebox_default:
+    external: true
