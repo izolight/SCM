@@ -72,10 +72,13 @@ def add_member(request):
             user.save()
             user.refresh_from_db()
             user.member.address = address
-            #            user.member.city = city  # todo fix or delete
-            user.member.zip_code = zip_code
+            db_city = City.objects.filter(name=city).filter(zip_code=zip_code).first()
+            if db_city is None:
+                db_city = City.objects.create(name=city, zip_code=zip_code)
+                db_city.save()
+                db_city.refresh_from_db()
+            user.member.city = db_city
             user.member.phone_number = phone_number
-
             user.save()
             messages.add_message(request, messages.SUCCESS, f'Added member {user.first_name} {user.last_name}')
             return redirect('list_members')
