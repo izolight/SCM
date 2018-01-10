@@ -376,7 +376,8 @@ def add_training(request):
     """
     if request.method == 'POST':
         form = AddTrainingForm(request.POST)
-        messages.add_message(request, messages.SUCCESS,
+        if form.is_valid():
+            messages.add_message(request, messages.SUCCESS,
                              f'Added ice_slot at {ice_slot.start_time} for club {ice_slot.club.name}')
         return redirect('list_ices')
     else:
