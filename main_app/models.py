@@ -53,7 +53,7 @@ def create_member(sender, instance, created, **kwargs):
     Hooking the create_member and save_member methods to the User model
     """
     if created:
-        Member.objects.create(user_name=instance)
+        Member.objects.create(user=instance)
 
 
 @receiver(post_save, sender=User)
