@@ -1,45 +1,62 @@
+{#On this form you can add an ice reservation. There is a datepicker for to make it easier.#}
 {% extends "main/base.html" %}
 {% load i18n %}
+{#This is the changing part of the title in the jumbotron#}
 {% block title %}
     {% trans "Title Add Eisbelegung" %}
-{#    Eisbelegung hinzufügen#}
+
 {% endblock title %}
 
 {% block content %}
-
+    {% load widget_tweaks %}
     <div class="col-sm-7">
 
         <form method="post" novalidate>
-            {#            {% csrf_token %}#}
+            {% csrf_token %}
 
             <div class="form-group">
-                <label for="Text">{% trans "Text Ice Usage" %}</label>
-{#                    Bitte tragen Sie eine neue Eisbelegung ein:#}
+                {{ form.start_time.label_tag }}
+                {% render_field form.start_time class="form-control" %}
+                {{ form.start_time.errors }}
             </div>
             <div class="form-group">
-                <label for="training">{% trans "Enter Name Training" %}</label>
-{#                Training#}
-                {#                {% render_field form.first_name class="form-control" %}#}
+                {{ form.end_time.label_tag }}
+                {% render_field form.end_time class="form-control" %}
+                {{ form.end_time.errors }}
             </div>
-            <div class="form-group">
-                <label for="trainer">{% trans "Enter Name Trainer" %}</label>
-{#                Trainer#}
-                {#                {% render_field form.last_name class="form-control" %}#}
-            </div>
-            <div class="form-group">
-                <label for="date">{% trans "Enter Date" %}</label>
-{#                Datum#}
-                <input class="datetime" type="datetime-local" name="date" id="date">
-                {#                {% render_field form.address class="form-control" %}#}
-            </div>
-
-
             <input type="Submit" class="btn btn-default col-sm-6" value="{% trans "Submit" %}">
-            {#            Eintragen#}
             <input type="Reset" class="btn btn-default col-sm-6" value="{% trans "Reset" %}">
-            {#            Zurücksetzen#}
-            <br><br><br><br>
 
+            <script type="text/javascript">
+                $('input[name="start_time"]').daterangepicker(
+                    {
+                        locale: {
+                            format: 'YYYY-MM-DD HH:mm'
+                        },
+                        "singleDatePicker": true,
+                        "timePicker": true,
+                        "timePicker24Hour": true,
+                        "timePickerIncrement": 15,
+                        "autoApply": true,
+                        "opens": "right",
+                        "drops": "down",
+                    }
+                );
+                $('input[name="end_time"]').daterangepicker(
+                    {
+                        locale: {
+                            format: 'YYYY-MM-DD HH:mm'
+                        },
+                        "singleDatePicker": true,
+                        "timePicker": true,
+                        "timePicker24Hour": true,
+                        "timePickerIncrement": 15,
+                        "autoApply": true,
+                        "opens": "right",
+                        "drops": "down",
+                    }
+                );
+            </script>
 
         </form>
     </div>

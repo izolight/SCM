@@ -1,0 +1,43 @@
+{#This is the entrance of this sub area. Here you can see all entrances and if necessery you can edit it immediately. You can also create an new one by clicking on the button bellow.#}
+{% extends "main/base.html" %}
+{% load i18n %}
+{#This is the changing part of the title in the jumbotron#}
+{% block title %}
+    Invoices
+{% endblock title %}
+
+{% block content %}
+
+    <div class="col-sm-9">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Nr.</th>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th>Benutzername</th>
+                <th class="hidden-xs">&nbsp;</th>
+                <th class="hidden-xs">&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            {#            {% for invoice in invoices %}#}
+            {#            <tr>#}
+            {#                <td>{{ invoice.number }}</td>#}
+            {#                <td>{{ invoice.member.user.first_name }}</td>#}
+            {#                <td>{{ invoice.member.user.last_name }}</td>#}
+            {#                <td>{{ invoice.member.user.email }}</td>#}
+            {#                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'facturate_bill' invoice.id %}" role="button">Verrechnen</a></td>#}
+            {#                <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'delayed_bill' invoice.id %}" role="button">Mahnen</a></td>#}
+            {#            </tr>#}
+            {#            {% endfor %}#}
+            </tbody>
+
+        </table>
+    </div>
+
+
+{% endblock content %}
+
+
+

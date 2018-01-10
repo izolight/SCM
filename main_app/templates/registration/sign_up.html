@@ -1,10 +1,13 @@
+{#This is the Sign Up side. Here you can create an account for the sign up.#}
 {% extends "main/base.html" %}
 {% load i18n %}
+{#This is the changing part of the title in the jumbotron#}
 {% block title %}
     {% trans "Title Sign Up" %}
-{#    Sign up for SCM-App!#}
+
 {% endblock title %}
 
+{#Here is the formular to create an account. After the confirmation and the checks you are logged in.#}
 {% block content %}
     <div class="col-sm-7">
         {% comment %}
