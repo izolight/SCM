@@ -15,7 +15,6 @@
 
             <div class="form-group">
                 <label for="Text">{% trans "Text Member Data" %}</label>
-                {#                    Bitte tragen Sie die Daten des neuen Mitglied ein:#}
             </div>
             <div class="form-group">
                 {{ form.first_name.label_tag }}
@@ -35,14 +34,14 @@
             <div class="form-group">
                 <div class="form-group row">
                     <div class="col-sm-4">
-                        {{ form.city.label_tag }}
-                        {% render_field form.city class="form-control" %}
-                        {{ form.city.errors }}
-                    </div>
-                    <div class="col-sm-8">
                         {{ form.zip_code.label_tag }}
                         {% render_field form.zip_code class="form-control" %}
                         {{ form.zip_code.errors }}
+                    </div>
+                    <div class="col-sm-8">
+                        {{ form.city.label_tag }}
+                        {% render_field form.city class="form-control" %}
+                        {{ form.city.errors }}
                     </div>
                 </div>
             </div>
@@ -60,6 +59,16 @@
                 {{ form.username.label_tag }}
                 {% render_field form.username class="form-control" %}
                 {{ form.username.errors }}
+            </div>
+            <div class="form-group">
+                {{ form.password1.label_tag }}
+                {% render_field form.password1 class="form-control" %}
+                {{ form.password1.errors }}
+            </div>
+            <div class="form-group">
+                {{ form.password2.label_tag }}
+                {% render_field form.password2 class="form-control" %}
+                {{ form.password2.errors }}
             </div>
             <div class="form-group">
                 <input type="Submit" class="btn btn-default col-sm-6" value="{% trans "Submit" %}"

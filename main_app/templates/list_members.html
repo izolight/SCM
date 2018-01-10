@@ -12,6 +12,12 @@
             class="btn btn-default btn-sm" href="{% url 'add_member' %}"
             role="button">{% trans "Add New Member" %}</a><br><br>
         {#    Hier ist eine Übersicht über die einzelnen Mitglieder:Um ein neues Mitglied hinzuzufügen:#}
+        {% for m in messages %}
+            <div class="alert alert-{{ m.tags }} alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>{{ m }}</strong>
+            </div>
+        {% endfor %}
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
@@ -27,16 +33,19 @@
             {% for member in members %}
                 <tr>
                     <td>{{ member.id }}</td>
-                    <td>{{ member.user_name.first_name }}</td>
-                    <td>{{ member.user_name.last_name }}</td>
-                    <td>{{ member.user_name.username }}</td>
+                    <td>{{ member.user.first_name }}</td>
+                    <td>{{ member.user.last_name }}</td>
+                    <td>{{ member.user.username }}</td>
                     <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs"
                                              href="{% url 'edit_member' member.id %}"
                                              role="button">{% trans "Edit" %}</a>
                     </td>
-                    <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs"
-                                             href="{% url 'delete_member' member.id %}"
-                                             role="button">{% trans "Delete" %}</a>
+                    <td class="hidden-xs">
+                        <form method="post" action="{% url 'delete_member' member.id %}">
+                            {% csrf_token %}
+                            <button class="btn btn-default btn-sm hidden-xs"
+                                    type="submit" role="button">{% trans "Delete" %}</button>
+                        </form>
                     </td>
                     <td class="hidden-sm hidden-md hidden-lg">
                     <td class="hidden-sm hidden-md hidden-lg"><a
@@ -44,9 +53,12 @@
                             href="{% url 'edit_member' member.id %}"
                             role="button">{% trans "Edit" %}</a>
                     </td>
-                    <td class="hidden-sm hidden-md hidden-lg"><a
-                            class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg"
-                            href="{% url 'delete_member' member.id %}" role="button">{% trans "Delete" %}</a>
+                    <td class="hidden-sm hidden-md hidden-lg">
+                        <form method="post" action="{% url 'delete_member' member.id %}">
+                            {% csrf_token %}
+                            <button class="btn btn-default hidden-sm hidden-md hidden-lg"
+                                    type="submit" role="button">{% trans "Delete" %}</button>
+                        </form>
                     </td>
                 </tr>
             {% endfor %}
