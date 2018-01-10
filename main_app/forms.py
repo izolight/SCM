@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 
 from datetime import datetime, timedelta
 
-from main_app.models import IceSlot, Training, Member, Club
+from main_app.models import IceSlot, Training, Member, Club, Invoice
 
 
 class AddMemberForm(forms.Form):
@@ -42,19 +42,30 @@ class AddMemberForm(forms.Form):
             self.add_error('password2', "Passwords do not match")
 
 
-class CreateInvoiceForm(forms.Form):
+class CreateInvoiceForm(forms.ModelForm):
     """
-    Form for new invoice.
+    Form to create an invoice
     """
-    title = forms.CharField(max_length=50, label="Title")
-    description = forms.CharField(widget=forms.Textarea())
-    amount = forms.IntegerField(None, 1)
-    due_date = forms.DateTimeField(initial=datetime.now)
+    due_date = forms.DateTimeField(initial=datetime.now() + timedelta(days=30))
+    create_date = forms.DateTimeField(initial=datetime.now())
 
-    CHOICES = [('1', 'First',), ('2', 'Second',)]
-    member = forms.ChoiceField(widget=forms.Select, choices=CHOICES)
+    class Meta:
+        """
+        Automatically creates form field with defined attributes of class Invoice
+        """
+        model = Invoice
+        fields = ('title', 'description', "amount", "due_date", "member", "create_date")
 
-    # member2 = forms.ModelChoiceField(queryset=User.objects.all().all(), required=True)
+    def clean(self):
+        """
+        Special check ...
+        """
+        cleaned_data = super(CreateInvoiceForm, self).clean()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__()
+        club = kwargs['club']
+        self.member = forms.ModelChoiceField(queryset=Member.objects.filter(club=club))
 
 
 class SignUpForm(UserCreationForm):
