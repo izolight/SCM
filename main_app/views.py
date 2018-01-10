@@ -158,15 +158,11 @@ def delete_member(request, member_id):
     if request.method != 'POST':
         return HttpResponseBadRequest()
     # TODO logic for deleting
-    member = Member.objects.get(pk=member_id)
-    if not member:
-        return HttpResponseNotFound()
+    member = get_object_or_404(Member, pk=member_id)
     member.delete()
     messages.add_message(request, messages.SUCCESS, f'Deleted member {member_id}')
-    return HttpResponse(status=204)
+    return redirect('list_members')
 
-
-#    return render(request, 'delete_member.html')
 
 @login_required()
 def edit_member(request, member_id):
