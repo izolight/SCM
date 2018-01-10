@@ -34,14 +34,14 @@
             <div class="form-group">
                 <div class="form-group row">
                     <div class="col-sm-4">
-                        {{ form.city.label_tag }}
-                        {% render_field form.city class="form-control" %}
-                        {{ form.city.errors }}
-                    </div>
-                    <div class="col-sm-8">
                         {{ form.zip_code.label_tag }}
                         {% render_field form.zip_code class="form-control" %}
                         {{ form.zip_code.errors }}
+                    </div>
+                    <div class="col-sm-8">
+                        {{ form.city.label_tag }}
+                        {% render_field form.city class="form-control" %}
+                        {{ form.city.errors }}
                     </div>
                 </div>
             </div>
