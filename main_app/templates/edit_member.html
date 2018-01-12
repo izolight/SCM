@@ -7,17 +7,19 @@
 {% endblock title %}
 
 {% block content %}
-
+    {% load widget_tweaks %}
     <div class="col-sm-7">
 
-        <form action="add_member">
+        <form method="post" novalidate>
+            {% csrf_token %}
+
             <div class="form-group">
                 <label for="Text">{% trans "Text Edit Member" %}</label>
-{#                    Bitte tragen Sie die neuen Daten für das ausgewählte Mitglied ein:#}
             </div>
             <div class="form-group">
                 <label for="firstname">{% trans "Enter First Name" %}</label>
-                <input type="text" class="form-control" id="firstname" placeholder="First Name" required>
+                {% render_field form.user.first_name class="form-control" %}
+                {{ form.user.first_name.errors }}
             </div>
             <div class="form-group">
                 <label for="lastname">{% trans "Enter Last Name" %}</label>
@@ -25,22 +27,22 @@
             </div>
             <div class="form-group">
                 <label for="address">{% trans "Enter Address" %}</label>
-                <input type="text" class="form-control" id="address" placeholder="Adresse" required>
+                {% render_field form.address class="form-control" %}
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <div clss="form-group">
-                        <label for="city">{% trans "Enter City Name" %}</label>
-                        <input type="text" class="form-control" id="city" placeholder="City" required>
-                    </div>
-                </div>
-                <div class="col-sm-8">
                     <div class="form-group">
                         <label for="postale code">{% trans "Enter Postale Code" %}</label>
                         <input type="text" class="form-control" id="plz" placeholder="Postale Code" required
                                pattern="[0-9]{4}"
                                title="{% trans "Enter Postale Code Spezified" %}"
                                inputmode="numeric">
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="city">{% trans "Enter City Name" %}</label>
+                        <input type="text" class="form-control" id="city" placeholder="City" required>
                     </div>
                 </div>
             </div>

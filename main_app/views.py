@@ -10,7 +10,7 @@ from django.http import HttpResponseBadRequest, HttpResponseNotFound, HttpRespon
 
 from django.contrib.auth.decorators import login_required
 
-from main_app.forms import SignUpForm, AddMemberForm, AddIceForm, CreateInvoiceForm, AddTrainingForm
+from main_app.forms import SignUpForm, AddMemberForm, AddIceForm, CreateInvoiceForm, AddTrainingForm, EditMemberForm
 from main_app.models import City, Member, Invoice, IceSlot, Training
 
 
@@ -172,14 +172,16 @@ def edit_member(request, member_id):
     :param member_id: database id of particular user
     :return: page with loaded current member data or a success message or a error message if input are not OK
     """
-    member = Member.objects.get(pk=member_id)
-    if not member:
-        return HttpResponseNotFound()
+    member = get_object_or_404(Member, pk=member_id)
     if request.method == 'POST':
-        # TODO logic for editing
+        form = EditMemberForm(request.POST, member=member)
+        if form.is_valid():
+            messages.add_message(request, messages.SUCCESS, f'Edited Member {member_id}')
         return redirect('list_members')
+    else:
+        form = EditMemberForm(member=member)
     return render(request, 'edit_member.html', {
-        'member': member
+        'form': form
     })
 
 

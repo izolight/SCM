@@ -42,6 +42,30 @@ class AddMemberForm(forms.Form):
             self.add_error('password2', "Passwords do not match")
 
 
+class EditMemberForm(forms.Form):
+    """
+    Form for editing Member, not all values can be edited
+    """
+    first_name = forms.CharField(max_length=30, label="First Name")
+    last_name = forms.CharField(max_length=30, label="Last Name")
+    address = forms.CharField(max_length=50, label="Address")
+    city = forms.CharField(max_length=30, label="City")
+    zip_code = forms.RegexField(regex=r'^\d{4}$', label="Zip Code",
+                                error_messages={'invalid': 'Bitte eine vierstellige Postleitzahl eingeben!'})
+    phone_number = forms.RegexField(regex=r'^\+41\d{9}$', label="Phone Number", initial="+41",
+                                    error_messages={'invalid': 'Enter a valid phone number'})
+
+    def __init__(self, *args, **kwargs):
+        super().__init__()
+        member = kwargs['member']
+        self.first_name = member.user.first_name
+        self.last_name = member.user.last_name
+        self.address = member.address
+        self.city = member.city.name
+        self.zip_code = member.city.zip_code
+        self.phone_number = member.phone_number
+
+
 class CreateInvoiceForm(forms.Form):
     """
     Form for new invoice.
