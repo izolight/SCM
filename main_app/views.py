@@ -271,7 +271,7 @@ def add_ice(request):
             ice_slot.save()
             ice_slot.refresh_from_db()
             messages.add_message(request, messages.SUCCESS,
-                                 f'Added ice_slot at {ice_slot.start_time} for club {ice_slot.club.name}')
+                                 f'Added ice-slot at {ice_slot.start_time} for club {ice_slot.club.name}')
             return redirect('list_ices')
     else:
         form = AddIceForm()
@@ -292,8 +292,12 @@ def edit_ice(request, ice_slot_id):
     if request.method == 'POST':
         form = AddIceForm(request.POST, instance=ice_slot)
         if form.is_valid():
+            old_start = ice_slot.start_time
+            old_end = ice_slot.end_time
             ice_slot = form.save(commit=False)
             ice_slot.save()
+            messages.add_message(request, messages.SUCCESS,
+                                 f'Changed time from {old_start}-{old_end} to {ice_slot.start_time}-{ice_slot.end_time} for slot {ice_slot_id}')
             return redirect('list_ices')
     else:
         form = AddIceForm(instance=ice_slot)
