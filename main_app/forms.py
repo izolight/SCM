@@ -141,11 +141,12 @@ class AddIceForm(forms.ModelForm):
                                            start_time__month=start_time.month,
                                            start_time__year=start_time.year)
         for i in ice_slots:
-            if i.start_time <= start_time < i.end_time:
-                self.add_error('start_time',
+            if i.id != self.instance.id:
+                if i.start_time <= start_time < i.end_time:
+                    self.add_error('start_time',
                                f"There is already a slot between {i.start_time: %H:%M} - {i.end_time: %H:%M}")
-            if i.start_time < end_time <= i.end_time:
-                self.add_error('end_time',
+                if i.start_time < end_time <= i.end_time:
+                    self.add_error('end_time',
                                f"There is already a slot between {i.start_time: %H:%M} - {i.end_time: %H:%M}")
 
 

@@ -288,7 +288,18 @@ def edit_ice(request, ice_slot_id):
     :param ice_slot_id: id of to be modified ice slot
     :return: a page with a edit ice form
     """
-    return render(request, 'edit_ice.html')
+    ice_slot = get_object_or_404(IceSlot, pk=ice_slot_id)
+    if request.method == 'POST':
+        form = AddIceForm(request.POST, instance=ice_slot)
+        if form.is_valid():
+            ice_slot = form.save(commit=False)
+            ice_slot.save()
+            return redirect('list_ices')
+    else:
+        form = AddIceForm(instance=ice_slot)
+    return render(request, 'add_ice.html', {
+        'form': form,
+    })
 
 
 @login_required()
