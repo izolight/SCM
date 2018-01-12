@@ -13,14 +13,16 @@
 
         <form method="post" novalidate>
             {% csrf_token %}
-
             <div class="form-group">
-                {{ form.start_time.label_tag }}
+                <label for="Text">{% trans "Text Ice Usage" %}</label>
+            </div>
+            <div class="form-group">
+                <label for="start_time">{% trans "Enter Start Time" %}</label>
                 {% render_field form.start_time class="form-control" %}
                 {{ form.start_time.errors }}
             </div>
             <div class="form-group">
-                {{ form.end_time.label_tag }}
+                <label for="end_time">{% trans "Enter End Time" %}</label>
                 {% render_field form.end_time class="form-control" %}
                 {{ form.end_time.errors }}
             </div>

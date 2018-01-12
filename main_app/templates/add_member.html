@@ -17,56 +17,56 @@
                 <label for="Text">{% trans "Text Member Data" %}</label>
             </div>
             <div class="form-group">
-                {{ form.first_name.label_tag }}
+                <label for="first_name">{% trans "Enter First Name" %}</label>
                 {% render_field form.first_name class="form-control" %}
                 {{ form.first_name.errors }}
             </div>
             <div class="form-group">
-                {{ form.last_name.label_tag }}
+                <label for="last_name">{% trans "Enter Last Name" %}</label>
                 {% render_field form.last_name class="form-control" %}
                 {{ form.last_name.errors }}
             </div>
             <div class="form-group">
-                {{ form.address.label_tag }}
+                <label for="address">{% trans "Enter Address" %}</label>
                 {% render_field form.address class="form-control" %}
                 {{ form.address.errors }}
             </div>
             <div class="form-group">
                 <div class="form-group row">
                     <div class="col-sm-4">
-                        {{ form.zip_code.label_tag }}
+                        <label for="zip_code">{% trans "Enter Zip Code" %}</label>
                         {% render_field form.zip_code class="form-control" %}
                         {{ form.zip_code.errors }}
                     </div>
                     <div class="col-sm-8">
-                        {{ form.city.label_tag }}
+                        <label for="city">{% trans "Enter City Name" %}</label>
                         {% render_field form.city class="form-control" %}
                         {{ form.city.errors }}
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                {{ form.phone_number.label_tag }}
+                <label for="phone_number">{% trans "Enter Phone Number" %}</label>
                 {% render_field form.phone_number class="form-control" %}
                 {{ form.phone_number.errors }}
             </div>
             <div class="form-group">
-                {{ form.email.label_tag }}
+                <label for="email">{% trans "Enter Email" %}</label>
                 {% render_field form.email class="form-control" %}
                 {{ form.email.errors }}
             </div>
             <div class="form-group">
-                {{ form.username.label_tag }}
+                <label for="username">{% trans "Enter Username" %}</label>
                 {% render_field form.username class="form-control" %}
                 {{ form.username.errors }}
             </div>
             <div class="form-group">
-                {{ form.password1.label_tag }}
+                <label for="password1">{% trans "Enter Password" %}</label>
                 {% render_field form.password1 class="form-control" %}
                 {{ form.password1.errors }}
             </div>
             <div class="form-group">
-                {{ form.password2.label_tag }}
+                <label for="password2">{% trans "Enter Password Confirmation" %}</label>
                 {% render_field form.password2 class="form-control" %}
                 {{ form.password2.errors }}
             </div>

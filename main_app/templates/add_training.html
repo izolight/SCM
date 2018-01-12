@@ -9,36 +9,33 @@
 {% block content %}
     {% load widget_tweaks %}
     <div class="col-sm-7">
-
         <form method="post" novalidate>
             {#            {% csrf_token %}#}
-
             <div class="form-group">
                 <label for="Text">{% trans "Text Training Data" %}</label>
-
             </div>
             <div class="form-group">
-                <label for="training">{% trans "Enter Name Training" %}</label>
+                <label for="title">{% trans "Enter Name Training" %}</label>
                 {% render_field form.title class="form-control" %}
                 {{ form.title.errors }}
             </div>
             <div class="form-group">
-                <label for="training">{% trans "Enter Description Training" %}</label>
+                <label for="description">{% trans "Enter Description Training" %}</label>
                 {% render_field form.description class="form-control" %}
                 {{ form.description.errors }}
             </div>
             <div class="form-group">
-                {{ form.start_time.label_tag }}
+                <label for="start_time">{% trans "Enter Start Time" %}</label>
                 {% render_field form.start_time class="form-control" %}
                 {{ form.start_time.errors }}
             </div>
             <div class="form-group">
-                {{ form.end_time.label_tag }}
+                <label for="end_time">{% trans "Enter End Time" %}</label>
                 {% render_field form.end_time class="form-control" %}
                 {{ form.end_time.errors }}
             </div>
             <div class="form-group">
-                <label for="trainer">{% trans "Enter Ice Slot" %}</label>
+                <label for="ice_slot">{% trans "Enter Ice Slot" %}</label>
                 {% render_field form.ice_slot class="form-control" %}
                 {{ form.ice_slot.errors }}
             </div>
@@ -48,18 +45,12 @@
                 {{ form.trainer.errors }}
             </div>
             <div class="form-group">
-                <label for="add_player">{% trans "Choose Member" %}</label>
+                <label for="members">{% trans "Choose Member" %}</label>
                 {% render_field form.members class="form-control" %}
                 {{ form.members.errors }}
             </div>
-
             <input type="Submit" class="btn btn-default col-sm-6" value="{% trans "Submit" %}">
-            {#            Eintragen#}
             <input type="Reset" class="btn btn-default col-sm-6" value="{% trans "Reset" %}">
-            {#            Zurücksetzen#}
-            <br><br><br><br>
-
-
         </form>
     </div>
 
