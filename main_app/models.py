@@ -77,6 +77,13 @@ class Invoice(models.Model):
     canceled = models.BooleanField(default=False)
     member = models.ForeignKey(Member, on_delete=models.PROTECT, related_name="invoices")
 
+    def __str__(self):
+        """
+        Overwriting to string method (otherwise it returns just the whole object of Invoice)
+        :return: string title of invoice string
+        """
+        return self.title
+
 
 class IceSlot(models.Model):
     """

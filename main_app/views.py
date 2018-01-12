@@ -195,30 +195,17 @@ def create_invoice(request):
     if request.method == 'POST':
         form = CreateInvoiceForm(request.POST)
         if form.is_valid():
-            title = form.cleaned_data['title']
-            description = form.cleaned_data['description']
-            member = form.cleaned_data['member']
-            # member_obj = User.objects.get(username=member)
-            # member_id = member_obj.id
-            # todo: clean list of members
-            amount = form.cleaned_data['amount']
-            due_date = form.cleaned_data['due_date']
-            create_date = datetime.date.today()
-
-            invoice = Invoice.objects.create(title=title,
-                                             description=description,
-                                             member_id=member,
-                                             amount=amount,
-                                             create_date=create_date,
-                                             due_date=due_date)
+            invoice = Invoice(form.instance)
             invoice.save()
-            messages.add_message(request, messages.SUCCESS, f'Invoice have been created')
-            return redirect('create_invoice')
+            invoice.refresh_from_db()
+            messages.add_message(request, messages.SUCCESS,
+                                 f'Created {invoice.title} for club {invoice.club.name}')
+            return redirect('list_invoices')
     else:
-        form = CreateInvoiceForm()
-
-    return render(request, 'create_invoice.html', {'form': form})
-
+        form = CreateInvoiceForm(club=request.user.member.club)
+    return render(request, 'create_invoice.html', {
+        'form': form
+    })
 
 @login_required()
 def list_invoices(request):
