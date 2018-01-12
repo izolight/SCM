@@ -375,11 +375,26 @@ def add_training(request):
     :return: page with add training form
     """
     if request.method == 'POST':
-        form = AddTrainingForm(request.POST)
+        form = AddTrainingForm(request.POST, club=request.user.member.club)
         if form.is_valid():
+            training = Training(
+                start_time=form.cleaned_data['start_time'],
+                end_time=form.cleaned_data['end_time'],
+                club=request.user.member.club,
+                title=form.cleaned_data['title'],
+                description=form.cleaned_data['description']
+            )
+            training.save()
+            training.refresh_from_db()
+            training.ice_slot = form.cleaned_data['ice_slot']
+            training.members = form.cleaned_data['members']
+            training.trainer = form.cleaned_data['trainer']
+            training.save()
+            training.refresh_from_db()
+
             messages.add_message(request, messages.SUCCESS,
-                             f'Added ice_slot at {ice_slot.start_time} for club {ice_slot.club.name}')
-        return redirect('list_ices')
+                             f'Added training at {training.start_time} for club {training.club.name}')
+        return redirect('list_trainings')
     else:
         form = AddTrainingForm(club=request.user.member.club)
     return render(request, 'add_training.html', {

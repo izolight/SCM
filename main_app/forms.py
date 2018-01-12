@@ -166,8 +166,8 @@ class AddTrainingForm(forms.ModelForm):
                   'members', 'trainer', 'ice_slot']
 
     def __init__(self, *args, **kwargs):
-        super().__init__()
-        club = kwargs['club']
+        club = kwargs.pop('club')
+        super().__init__(*args, **kwargs)
         self.members = forms.ModelMultipleChoiceField(queryset=Member.objects.filter(club=club))
         self.trainer = forms.ModelChoiceField(queryset=Member.objects.filter(club=club))
         self.ice_slot = forms.ModelChoiceField(queryset=IceSlot.objects.filter(club=club))

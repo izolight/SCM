@@ -10,7 +10,7 @@
     {% load widget_tweaks %}
     <div class="col-sm-7">
         <form method="post" novalidate>
-            {#            {% csrf_token %}#}
+            {% csrf_token %}
             <div class="form-group">
                 <label for="Text">{% trans "Text Training Data" %}</label>
             </div>
@@ -51,6 +51,36 @@
             </div>
             <input type="Submit" class="btn btn-default col-sm-6" value="{% trans "Submit" %}">
             <input type="Reset" class="btn btn-default col-sm-6" value="{% trans "Reset" %}">
+            <script type="text/javascript">
+                $('input[name="start_time"]').daterangepicker(
+                    {
+                        locale: {
+                            format: 'YYYY-MM-DD HH:mm'
+                        },
+                        "singleDatePicker": true,
+                        "timePicker": true,
+                        "timePicker24Hour": true,
+                        "timePickerIncrement": 15,
+                        "autoApply": true,
+                        "opens": "right",
+                        "drops": "down",
+                    }
+                );
+                $('input[name="end_time"]').daterangepicker(
+                    {
+                        locale: {
+                            format: 'YYYY-MM-DD HH:mm'
+                        },
+                        "singleDatePicker": true,
+                        "timePicker": true,
+                        "timePicker24Hour": true,
+                        "timePickerIncrement": 15,
+                        "autoApply": true,
+                        "opens": "right",
+                        "drops": "down",
+                    }
+                );
+            </script>
         </form>
     </div>
 
