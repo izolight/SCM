@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-13 13:49+0100\n"
+"POT-Creation-Date: 2018-01-13 13:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -211,8 +211,8 @@ msgstr "Eisbelegung löschen"
 #: main_app/templates/members/list_members.html:45
 #: main_app/templates/members/list_members.html:58
 #: main_app/templates/trainings/delete_training.html:16
-#: main_app/templates/trainings/list_trainings.html:39
-#: main_app/templates/trainings/list_trainings.html:47
+#: main_app/templates/trainings/list_trainings.html:44
+#: main_app/templates/trainings/list_trainings.html:52
 msgid "Delete"
 msgstr "Löschen"
 
@@ -228,7 +228,7 @@ msgstr "Bitte tragen Sie die korrigierten Daten die Eisbelegung ein"
 #: main_app/templates/ice_slots/list_ices.html:24
 #: main_app/templates/trainings/add_training.html:18
 #: main_app/templates/trainings/edit_training.html:19
-#: main_app/templates/trainings/list_trainings.html:19
+#: main_app/templates/trainings/list_trainings.html:24
 msgid "Training"
 msgstr ""
 
@@ -236,14 +236,14 @@ msgstr ""
 #: main_app/templates/ice_slots/list_ices.html:25
 #: main_app/templates/trainings/add_training.html:43
 #: main_app/templates/trainings/edit_training.html:23
-#: main_app/templates/trainings/list_trainings.html:20
+#: main_app/templates/trainings/list_trainings.html:25
 msgid "Trainer"
 msgstr ""
 
 #: main_app/templates/ice_slots/edit_ice.html:27
 #: main_app/templates/ice_slots/list_ices.html:26
 #: main_app/templates/trainings/edit_training.html:27
-#: main_app/templates/trainings/list_trainings.html:21
+#: main_app/templates/trainings/list_trainings.html:26
 msgid "Date"
 msgstr "Datum"
 
@@ -259,8 +259,8 @@ msgstr "Hier ist eine Übersicht über den Eisbelegungsplan:"
 #: main_app/templates/ice_slots/list_ices.html:59
 #: main_app/templates/members/list_members.html:39
 #: main_app/templates/members/list_members.html:52
-#: main_app/templates/trainings/list_trainings.html:35
-#: main_app/templates/trainings/list_trainings.html:44
+#: main_app/templates/trainings/list_trainings.html:40
+#: main_app/templates/trainings/list_trainings.html:49
 msgid "Edit"
 msgstr "Bearbeiten"
 
@@ -300,7 +300,7 @@ msgid "Description"
 msgstr "Beschreibung"
 
 #: main_app/templates/invoices/create_invoice.html:28
-#: main_app/templates/trainings/list_trainings.html:22
+#: main_app/templates/trainings/list_trainings.html:27
 msgid "Amount"
 msgstr "Betrag"
 
