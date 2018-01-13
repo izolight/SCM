@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect, get_object_or_404
+from django.utils.translation import gettext
 
 from main_app.forms import AddIceForm
 from main_app.models import IceSlot
@@ -38,7 +39,8 @@ def add_ice(request):
             ice_slot.save()
             ice_slot.refresh_from_db()
             messages.add_message(request, messages.SUCCESS,
-                                 f'Added ice-slot at {ice_slot.start_time} for club {ice_slot.club.name}')
+                                 gettext('Added ice-slot at {start} for club {club}').format(start=ice_slot.start_time,
+                                                                                             club=ice_slot.club.name))
             return redirect('list_ices')
     else:
         form = AddIceForm()
@@ -64,7 +66,10 @@ def edit_ice(request, ice_slot_id):
             ice_slot = form.save(commit=False)
             ice_slot.save()
             messages.add_message(request, messages.SUCCESS,
-                                 f'Changed time from {old_start}-{old_end} to {ice_slot.start_time}-{ice_slot.end_time} for slot {ice_slot_id}')
+                                 gettext(
+                                     'Changed time from {old_start}-{old_end} to {start}-{end} for slot {id}').format(
+                                     old_start=old_start, old_end=old_end, start=ice_slot.start_time,
+                                     end=ice_slot.end_time, id=ice_slot_id))
             return redirect('list_ices')
     else:
         form = AddIceForm(instance=ice_slot)
@@ -86,5 +91,5 @@ def delete_ice(request, ice_slot_id):
     # TODO logic for deleting
     ice_slot = get_object_or_404(IceSlot, pk=ice_slot_id)
     ice_slot.delete()
-    messages.add_message(request, messages.SUCCESS, f'Deleted ice_slot {ice_slot_id}')
+    messages.add_message(request, messages.SUCCESS, gettext('Deleted ice_slot {id}').format(id=ice_slot_id))
     return redirect('list_ices')

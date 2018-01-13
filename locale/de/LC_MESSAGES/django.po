@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-13 13:10+0100\n"
+"POT-Creation-Date: 2018-01-13 13:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,7 +66,7 @@ msgstr "Ort"
 msgid "Zip Code"
 msgstr "Postleitzahl"
 
-#: main_app/forms.py:24 main_app/forms.py:55
+#: main_app/forms.py:24 main_app/forms.py:55 main_app/models.py:18
 #: main_app/templates/members/edit_member.html:38
 msgid "Enter correct Zip Code"
 msgstr "Bitte vierstellige Postleitzahl eingeben!"
@@ -78,7 +78,7 @@ msgstr "Bitte vierstellige Postleitzahl eingeben!"
 msgid "Phone Number"
 msgstr "Telefonnummer"
 
-#: main_app/forms.py:26 main_app/forms.py:57
+#: main_app/forms.py:26 main_app/forms.py:57 main_app/models.py:37
 msgid "Enter a valid phone number"
 msgstr "Bitte eine gültige Telefonnummer eingeben"
 
@@ -486,3 +486,50 @@ msgstr "Trainingsübersicht"
 #: main_app/templates/trainings/list_trainings.html:12
 msgid "Here is a list of all trainings"
 msgstr "Hier sehen Sie eine Übersicht über die geplanten Trainings"
+
+#: main_app/views/ice_slots.py:42
+#, python-brace-format
+msgid "Added ice-slot at {start} for club {club}"
+msgstr "Eisbelegung um {start} für Club {club} hinzugefügt"
+
+#: main_app/views/ice_slots.py:70
+#, python-brace-format
+msgid "Changed time from {old_start}-{old_end} to {start}-{end} for slot {id}"
+msgstr ""
+"Zeit von {old_start}-{old_end} auf {start}-{end} für Eisbelegung {id} "
+"geändert"
+
+#: main_app/views/ice_slots.py:94
+#, python-brace-format
+msgid "Deleted ice_slot {id}"
+msgstr "Eisbelegung {id} gelöscht"
+
+#: main_app/views/invoices.py:24
+#, python-brace-format
+msgid "Created {invoice_title} for club {club}"
+msgstr "Rechnung für {invoice_title} für Club {club} wurde erstellt"
+
+#: main_app/views/members.py:58
+#, python-brace-format
+msgid "Deleted member {member_id}"
+msgstr "Mitglied {member_id} gelöscht"
+
+#: main_app/views/members.py:75
+#, python-brace-format
+msgid "Edited Member {member_id} successfully"
+msgstr "Mitglied {member_id} erfolgreich bearbeitet"
+
+#: main_app/views/members.py:97
+#, python-brace-format
+msgid "Added member {first_name} {last_name}"
+msgstr "Mitglied {first_name} {last_name} hinzugefügt"
+
+#: main_app/views/training.py:61
+#, python-brace-format
+msgid "Added training at {start} for club {club}"
+msgstr "Training um {start} für Club {club} hinzugefügt"
+
+#: main_app/views/training.py:96
+#, python-brace-format
+msgid "Deleted training {training_id}"
+msgstr "Training {training_id} gelöscht"
