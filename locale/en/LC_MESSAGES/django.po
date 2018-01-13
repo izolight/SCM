@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-13 12:22+0100\n"
+"POT-Creation-Date: 2018-01-13 12:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,55 +25,55 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: main_app/forms.py:19 main_app/forms.py:50
-#: main_app/templates/add_member.html:20 main_app/templates/contact.html:19
+#: main_app/forms.py:19 main_app/forms.py:50 main_app/templates/contact.html:19
 #: main_app/templates/create_account.html:20
-#: main_app/templates/edit_invoice.html:18
-#: main_app/templates/edit_member.html:20
-#: main_app/templates/list_members.html:24
+#: main_app/templates/invoices/edit_invoice.html:18
+#: main_app/templates/members/add_member.html:20
+#: main_app/templates/members/edit_member.html:20
+#: main_app/templates/members/list_members.html:24
 msgid "First Name"
 msgstr ""
 
-#: main_app/forms.py:20 main_app/forms.py:51
-#: main_app/templates/add_member.html:25 main_app/templates/contact.html:20
+#: main_app/forms.py:20 main_app/forms.py:51 main_app/templates/contact.html:20
 #: main_app/templates/create_account.html:25
-#: main_app/templates/edit_invoice.html:19
-#: main_app/templates/edit_member.html:25
-#: main_app/templates/list_members.html:25
+#: main_app/templates/invoices/edit_invoice.html:19
+#: main_app/templates/members/add_member.html:25
+#: main_app/templates/members/edit_member.html:25
+#: main_app/templates/members/list_members.html:25
 msgid "Last Name"
 msgstr ""
 
 #: main_app/forms.py:21 main_app/forms.py:52
-#: main_app/templates/add_member.html:30
 #: main_app/templates/create_account.html:30
-#: main_app/templates/edit_member.html:29
+#: main_app/templates/members/add_member.html:30
+#: main_app/templates/members/edit_member.html:29
 msgid "Address"
 msgstr ""
 
 #: main_app/forms.py:22 main_app/forms.py:53
-#: main_app/templates/add_member.html:42
 #: main_app/templates/create_account.html:42
-#: main_app/templates/edit_member.html:44
+#: main_app/templates/members/add_member.html:42
+#: main_app/templates/members/edit_member.html:44
 msgid "City"
 msgstr ""
 
 #: main_app/forms.py:23 main_app/forms.py:54
-#: main_app/templates/add_member.html:37
 #: main_app/templates/create_account.html:37
-#: main_app/templates/edit_member.html:35
-#: main_app/templates/edit_member.html:36
+#: main_app/templates/members/add_member.html:37
+#: main_app/templates/members/edit_member.html:35
+#: main_app/templates/members/edit_member.html:36
 msgid "Zip Code"
 msgstr ""
 
 #: main_app/forms.py:24 main_app/forms.py:55
-#: main_app/templates/edit_member.html:38
+#: main_app/templates/members/edit_member.html:38
 msgid "Enter correct Zip Code"
 msgstr ""
 
 #: main_app/forms.py:25 main_app/forms.py:56
-#: main_app/templates/add_member.html:49
 #: main_app/templates/create_account.html:49
-#: main_app/templates/edit_member.html:50
+#: main_app/templates/members/add_member.html:49
+#: main_app/templates/members/edit_member.html:50
 msgid "Phone Number"
 msgstr ""
 
@@ -81,16 +81,18 @@ msgstr ""
 msgid "Enter a valid phone number"
 msgstr ""
 
-#: main_app/forms.py:27 main_app/templates/add_member.html:54
+#: main_app/forms.py:27 main_app/templates/contact.html:21
 #: main_app/templates/create_account.html:54
+#: main_app/templates/members/add_member.html:54
 #: main_app/templates/registration/password_reset_form.html:16
 msgid "E-Mail address"
 msgstr ""
 
-#: main_app/forms.py:28 main_app/templates/add_member.html:59
-#: main_app/templates/create_account.html:59
-#: main_app/templates/edit_invoice.html:20
-#: main_app/templates/list_members.html:26
+#: main_app/forms.py:28 main_app/templates/create_account.html:59
+#: main_app/templates/invoices/edit_invoice.html:20
+#: main_app/templates/members/add_member.html:59
+#: main_app/templates/members/list_members.html:26
+#: main_app/templates/registration/login.html:28
 msgid "Username"
 msgstr ""
 
@@ -100,13 +102,14 @@ msgid ""
 "characters. Please, don't use 'ä', 'ö' and 'ü'"
 msgstr ""
 
-#: main_app/forms.py:31 main_app/templates/add_member.html:64
-#: main_app/templates/create_account.html:64
+#: main_app/forms.py:31 main_app/templates/create_account.html:64
+#: main_app/templates/members/add_member.html:64
+#: main_app/templates/registration/login.html:33
 msgid "Password"
 msgstr ""
 
-#: main_app/forms.py:32 main_app/templates/add_member.html:69
-#: main_app/templates/create_account.html:69
+#: main_app/forms.py:32 main_app/templates/create_account.html:69
+#: main_app/templates/members/add_member.html:69
 #: main_app/templates/registration/password_reset_confirm.html:28
 msgid "Confirm Password"
 msgstr ""
@@ -127,84 +130,6 @@ msgstr ""
 msgid "End Time must be on the same day as Start Time"
 msgstr ""
 
-#: main_app/templates/add_ice.html:6 main_app/templates/list_ices.html:14
-msgid "Add Ice Reservation"
-msgstr ""
-
-#: main_app/templates/add_ice.html:17
-msgid "Here you can plan the ice reservation"
-msgstr ""
-
-#: main_app/templates/add_ice.html:20 main_app/templates/add_training.html:28
-msgid "Start Time"
-msgstr ""
-
-#: main_app/templates/add_ice.html:25 main_app/templates/add_training.html:33
-msgid "End Time"
-msgstr ""
-
-#: main_app/templates/add_ice.html:29 main_app/templates/add_member.html:74
-#: main_app/templates/add_training.html:52
-#: main_app/templates/create_account.html:74
-#: main_app/templates/create_invoice.html:43
-#: main_app/templates/edit_ice.html:33 main_app/templates/edit_member.html:54
-#: main_app/templates/edit_training.html:46
-#: main_app/templates/registration/password_reset_form.html:26
-msgid "Submit"
-msgstr ""
-
-#: main_app/templates/add_ice.html:30 main_app/templates/add_member.html:77
-#: main_app/templates/add_training.html:53
-#: main_app/templates/create_account.html:76
-#: main_app/templates/create_invoice.html:44
-#: main_app/templates/delete_ice.html:17
-#: main_app/templates/delete_member.html:17
-#: main_app/templates/delete_training.html:17
-#: main_app/templates/edit_member.html:55
-#: main_app/templates/edit_training.html:47
-msgid "Reset"
-msgstr ""
-
-#: main_app/templates/add_member.html:6 main_app/templates/add_member.html:17
-#: main_app/templates/list_members.html:6
-msgid "Memberlist"
-msgstr ""
-
-#: main_app/templates/add_training.html:6
-#: main_app/templates/add_training.html:15
-#: main_app/templates/list_trainings.html:12
-#: main_app/templates/list_trainings.html:14
-msgid "Add Training"
-msgstr ""
-
-#: main_app/templates/add_training.html:18 main_app/templates/edit_ice.html:19
-#: main_app/templates/edit_training.html:19
-#: main_app/templates/list_ices.html:24
-#: main_app/templates/list_trainings.html:19
-msgid "Training"
-msgstr ""
-
-#: main_app/templates/add_training.html:23
-#: main_app/templates/create_invoice.html:23
-msgid "Description"
-msgstr ""
-
-#: main_app/templates/add_training.html:38
-msgid "Select Ice Slot"
-msgstr ""
-
-#: main_app/templates/add_training.html:43 main_app/templates/edit_ice.html:23
-#: main_app/templates/edit_training.html:23
-#: main_app/templates/list_ices.html:25
-#: main_app/templates/list_trainings.html:20
-msgid "Trainer"
-msgstr ""
-
-#: main_app/templates/add_training.html:48
-#: main_app/templates/edit_training.html:32
-msgid "Select Members"
-msgstr ""
-
 #: main_app/templates/contact.html:6
 msgid "Contact"
 msgstr ""
@@ -213,7 +138,8 @@ msgstr ""
 msgid "If you want to contact us, here are the information"
 msgstr ""
 
-#: main_app/templates/contact.html:18 main_app/templates/edit_invoice.html:17
+#: main_app/templates/contact.html:18
+#: main_app/templates/invoices/edit_invoice.html:17
 msgid "Number"
 msgstr ""
 
@@ -225,96 +151,114 @@ msgstr ""
 msgid "Please enter the data of the new member"
 msgstr ""
 
-#: main_app/templates/create_invoice.html:6
-#: main_app/templates/create_invoice.html:18
-msgid "New Invoice"
+#: main_app/templates/create_account.html:74
+#: main_app/templates/ice_slots/add_ice.html:29
+#: main_app/templates/ice_slots/edit_ice.html:33
+#: main_app/templates/invoices/create_invoice.html:43
+#: main_app/templates/members/add_member.html:74
+#: main_app/templates/members/edit_member.html:54
+#: main_app/templates/registration/password_reset_form.html:26
+#: main_app/templates/trainings/add_training.html:52
+#: main_app/templates/trainings/edit_training.html:46
+msgid "Submit"
 msgstr ""
 
-#: main_app/templates/create_invoice.html:28
-#: main_app/templates/list_trainings.html:22
-msgid "Amount"
+#: main_app/templates/create_account.html:76
+#: main_app/templates/ice_slots/add_ice.html:30
+#: main_app/templates/ice_slots/delete_ice.html:17
+#: main_app/templates/invoices/create_invoice.html:44
+#: main_app/templates/members/add_member.html:77
+#: main_app/templates/members/delete_member.html:17
+#: main_app/templates/members/edit_member.html:55
+#: main_app/templates/trainings/add_training.html:53
+#: main_app/templates/trainings/delete_training.html:17
+#: main_app/templates/trainings/edit_training.html:47
+msgid "Reset"
 msgstr ""
 
-#: main_app/templates/create_invoice.html:33
-msgid "Due Date"
+#: main_app/templates/ice_slots/add_ice.html:6
+#: main_app/templates/ice_slots/list_ices.html:14
+msgid "Add Ice Reservation"
 msgstr ""
 
-#: main_app/templates/create_invoice.html:38
-msgid "Select Member"
+#: main_app/templates/ice_slots/add_ice.html:17
+msgid "Here you can plan the ice reservation"
 msgstr ""
 
-#: main_app/templates/delete_ice.html:6 main_app/templates/delete_ice.html:11
+#: main_app/templates/ice_slots/add_ice.html:20
+#: main_app/templates/trainings/add_training.html:28
+msgid "Start Time"
+msgstr ""
+
+#: main_app/templates/ice_slots/add_ice.html:25
+#: main_app/templates/trainings/add_training.html:33
+msgid "End Time"
+msgstr ""
+
+#: main_app/templates/ice_slots/delete_ice.html:6
+#: main_app/templates/ice_slots/delete_ice.html:11
 msgid "Delete Ice Slot"
 msgstr ""
 
-#: main_app/templates/delete_ice.html:16
-#: main_app/templates/delete_member.html:16
-#: main_app/templates/delete_training.html:16
-#: main_app/templates/edit_ice.html:34 main_app/templates/list_ices.html:51
-#: main_app/templates/list_ices.html:63 main_app/templates/list_members.html:45
-#: main_app/templates/list_members.html:58
-#: main_app/templates/list_trainings.html:39
-#: main_app/templates/list_trainings.html:47
+#: main_app/templates/ice_slots/delete_ice.html:16
+#: main_app/templates/ice_slots/edit_ice.html:34
+#: main_app/templates/ice_slots/list_ices.html:51
+#: main_app/templates/ice_slots/list_ices.html:63
+#: main_app/templates/members/delete_member.html:16
+#: main_app/templates/members/list_members.html:45
+#: main_app/templates/members/list_members.html:58
+#: main_app/templates/trainings/delete_training.html:16
+#: main_app/templates/trainings/list_trainings.html:39
+#: main_app/templates/trainings/list_trainings.html:47
 msgid "Delete"
 msgstr ""
 
-#: main_app/templates/delete_member.html:6
-#: main_app/templates/delete_member.html:11
-msgid "Delete Member"
-msgstr ""
-
-#: main_app/templates/delete_training.html:6
-#: main_app/templates/delete_training.html:11
-msgid "Delete Training"
-msgstr ""
-
-#: main_app/templates/edit_ice.html:6
+#: main_app/templates/ice_slots/edit_ice.html:6
 msgid "Edit Ice Slot"
 msgstr ""
 
-#: main_app/templates/edit_ice.html:15
+#: main_app/templates/ice_slots/edit_ice.html:15
 msgid "Please enter the correct data for the ice slot"
 msgstr ""
 
-#: main_app/templates/edit_ice.html:27 main_app/templates/edit_training.html:27
-#: main_app/templates/list_ices.html:26
-#: main_app/templates/list_trainings.html:21
+#: main_app/templates/ice_slots/edit_ice.html:19
+#: main_app/templates/ice_slots/list_ices.html:24
+#: main_app/templates/trainings/add_training.html:18
+#: main_app/templates/trainings/edit_training.html:19
+#: main_app/templates/trainings/list_trainings.html:19
+msgid "Training"
+msgstr ""
+
+#: main_app/templates/ice_slots/edit_ice.html:23
+#: main_app/templates/ice_slots/list_ices.html:25
+#: main_app/templates/trainings/add_training.html:43
+#: main_app/templates/trainings/edit_training.html:23
+#: main_app/templates/trainings/list_trainings.html:20
+msgid "Trainer"
+msgstr ""
+
+#: main_app/templates/ice_slots/edit_ice.html:27
+#: main_app/templates/ice_slots/list_ices.html:26
+#: main_app/templates/trainings/edit_training.html:27
+#: main_app/templates/trainings/list_trainings.html:21
 msgid "Date"
 msgstr ""
 
-#: main_app/templates/edit_invoice.html:6
-#: main_app/templates/edit_invoice.html:12
-msgid "Open Invoices"
+#: main_app/templates/ice_slots/list_ices.html:6
+msgid "List Ice Slots"
 msgstr ""
 
-#: main_app/templates/edit_invoice.html:31
-#: main_app/templates/edit_invoice.html:35
-#: main_app/templates/edit_invoice.html:43
-#: main_app/templates/edit_invoice.html:47
-#: main_app/templates/edit_invoice.html:55
-#: main_app/templates/edit_invoice.html:59
-msgid "Offset"
+#: main_app/templates/ice_slots/list_ices.html:12
+msgid "Here is a list for the ice reservations"
 msgstr ""
 
-#: main_app/templates/edit_invoice.html:32
-#: main_app/templates/edit_invoice.html:36
-#: main_app/templates/edit_invoice.html:44
-#: main_app/templates/edit_invoice.html:48
-#: main_app/templates/edit_invoice.html:56
-#: main_app/templates/edit_invoice.html:60
-msgid "Remind"
-msgstr ""
-
-#: main_app/templates/edit_member.html:6 main_app/templates/edit_member.html:17
-msgid "Edit Member"
-msgstr ""
-
-#: main_app/templates/edit_training.html:6
-msgid "Edit Training"
-msgstr ""
-
-#: main_app/templates/edit_training.html:15
-msgid "Please enter the new data for this training"
+#: main_app/templates/ice_slots/list_ices.html:46
+#: main_app/templates/ice_slots/list_ices.html:59
+#: main_app/templates/members/list_members.html:39
+#: main_app/templates/members/list_members.html:52
+#: main_app/templates/trainings/list_trainings.html:35
+#: main_app/templates/trainings/list_trainings.html:44
+msgid "Edit"
 msgstr ""
 
 #: main_app/templates/impressum.html:6 main_app/templates/impressum.html:12
@@ -335,38 +279,75 @@ msgid ""
 "Gabor Tanz and/or Alain Keusen. :-)"
 msgstr ""
 
-#: main_app/templates/list_ices.html:6
-msgid "List Ice Slots"
+#: main_app/templates/invoices/create_invoice.html:6
+#: main_app/templates/invoices/create_invoice.html:18
+msgid "New Invoice"
 msgstr ""
 
-#: main_app/templates/list_ices.html:12
-msgid "Here is a list for the ice reservations"
+#: main_app/templates/invoices/create_invoice.html:23
+#: main_app/templates/trainings/add_training.html:23
+msgid "Description"
 msgstr ""
 
-#: main_app/templates/list_ices.html:46 main_app/templates/list_ices.html:59
-#: main_app/templates/list_members.html:39
-#: main_app/templates/list_members.html:52
-#: main_app/templates/list_trainings.html:35
-#: main_app/templates/list_trainings.html:44
-msgid "Edit"
+#: main_app/templates/invoices/create_invoice.html:28
+#: main_app/templates/trainings/list_trainings.html:22
+msgid "Amount"
 msgstr ""
 
-#: main_app/templates/list_members.html:11
-msgid "Here is the overview of the members"
+#: main_app/templates/invoices/create_invoice.html:33
+msgid "Due Date"
 msgstr ""
 
-#: main_app/templates/list_members.html:11
-#: main_app/templates/list_members.html:13
+#: main_app/templates/invoices/create_invoice.html:38
+msgid "Select Member"
+msgstr ""
+
+#: main_app/templates/invoices/edit_invoice.html:6
+#: main_app/templates/invoices/edit_invoice.html:12
+msgid "Open Invoices"
+msgstr ""
+
+#: main_app/templates/invoices/edit_invoice.html:31
+#: main_app/templates/invoices/edit_invoice.html:35
+#: main_app/templates/invoices/edit_invoice.html:43
+#: main_app/templates/invoices/edit_invoice.html:47
+#: main_app/templates/invoices/edit_invoice.html:55
+#: main_app/templates/invoices/edit_invoice.html:59
+msgid "Offset"
+msgstr ""
+
+#: main_app/templates/invoices/edit_invoice.html:32
+#: main_app/templates/invoices/edit_invoice.html:36
+#: main_app/templates/invoices/edit_invoice.html:44
+#: main_app/templates/invoices/edit_invoice.html:48
+#: main_app/templates/invoices/edit_invoice.html:56
+#: main_app/templates/invoices/edit_invoice.html:60
+msgid "Remind"
+msgstr ""
+
 #: main_app/templates/main/navigation.html:59
+#: main_app/templates/members/list_members.html:13
 msgid "Add Member"
 msgstr ""
 
-#: main_app/templates/list_trainings.html:6
-msgid "Training overview"
+#: main_app/templates/members/add_member.html:6
+#: main_app/templates/members/add_member.html:17
+#: main_app/templates/members/list_members.html:6
+msgid "Memberlist"
 msgstr ""
 
-#: main_app/templates/list_trainings.html:12
-msgid "Here is a list of all trainings"
+#: main_app/templates/members/delete_member.html:6
+#: main_app/templates/members/delete_member.html:11
+msgid "Delete Member"
+msgstr ""
+
+#: main_app/templates/members/edit_member.html:6
+#: main_app/templates/members/edit_member.html:17
+msgid "Edit Member"
+msgstr ""
+
+#: main_app/templates/members/list_members.html:11
+msgid "Here is the overview of the members"
 msgstr ""
 
 #: main_app/templates/registration/logged_out.html:6
@@ -383,7 +364,7 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: main_app/templates/registration/login.html:13
+#: main_app/templates/registration/login.html:14
 msgid "Your username and password didn't match. Please try again."
 msgstr ""
 
@@ -393,11 +374,11 @@ msgid ""
 "an account that has access."
 msgstr ""
 
-#: main_app/templates/registration/login.html:23
+#: main_app/templates/registration/login.html:21
 msgid "Please login to see this page"
 msgstr ""
 
-#: main_app/templates/registration/login.html:46
+#: main_app/templates/registration/login.html:43
 msgid "Lost Password"
 msgstr ""
 
@@ -447,4 +428,40 @@ msgstr ""
 #: main_app/templates/registration/sign_up.html:6
 #: main_app/templates/registration/sign_up.html:35
 msgid "Sign Up for the SCM-App"
+msgstr ""
+
+#: main_app/templates/trainings/add_training.html:6
+#: main_app/templates/trainings/add_training.html:15
+#: main_app/templates/trainings/list_trainings.html:14
+msgid "Add Training"
+msgstr ""
+
+#: main_app/templates/trainings/add_training.html:38
+msgid "Select Ice Slot"
+msgstr ""
+
+#: main_app/templates/trainings/add_training.html:48
+#: main_app/templates/trainings/edit_training.html:32
+msgid "Select Members"
+msgstr ""
+
+#: main_app/templates/trainings/delete_training.html:6
+#: main_app/templates/trainings/delete_training.html:11
+msgid "Delete Training"
+msgstr ""
+
+#: main_app/templates/trainings/edit_training.html:6
+msgid "Edit Training"
+msgstr ""
+
+#: main_app/templates/trainings/edit_training.html:15
+msgid "Please enter the new data for this training"
+msgstr ""
+
+#: main_app/templates/trainings/list_trainings.html:6
+msgid "Training overview"
+msgstr ""
+
+#: main_app/templates/trainings/list_trainings.html:12
+msgid "Here is a list of all trainings"
 msgstr ""
