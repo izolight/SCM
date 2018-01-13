@@ -8,13 +8,14 @@ from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.utils.translation import gettext_lazy
 
 
 class City(models.Model):
     """
     Class City: with specified type checks like zip must be 4 digits
     """
-    zip_regex = RegexValidator(regex=r'^\d{4}$', message="Bitte vierstellige PLZ eingeben")
+    zip_regex = RegexValidator(regex=r'^\d{4}$', message=gettext_lazy("Enter correct Zip Code"))
     zip_code = models.PositiveSmallIntegerField(validators=[zip_regex])
     name = models.CharField(max_length=30)
 
@@ -33,7 +34,7 @@ class Member(models.Model):
     """
     address = models.CharField(max_length=50, null=True)
     city = models.ForeignKey(City, related_name='members', null=True)
-    phone_regex = RegexValidator(regex=r'^\+41\d{9}$', message="Bitte gültige Telefonnummer eingeben")
+    phone_regex = RegexValidator(regex=r'^\+41\d{9}$', message=gettext_lazy("Enter a valid phone number"))
     phone_number = models.CharField(validators=[phone_regex], max_length=12, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='member')
     website = models.URLField(max_length=100, blank=True, null=True)
