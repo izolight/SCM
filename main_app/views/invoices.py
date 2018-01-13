@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
+from django.utils.translation import gettext
 
 from main_app.forms import CreateInvoiceForm
 from main_app.models import Invoice
@@ -20,7 +21,8 @@ def create_invoice(request):
             invoice.save()
             invoice.refresh_from_db()
             messages.add_message(request, messages.SUCCESS,
-                                 f'Created {invoice.title} for club {invoice.club.name}')
+                                 gettext('Created {invoice_title} for club {club}').format(invoice_title=invoice.title,
+                                                                                           club=invoice.club.name))
             return redirect('list_invoices')
     else:
         form = CreateInvoiceForm(club=request.user.member.club)

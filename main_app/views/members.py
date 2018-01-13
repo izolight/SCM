@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponseBadRequest, HttpResponseNotFound
 from django.shortcuts import render, get_object_or_404, redirect
+from django.utils.translation import gettext
 
 from main_app.forms import EditMemberForm, AddMemberForm
 from main_app.models import Member, City
@@ -54,7 +55,7 @@ def delete_member(request, member_id):
     # TODO logic for deleting
     member = get_object_or_404(Member, pk=member_id)
     member.delete()
-    messages.add_message(request, messages.SUCCESS, f'Deleted member {member_id}')
+    messages.add_message(request, messages.SUCCESS, gettext('Deleted member {member_id}').format(member_id=member_id))
     return redirect('list_members')
 
 
@@ -70,7 +71,8 @@ def edit_member(request, member_id):
     if request.method == 'POST':
         form = EditMemberForm(request.POST, member=member)
         if form.is_valid():
-            messages.add_message(request, messages.SUCCESS, f'Edited Member {member_id}')
+            messages.add_message(request, messages.SUCCESS,
+                                 gettext('Edited Member {member_id} successfully').format(member_id=member_id))
         return redirect('list_members')
     else:
         form = EditMemberForm(member=member)
@@ -91,7 +93,9 @@ def add_member(request):
         form = AddMemberForm(request.POST)
         if form.is_valid():
             user, password = create_member(form)
-            messages.add_message(request, messages.SUCCESS, f'Added member {user.first_name} {user.last_name}')
+            messages.add_message(request, messages.SUCCESS,
+                                 gettext('Added member {first_name} {last_name}').format(first_name=user.first_name,
+                                                                                         last_name=user.last_name))
             return redirect('list_members')
     else:
         form = AddMemberForm()

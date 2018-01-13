@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseBadRequest, HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
+from django.utils.translation import gettext
 
 from main_app.forms import AddTrainingForm
 from main_app.models import Training
@@ -57,7 +58,8 @@ def add_training(request):
             training.refresh_from_db()
 
             messages.add_message(request, messages.SUCCESS,
-                             f'Added training at {training.start_time} for club {training.club.name}')
+                                 gettext('Added training at {start} for club {club}').format(start=training.start_time,
+                                                                                             club=training.club.name))
         return redirect('list_trainings')
     else:
         form = AddTrainingForm(club=request.user.member.club)
@@ -90,6 +92,7 @@ def delete_training(request, training_id):
     # TODO logic for deleting
     training = get_object_or_404(Training, pk=training_id)
     training.delete()
-    messages.add_message(request, messages.SUCCESS, f'Delete training {training_id}')
+    messages.add_message(request, messages.SUCCESS,
+                         gettext('Deleted training {training_id}').format(training_id=training_id))
     return HttpResponse(status=204)
     # return render(request, 'delete_training.html')
