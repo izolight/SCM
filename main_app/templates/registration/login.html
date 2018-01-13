@@ -8,35 +8,32 @@
 {% endblock title %}
 
 {% block content %}
+    {% load widget_tweaks %}
     <div class="col-sm-7">
         {% if form.errors %}
             <p>{% trans "Your username and password didn't match. Please try again." %}</p>
-{#            Your username and password didn't match. Please try again.#}
         {% endif %}
 
         {% if next %}
             {% if user.is_authenticated %}
                 <p>{% trans "Your account doesn't have access to this page. To proceed, please login with an account that has access." %}</p>
-{#                Your account doesn't have access to this page. To proceed,#}
-{#                    please login with an account that has access.#}
             {% else %}
                 <p>{% trans "Please login to see this page" %}</p>
-{#                Please login to see this page.#}
             {% endif %}
         {% endif %}
 
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
-            <table>
-                <tr>
-                    <td>{{ form.username.label_tag }}</td>
-                    <td>{{ form.username }}</td>
-                </tr>
-                <tr>
-                    <td>{{ form.password.label_tag }}</td>
-                    <td>{{ form.password }}</td>
-                </tr>
-            </table>
+            <div class="form-group">
+                <label for="username">{% trans "Username" %}</label>
+                {% render_field form.username class="form-control" %}
+                {{ form.username.errors }}
+            </div>
+            <div class="form-group">
+                <label for="password">{% trans "Password" %}</label>
+                {% render_field form.password class="form-control" %}
+                {{ form.password.errors }}
+            </div>
 
             <input type="submit" value="login"/>
             <input type="hidden" name="next" value="{{ next }}"/>
