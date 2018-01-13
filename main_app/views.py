@@ -59,7 +59,7 @@ def add_member(request):
             return redirect('list_members')
     else:
         form = AddMemberForm()
-    return render(request, 'add_member.html', {
+    return render(request, 'members/add_member.html', {
         'form': form
     })
 
@@ -110,7 +110,7 @@ def signup(request):
             return redirect('loggedInLandingPage')
     else:
         form = AddMemberForm()
-    return render(request, 'add_member.html', {
+    return render(request, 'members/add_member.html', {
         'form': form
     })
 
@@ -123,7 +123,7 @@ def list_members(request):
     :return: page with a list of members
     """
     members = Member.objects.all()
-    return render(request, 'list_members.html', {
+    return render(request, 'members/list_members.html', {
         'members': members
     })
 
@@ -142,7 +142,7 @@ def list_member(request, member_id):
     member = Member.objects.get(pk=member_id)
     if not member:
         return HttpResponseNotFound()
-    return render(request, 'list_member.html', {
+    return render(request, 'members/list_member.html', {
         'member': member
     })
 
@@ -180,7 +180,7 @@ def edit_member(request, member_id):
         return redirect('list_members')
     else:
         form = EditMemberForm(member=member)
-    return render(request, 'edit_member.html', {
+    return render(request, 'members/edit_member.html', {
         'form': form
     })
 
@@ -203,7 +203,7 @@ def create_invoice(request):
             return redirect('list_invoices')
     else:
         form = CreateInvoiceForm(club=request.user.member.club)
-    return render(request, 'create_invoice.html', {
+    return render(request, 'invoices/create_invoice.html', {
         'form': form
     })
 
@@ -215,7 +215,7 @@ def list_invoices(request):
     :return: returns a page with all created invoices
     """
     invoices = Invoice.objects.all()
-    return render(request, 'list_invoices.html', {
+    return render(request, 'invoices/list_invoices.html', {
         'invoices': invoices
     })
 
@@ -228,7 +228,7 @@ def edit_invoice(request, invoice_id):
     :param invoice_id: integer id of an invoice to edit
     :return: page with invoice edit mask
     """
-    return render(request, 'edit_invoice.html')
+    return render(request, 'invoices/edit_invoice.html')
 
 
 def contact(request):
@@ -248,7 +248,7 @@ def list_ices(request):
     :return: a page with a table of all ices
     """
     ice_slots = IceSlot.objects.all()
-    return render(request, 'list_ices.html', {
+    return render(request, 'ice_slots/list_ices.html', {
         'ice_slots': ice_slots
     })
 
@@ -275,7 +275,7 @@ def add_ice(request):
             return redirect('list_ices')
     else:
         form = AddIceForm()
-    return render(request, 'add_ice.html', {
+    return render(request, 'ice_slots/add_ice.html', {
         'form': form
     })
 
@@ -301,7 +301,7 @@ def edit_ice(request, ice_slot_id):
             return redirect('list_ices')
     else:
         form = AddIceForm(instance=ice_slot)
-    return render(request, 'add_ice.html', {
+    return render(request, 'ice_slots/add_ice.html', {
         'form': form,
     })
 
@@ -351,7 +351,7 @@ def list_trainings(request):
     :return: page with table of trainings
     """
     trainings = Training.objects.all()
-    return render(request, 'list_trainings.html', {
+    return render(request, 'trainings/list_trainings.html', {
         'trainings': trainings
     })
 
@@ -364,7 +364,7 @@ def view_training(request, training_id):
     :param training_id: integer id of to be viewed training
     :return: page displaying one training
     """
-    return render(request, 'view_training.html')
+    return render(request, 'trainings/view_training.html')
 
 
 @login_required()
@@ -397,7 +397,7 @@ def add_training(request):
         return redirect('list_trainings')
     else:
         form = AddTrainingForm(club=request.user.member.club)
-    return render(request, 'add_training.html', {
+    return render(request, 'trainings/add_training.html', {
         'form': form
     })
 
@@ -410,7 +410,7 @@ def edit_training(request, training_id):
     :param training_id: integer id of to be edited training
     :return: page with edit training mask
     """
-    return render(request, 'edit_training.html')
+    return render(request, 'trainings/edit_training.html')
 
 
 @login_required()
