@@ -56,7 +56,7 @@ This is the navigation. We are working with a layout from bootstrap for the resp
                                 <li class="{% if url_name == 'list_members' %}active{% endif %}"><a
                                         href="{% url 'list_members' %}">List Member</a></li>
                                 <li class="{% if url_name == 'add_member' %}active{% endif %}"><a
-                                        href="{% url 'add_member' %}">Add Member</a></li>
+                                        href="{% url 'add_member' %}">{% trans "Add Member" %}</a></li>
                             </ul>
                         </li>
 

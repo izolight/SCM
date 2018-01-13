@@ -3,13 +3,13 @@
 {% load i18n %}
 {#This is the changing part of the title in the jumbotron#}
 {% block title %}
-{% trans "Title Logged Out" %}
+{% trans "You are logged out" %}
 
 {% endblock title %}
 
 {% block content %}
     <div class="col-sm-7">
-        <p>{% trans "Text Logged Out" %}</p>
+        <p>{% trans "You are logged out" %}</p>
         <a href="{% url 'login' %}">{% trans "Login Again" %}</a>
     </div>
 {% endblock %}

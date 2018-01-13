@@ -3,7 +3,7 @@
 {% load i18n %}
 {#This is the changing part of the title in the jumbotron#}
 {% block title %}
-    {% trans "Title Add Eisbelegung" %}
+    {% trans "Add Ice Reservation" %}
 
 {% endblock title %}
 
@@ -14,15 +14,15 @@
         <form method="post" novalidate>
             {% csrf_token %}
             <div class="form-group">
-                <label for="Text">{% trans "Text Ice Usage" %}</label>
+                <label for="Text">{% trans "Here you can plan the ice reservation" %}</label>
             </div>
             <div class="form-group">
-                <label for="start_time">{% trans "Enter Start Time" %}</label>
+                <label for="start_time">{% trans "Start Time" %}</label>
                 {% render_field form.start_time class="form-control" %}
                 {{ form.start_time.errors }}
             </div>
             <div class="form-group">
-                <label for="end_time">{% trans "Enter End Time" %}</label>
+                <label for="end_time">{% trans "End Time" %}</label>
                 {% render_field form.end_time class="form-control" %}
                 {{ form.end_time.errors }}
             </div>

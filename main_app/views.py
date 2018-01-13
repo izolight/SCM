@@ -1,7 +1,7 @@
 """
 views.py: prepares all views to present (handover) to html render engine by linking to correct template.
 """
-import datetime
+
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -10,7 +10,7 @@ from django.http import HttpResponseBadRequest, HttpResponseNotFound, HttpRespon
 
 from django.contrib.auth.decorators import login_required
 
-from main_app.forms import SignUpForm, AddMemberForm, AddIceForm, CreateInvoiceForm, AddTrainingForm, EditMemberForm
+from main_app.forms import AddMemberForm, AddIceForm, CreateInvoiceForm, AddTrainingForm, EditMemberForm
 from main_app.models import City, Member, Invoice, IceSlot, Training
 
 

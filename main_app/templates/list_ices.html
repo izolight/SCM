@@ -3,16 +3,15 @@
 {% load i18n %}
 {#This is the changing part of the title in the jumbotron#}
 {% block title %}
-    {% trans "Title List Ice" %}
+    {% trans "List Ice Slots" %}
 {% endblock title %}
 
 {% block content %}
 
     <div class="col-sm-9">
-        <b>{% trans "Text List Ice" %}</b><br>
-        {% trans "Text New Ice Button" %}
+        <b>{% trans "Here is a list for the ice reservations" %}</b><br>
         <a class="btn btn-default btn-sm" href="{% url 'add_ice' %}"
-           role="button">{% trans "Button New Ice Usage" %}</a><br><br>
+           role="button">{% trans "Add Ice Reservation" %}</a><br><br>
         {% for m in messages %}
             <div class="alert alert-{{ m.tags }} alert-dismissable">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

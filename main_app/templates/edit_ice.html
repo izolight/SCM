@@ -3,7 +3,7 @@
 {% load i18n %}
 {#This is the changing part of the title in the jumbotron#}
 {% block title %}
-    {% trans "Title Edit Ice" %}
+    {% trans "Edit Ice Slot" %}
 {% endblock title %}
 
 {% block content %}
@@ -12,19 +12,19 @@
 
         <form action="add_member">
             <div class="form-group">
-                <label for="Text">{% trans "Text Edit Ice" %}</label>
+                <label for="Text">{% trans "Please enter the correct data for the ice slot" %}</label>
 {#                    Bitte tragen Sie die korrigierten Daten die Eisbelegung ein:#}
             </div>
             <div class="form-group">
-                <label for="training">{% trans "Enter Name Training" %}</label>
+                <label for="training">{% trans "Training" %}</label>
                 {#                {% render_field form.first_name class="form-control" %}#}
             </div>
             <div class="form-group">
-                <label for="trainer">{% trans "Enter Name Trainer" %}</label>
+                <label for="trainer">{% trans "Trainer" %}</label>
                 {#                {% render_field form.last_name class="form-control" %}#}
             </div>
             <div class="form-group">
-                <label for="date">{% trans "Enter Date" %}</label>
+                <label for="date">{% trans "Date" %}</label>
                 <input class="datetime" type="datetime-local" name="date" id="date">
                 {#                {% render_field form.address class="form-control" %}#}
             </div>

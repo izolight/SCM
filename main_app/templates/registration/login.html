@@ -3,24 +3,24 @@
 {% load i18n %}
 {#This is the changing part of the title in the jumbotron#}
 {% block title %}
-    {% trans "Title Login" %}
+    {% trans "Login" %}
 
 {% endblock title %}
 
 {% block content %}
     <div class="col-sm-7">
         {% if form.errors %}
-            <p>{% trans "Text Login Failed" %}</p>
+            <p>{% trans "Your username and password didn't match. Please try again." %}</p>
 {#            Your username and password didn't match. Please try again.#}
         {% endif %}
 
         {% if next %}
             {% if user.is_authenticated %}
-                <p>{% trans "Text No Access" %}</p>
+                <p>{% trans "Your account doesn't have access to this page. To proceed, please login with an account that has access." %}</p>
 {#                Your account doesn't have access to this page. To proceed,#}
 {#                    please login with an account that has access.#}
             {% else %}
-                <p>{% trans "Text Try New Login" %}</p>
+                <p>{% trans "Please login to see this page" %}</p>
 {#                Please login to see this page.#}
             {% endif %}
         {% endif %}

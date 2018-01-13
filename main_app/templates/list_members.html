@@ -3,14 +3,14 @@
 {% load i18n %}
 {#This is the changing part of the title in the jumbotron#}
 {% block title %}
-    {% trans "Title List Member" %}
+    {% trans "Memberlist" %}
 {% endblock title %}
 
 {% block content %}
     <div class="col-sm-9">
-        <b>{% trans "Text List Member" %}</b><br> {% trans "Text New Member" %}<a
+        <b>{% trans "Here is the overview of the members" %}</b><br> {% trans "Add Member" %}<a
             class="btn btn-default btn-sm" href="{% url 'add_member' %}"
-            role="button">{% trans "Add New Member" %}</a><br><br>
+            role="button">{% trans "Add Member" %}</a><br><br>
         {#    Hier ist eine Übersicht über die einzelnen Mitglieder:Um ein neues Mitglied hinzuzufügen:#}
         {% for m in messages %}
             <div class="alert alert-{{ m.tags }} alert-dismissable">

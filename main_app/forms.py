@@ -5,6 +5,7 @@ forms.py: hold all forms classes which will give over to related views
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.utils.translation import gettext
 
 from datetime import datetime, timedelta
 
@@ -15,20 +16,20 @@ class AddMemberForm(forms.Form):
     """
     Form for new member with specified user input checks.
     """
-    first_name = forms.CharField(max_length=30, label="First Name")
-    last_name = forms.CharField(max_length=30, label="Last Name")
-    address = forms.CharField(max_length=50, label="Address")
-    city = forms.CharField(max_length=30, label="City")
-    zip_code = forms.RegexField(regex=r'^\d{4}$', label="Zip Code",
-                                error_messages={'invalid': 'Bitte eine vierstellige Postleitzahl eingeben!'})
-    phone_number = forms.RegexField(regex=r'^\+41\d{9}$', label="Phone Number", initial="+41",
-                                    error_messages={'invalid': 'Enter a valid phone number'})
-    email = forms.EmailField(label="E-Mail Address")
-    username = forms.RegexField(regex=r'^[a-zA-Z][a-zA-Z0-9]{1,19}$', label="Username", error_messages={
-        'invalid': "Usernames are without punctuation marks. It contains one to twenty characters. Please, don't use "
-                   "'ä', 'ö' and 'ü'"})
-    password1 = forms.CharField(widget=forms.PasswordInput(), label="Password", min_length=10)
-    password2 = forms.CharField(widget=forms.PasswordInput(), label="Confirm password", min_length=10)
+    first_name = forms.CharField(max_length=30, label=gettext("First Name"))
+    last_name = forms.CharField(max_length=30, label=gettext("Last Name"))
+    address = forms.CharField(max_length=50, label=gettext("Address"))
+    city = forms.CharField(max_length=30, label=gettext("City"))
+    zip_code = forms.RegexField(regex=r'^\d{4}$', label=gettext("Zip Code"),
+                                error_messages={'invalid': gettext("Enter correct Zip Code")})
+    phone_number = forms.RegexField(regex=r'^\+41\d{9}$', label=gettext("Phone Number"), initial="+41",
+                                    error_messages={'invalid': gettext("Enter a valid phone number")})
+    email = forms.EmailField(label=gettext("E-Mail address"))
+    username = forms.RegexField(regex=r'^[a-zA-Z][a-zA-Z0-9]{1,19}$', label=gettext("Username"), error_messages={
+        'invalid': gettext("Usernames are without punctuation marks. It contains one to twenty characters. Please, don't use "
+                   "'ä', 'ö' and 'ü'")})
+    password1 = forms.CharField(widget=forms.PasswordInput(), label=gettext("Password"), min_length=10)
+    password2 = forms.CharField(widget=forms.PasswordInput(), label=gettext("Confirm Password"), min_length=10)
 
     def clean(self):
         """
@@ -39,21 +40,21 @@ class AddMemberForm(forms.Form):
         password2 = cleaned_data.get("password2")
 
         if password1 != password2:
-            self.add_error('password2', "Passwords do not match")
+            self.add_error('password2', gettext("Passwords do not match"))
 
 
 class EditMemberForm(forms.Form):
     """
     Form for editing Member, not all values can be edited
     """
-    first_name = forms.CharField(max_length=30, label="First Name")
-    last_name = forms.CharField(max_length=30, label="Last Name")
-    address = forms.CharField(max_length=50, label="Address")
-    city = forms.CharField(max_length=30, label="City")
-    zip_code = forms.RegexField(regex=r'^\d{4}$', label="Zip Code",
-                                error_messages={'invalid': 'Bitte eine vierstellige Postleitzahl eingeben!'})
-    phone_number = forms.RegexField(regex=r'^\+41\d{9}$', label="Phone Number", initial="+41",
-                                    error_messages={'invalid': 'Enter a valid phone number'})
+    first_name = forms.CharField(max_length=30, label=gettext("First Name"))
+    last_name = forms.CharField(max_length=30, label=gettext("Last Name"))
+    address = forms.CharField(max_length=50, label=gettext("Address"))
+    city = forms.CharField(max_length=30, label=gettext("City"))
+    zip_code = forms.RegexField(regex=r'^\d{4}$', label=gettext("Zip Code"),
+                                error_messages={'invalid': gettext("Enter correct Zip Code")})
+    phone_number = forms.RegexField(regex=r'^\+41\d{9}$', label=gettext("Phone Number"), initial="+41",
+                                    error_messages={'invalid': gettext("Enter a valid phone number")})
 
     def __init__(self, *args, **kwargs):
         super().__init__()
@@ -98,7 +99,7 @@ class SignUpForm(UserCreationForm):
     """
     first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
     last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
-    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
+    email = forms.EmailField(max_length=254, help_text=gettext("Enter a valid email address."))
 
     class Meta:
         """
@@ -132,10 +133,10 @@ class AddIceForm(forms.ModelForm):
         end_time = cleaned_data.get('end_time')
 
         if end_time <= start_time:
-            self.add_error('end_time', "Must be greater than start")
+            self.add_error('end_time', gettext("End Time can't be before Start Time"))
 
         if start_time.date() != end_time.date():
-            self.add_error('end_time', "Must be on the same day as start")
+            self.add_error('end_time', gettext("End Time must be on the same day as Start Time"))
 
         ice_slots = IceSlot.objects.filter(start_time__day=start_time.day,
                                            start_time__month=start_time.month,

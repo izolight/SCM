@@ -3,7 +3,7 @@
 {% load i18n %}
 {#This is the changing part of the title in the jumbotron#}
 {% block title %}
-    {% trans "Title Edit Member" %}
+    {% trans "Edit Member" %}
 {% endblock title %}
 
 {% block content %}
@@ -14,40 +14,40 @@
             {% csrf_token %}
 
             <div class="form-group">
-                <label for="Text">{% trans "Text Edit Member" %}</label>
+                <label for="Text">{% trans "Edit Member" %}</label>
             </div>
             <div class="form-group">
-                <label for="firstname">{% trans "Enter First Name" %}</label>
+                <label for="firstname">{% trans "First Name" %}</label>
                 {% render_field form.user.first_name class="form-control" %}
                 {{ form.user.first_name.errors }}
             </div>
             <div class="form-group">
-                <label for="lastname">{% trans "Enter Last Name" %}</label>
-                <input type="text" class="form-control" id="lastname" placeholder="Last Name" required>
+                <label for="lastname">{% trans "Last Name" %}</label>
+                <input type="text" class="form-control" id="lastname" placeholder="{% trans Last Name %}" required>
             </div>
             <div class="form-group">
-                <label for="address">{% trans "Enter Address" %}</label>
+                <label for="address">{% trans "Address" %}</label>
                 {% render_field form.address class="form-control" %}
             </div>
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group">
-                        <label for="postale code">{% trans "Enter Postale Code" %}</label>
-                        <input type="text" class="form-control" id="plz" placeholder="Postale Code" required
+                        <label for="postale code">{% trans "Zip Code" %}</label>
+                        <input type="text" class="form-control" id="plz" placeholder="{% trans "Zip Code" %}" required
                                pattern="[0-9]{4}"
-                               title="{% trans "Enter Postale Code Spezified" %}"
+                               title="{% trans "Enter correct Zip Code" %}"
                                inputmode="numeric">
                     </div>
                 </div>
                 <div class="col-sm-8">
                     <div class="form-group">
-                        <label for="city">{% trans "Enter City Name" %}</label>
+                        <label for="city">{% trans "City" %}</label>
                         <input type="text" class="form-control" id="city" placeholder="City" required>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="phonenumber">{% trans "Enter Phone Number" %}</label>
+                <label for="phonenumber">{% trans "Phone Number" %}</label>
                 <input type="tel" class="form-control" id="phonenumber" placeholder="Phone Number" required>
             </div>
 

@@ -3,7 +3,7 @@
 {% load i18n %}
 {#This is the changing part of the title in the jumbotron#}
 {% block title %}
-    {% trans "Title Payed Bill" %}
+    {% trans "New Invoice" %}
 
 {% endblock title %}
 
@@ -15,12 +15,12 @@
             {% csrf_token %}
 
             <div class="form-group">
-                <label for="title">{% trans "Title Add Invoice" %}</label>
+                <label for="title">{% trans "New Invoice" %}</label>
                 {% render_field form.title class="form-control" %}
                 {{ form.title.errors }}
             </div>
             <div class="form-group">
-                <label for="description">{% trans "Description Add Invoice" %}</label>
+                <label for="description">{% trans "Description" %}</label>
                 {% render_field form.description class="form-control" %}
                 {{ form.description.errors }}
             </div>
