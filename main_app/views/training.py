@@ -94,5 +94,4 @@ def delete_training(request, training_id):
     training.delete()
     messages.add_message(request, messages.SUCCESS,
                          gettext('Deleted training {training_id}').format(training_id=training_id))
-    return HttpResponse(status=204)
-    # return render(request, 'delete_training.html')
+    return redirect('list_trainings')
