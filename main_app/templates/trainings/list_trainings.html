@@ -24,7 +24,6 @@
                 <th>{% trans "Training" %}</th>
                 <th>{% trans "Trainer" %}</th>
                 <th>{% trans "Date" %}</th>
-                <th>{% trans "Amount" %}</th>
                 <th class="hidden-xs">&nbsp;</th>
                 <th class="hidden-xs">&nbsp;</th>
             </tr>
@@ -32,10 +31,9 @@
             <tbody>
             {% for t in trainings %}
                 <tr>
-                    <td>{{ t.description }}</td>
+                    <td><a href="{% url 'view_training' t.id %}">{{ t.title }}</a></td>
                     <td>{{ t.trainer.user.first_name }}</td>
-                    <td>{{ t.start_time }} {{ t.end_time }}</td>
-                    <td></td>
+                    <td>{{ t.start_time|date:"l d M Y" }} {{ t.start_time|date:"H:i" }}-{{ t.end_time|date:"H:i" }}</td>
                     <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs"
                                              href="{% url 'edit_training' t.id %}" role="button">{% trans "Edit" %}</a>
                     </td>

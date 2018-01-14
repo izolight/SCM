@@ -32,10 +32,10 @@
                 <tr>
                     <td>
                         {% for t in ice.trainings.all %}
-                            {{ t.title }} {{ t.start_time|date:"H:i" }} - {{ t.end_time|date:"H:i" }}<br>
+                            <a href="{% url 'view_training' t.id %}">{{ t.title }} {{ t.start_time|date:"H:i" }}-{{ t.end_time|date:"H:i" }}</a><br>
                         {% endfor %}
                     </td>
-                    <td>{{ ice.start_time }} - {{ ice.end_time }}</td>
+                    <td>{{ ice.start_time|date:"l d M Y" }} {{ ice.start_time|date:"H:i" }}-{{ ice.end_time|date:"H:i" }}</td>
                     <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs" href="{% url 'edit_ice' ice.id %}"
                                              role="button">{% trans "Edit" %}</a></td>
                     <td class="hidden-xs">
