@@ -17,7 +17,8 @@ def list_members(request):
     :param request: client request
     :return: page with a list of members
     """
-    members = Member.objects.all()
+    club = request.user.member.club
+    members = Member.objects.filter(club=club)
     return render(request, 'members/list_members.html', {
         'members': members
     })
@@ -52,8 +53,8 @@ def delete_member(request, member_id):
     """
     if request.method != 'POST':
         return HttpResponseBadRequest()
-    # TODO logic for deleting
-    member = get_object_or_404(Member, pk=member_id)
+    club = request.user.member.club
+    member = get_object_or_404(Member, pk=member_id, club=club)
     member.delete()
     messages.add_message(request, messages.SUCCESS, gettext('Deleted member {member_id}').format(member_id=member_id))
     return redirect('list_members')
@@ -114,6 +115,7 @@ def create_member(form):
     city = form.cleaned_data['city']
     zip_code = form.cleaned_data['zip_code']
     phone_number = form.cleaned_data['phone_number']
+    club = form.cleaned_data['club']
 
     user = User.objects.create_user(first_name=first_name,
                                     last_name=last_name,
@@ -130,6 +132,7 @@ def create_member(form):
         db_city.refresh_from_db()
     user.member.city = db_city
     user.member.phone_number = phone_number
+    user.member.club=club
     user.save()
 
     return user, password

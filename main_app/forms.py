@@ -28,6 +28,7 @@ class AddMemberForm(forms.Form):
     username = forms.RegexField(regex=r'^[a-zA-Z][a-zA-Z0-9]{1,19}$', label=gettext_lazy("Username"), error_messages={
         'invalid': gettext_lazy("Usernames are without punctuation marks. It contains one to twenty characters. Please, don't use "
                    "'ä', 'ö' and 'ü'")})
+    club = forms.ModelChoiceField(queryset=Club.objects.all())
     password1 = forms.CharField(widget=forms.PasswordInput(), label=gettext_lazy("Password"), min_length=10)
     password2 = forms.CharField(widget=forms.PasswordInput(), label=gettext_lazy("Confirm Password"), min_length=10)
 

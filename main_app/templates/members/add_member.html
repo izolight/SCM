@@ -61,6 +61,11 @@
                 {{ form.username.errors }}
             </div>
             <div class="form-group">
+                <label for="club">{% trans "Club" %}</label>
+                {% render_field form.club class="form-control" %}
+                {{ form.club.errors }}
+            </div>
+            <div class="form-group">
                 <label for="password1">{% trans "Password" %}</label>
                 {% render_field form.password1 class="form-control" %}
                 {{ form.password1.errors }}

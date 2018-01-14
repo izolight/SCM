@@ -27,6 +27,13 @@ class Club(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
 
+    def __str__(self):
+        """
+        Overwriting to string method (otherwise it returns just the whole object of Club)
+        :return: club name
+        """
+        return self.name
+
 
 class Member(models.Model):
     """
