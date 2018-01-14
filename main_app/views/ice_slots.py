@@ -70,8 +70,8 @@ def edit_ice(request, ice_slot_id):
             messages.add_message(request, messages.SUCCESS,
                                  gettext(
                                      'Changed time from {old_start}-{old_end} to {start}-{end} for slot {id}').format(
-                                     old_start=old_start, old_end=old_end, start=ice_slot.start_time,
-                                     end=ice_slot.end_time, id=ice_slot_id))
+                                     old_start=old_start.time(), old_end=old_end.time(), start=ice_slot.start_time.time(),
+                                     end=ice_slot.end_time.time(), id=ice_slot_id))
             return redirect('list_ices')
     else:
         form = AddIceForm(instance=ice_slot)
