@@ -192,10 +192,11 @@ class AddTrainingForm(forms.ModelForm):
         end_time = cleaned_data.get('end_time')
         validate_start_end(self, start_time, end_time, Training)
         ice_slot = cleaned_data.get("ice_slot")
-        if start_time < ice_slot.start_time or start_time >= ice_slot.end_time:
-            self.add_error('start_time', gettext_lazy("Start is not within the selected ice slot"))
-        if end_time <= ice_slot.start_time or end_time > ice_slot.end_time:
-            self.add_error('end_time', gettext_lazy("End is not within the selected ice slot"))
+        if ice_slot:
+            if start_time < ice_slot.start_time or start_time >= ice_slot.end_time:
+                self.add_error('start_time', gettext_lazy("Start is not within the selected ice slot"))
+            if end_time <= ice_slot.start_time or end_time > ice_slot.end_time:
+                self.add_error('end_time', gettext_lazy("End is not within the selected ice slot"))
 
     def __init__(self, *args, **kwargs):
         club = kwargs.pop('club')
