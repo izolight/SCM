@@ -88,7 +88,6 @@ def delete_ice(request, ice_slot_id):
     """
     if request.method != 'POST':
         return HttpResponseBadRequest()
-    # TODO logic for deleting
     ice_slot = get_object_or_404(IceSlot, pk=ice_slot_id)
     ice_slot.delete()
     messages.add_message(request, messages.SUCCESS, gettext('Deleted ice_slot {id}').format(id=ice_slot_id))

@@ -51,10 +51,14 @@
                             class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg"
                             href="{% url 'edit_ice' ice.id %}"
                             role="button">{% trans "Edit" %}</a></td>
-                    <td class="hidden-sm hidden-md hidden-lg"><a
-                            class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg"
-                            href="{% url 'delete_ice' ice.id %}"
-                            role="button">{% trans "Delete" %}</a></td>
+                    <td class="hidden-sm hidden-md hidden-lg">
+                        <form action="{% url 'delete_ice' ice.id %}" method="post" novalidate>
+                            {% csrf_token %}
+                            <input type="hidden" value="{{ ice.id }}">
+                            <button class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg"
+                                    type="Submit">{% trans "Delete" %}</button>
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>

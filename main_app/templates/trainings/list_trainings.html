@@ -39,17 +39,26 @@
                     <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs"
                                              href="{% url 'edit_training' t.id %}" role="button">{% trans "Edit" %}</a>
                     </td>
-                    <td class="hidden-xs"><a class="btn btn-default btn-sm hidden-xs"
-                                             href="{% url 'delete_training' t.id %}"
-                                             role="button">{% trans "Delete" %}</a></td>
+                    <td class="hidden-xs">
+                        <form action="{% url 'delete_training' t.id %}" method="post" novalidate>
+                            {% csrf_token %}
+                            <input type="hidden" value="{{ t.id }}">
+                            <button class="btn btn-default btn-sm hidden-xs" type="Submit">{% trans "Delete" %}</button>
+                        </form>
+                    </td>
                 </tr>
                 <tr class="hidden-sm hidden-md hidden-lg">
                     <td class="hidden-sm hidden-md hidden-lg"><a
                             class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg"
                             href="{% url 'edit_training' t.id %}" role="button">{% trans "Edit" %}</a></td>
-                    <td class="hidden-sm hidden-md hidden-lg"><a
-                            class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg"
-                            href="{% url 'delete_training' t.id %}" role="button">{% trans "Delete" %}</a></td>
+                    <td class="hidden-sm hidden-md hidden-lg">
+                        <form action="{% url 'delete_training' t.id %}" method="post" novalidate>
+                            {% csrf_token %}
+                            <input type="hidden" value="{{ t.id }}">
+                            <button class="btn btn-default btn-sm hidden-sm hidden-md hidden-lg"
+                                    type="Submit">{% trans "Delete" %}</button>
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>
