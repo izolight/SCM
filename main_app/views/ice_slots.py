@@ -66,8 +66,7 @@ def edit_ice(request, ice_slot_id):
         if form.is_valid():
             old_start = ice_slot.start_time
             old_end = ice_slot.end_time
-            ice_slot = form.save(commit=False)
-            ice_slot.save()
+            form.save()
             messages.add_message(request, messages.SUCCESS,
                                  gettext(
                                      'Changed time from {old_start}-{old_end} to {start}-{end} for slot {id}').format(
