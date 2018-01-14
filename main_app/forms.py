@@ -132,29 +132,39 @@ class AddIceForm(forms.ModelForm):
         Special check whether the ice slot is not overlapping nor that is has bad input
         such as start time is before end time
         """
-        cleaned_data = super(AddIceForm, self).clean()
-        start_time = cleaned_data.get('start_time')
-        end_time = cleaned_data.get('end_time')
+        validate_start_end(self, AddIceForm, IceSlot)
 
-        if end_time <= start_time:
-            self.add_error('end_time', gettext_lazy("End Time can't be before Start Time"))
 
-        if start_time.date() != end_time.date():
-            self.add_error('end_time', gettext_lazy("End Time must be on the same day as Start Time"))
+def validate_start_end(form, form_class, model):
+    """
+    Helper function that is used to check for overlapping times, and wrong start and end_dates
+    :param form: The form that should be checked
+    :param form_class: The class of the form (used to call super methods)
+    :param model: The model that belongs to the form
+    """
+    cleaned_data = super(form_class, form).clean()
+    start_time = cleaned_data.get('start_time')
+    end_time = cleaned_data.get('end_time')
 
-        ice_slots = IceSlot.objects.filter(start_time__day=start_time.day,
-                                           start_time__month=start_time.month,
-                                           start_time__year=start_time.year)
-        for i in ice_slots:
-            if i.id != self.instance.id:
-                if i.start_time <= start_time < i.end_time:
-                    self.add_error('start_time',
-                                   gettext_lazy("There is already a slot between {start: %H:%M} - {end: %H:%M}").format(
-                                       start=i.start_time, end=i.end_time))
-                if i.start_time < end_time <= i.end_time:
-                    self.add_error('end_time',
-                                   gettext_lazy("There is already a slot between {start: %H:%M} - {end: %H:%M}").format(
-                                       start=i.start_time, end=i.end_time))
+    if end_time <= start_time:
+        form.add_error('end_time', gettext_lazy("End Time can't be before Start Time"))
+
+    if start_time.date() != end_time.date():
+        form.add_error('end_time', gettext_lazy("End Time must be on the same day as Start Time"))
+
+    slots = model.objects.filter(start_time__day=start_time.day,
+                                 start_time__month=start_time.month,
+                                 start_time__year=start_time.year)
+    for s in slots:
+        if s.id != form.instance.id:
+            if s.start_time <= start_time < s.end_time:
+                form.add_error('start_time',
+                               gettext_lazy("There is already a slot between {start: %H:%M} - {end: %H:%M}").format(
+                                   start=s.start_time, end=s.end_time))
+            if s.start_time < end_time <= s.end_time:
+                form.add_error('end_time',
+                               gettext_lazy("There is already a slot between {start: %H:%M} - {end: %H:%M}").format(
+                                   start=s.start_time, end=s.end_time))
 
 
 class AddTrainingForm(forms.ModelForm):
@@ -171,6 +181,14 @@ class AddTrainingForm(forms.ModelForm):
         model = Training
         fields = ['title', 'description', 'start_time', 'end_time',
                   'members', 'trainer', 'ice_slot']
+
+    def clean(self):
+        """
+        Special check whether the training is not overlapping nor that is has bad input
+        such as start time is before end time
+        """
+        validate_start_end(self, AddTrainingForm, Training)
+
 
     def __init__(self, *args, **kwargs):
         club = kwargs.pop('club')

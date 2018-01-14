@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-14 13:16+0100\n"
+"POT-Creation-Date: 2018-01-14 14:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,15 +121,15 @@ msgstr ""
 msgid "Enter a valid email address."
 msgstr ""
 
-#: main_app/forms.py:140
+#: main_app/forms.py:150
 msgid "End Time can't be before Start Time"
 msgstr ""
 
-#: main_app/forms.py:143
+#: main_app/forms.py:153
 msgid "End Time must be on the same day as Start Time"
 msgstr ""
 
-#: main_app/forms.py:152 main_app/forms.py:156
+#: main_app/forms.py:162 main_app/forms.py:166
 msgid "There is already a slot between {start: %H:%M} - {end: %H:%M}"
 msgstr ""
 

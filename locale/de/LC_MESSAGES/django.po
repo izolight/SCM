@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-14 13:16+0100\n"
+"POT-Creation-Date: 2018-01-14 14:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -124,18 +124,17 @@ msgstr "Passwörter stimmen nicht überein"
 msgid "Enter a valid email address."
 msgstr "Bitte eine gültige E-Mail Adresse eingeben"
 
-#: main_app/forms.py:140
+#: main_app/forms.py:150
 msgid "End Time can't be before Start Time"
 msgstr "Endzeitpunkt darf nicht vor dem Startzeitpunkt sein."
 
-#: main_app/forms.py:143
+#: main_app/forms.py:153
 msgid "End Time must be on the same day as Start Time"
 msgstr "Endzeitpunkt muss am gleichen Tag wie der Startzeitpunkt sein."
 
-#: main_app/forms.py:152 main_app/forms.py:156
+#: main_app/forms.py:162 main_app/forms.py:166
 msgid "There is already a slot between {start: %H:%M} - {end: %H:%M}"
-msgstr ""
-"Zwischen {start: %H:%M} - {end: %H:%M} ist schon eine Eisbelegung vorhanden"
+msgstr "Zwischen {start: %H:%M} - {end: %H:%M} ist schon ein Slot vorhanden"
 
 #: main_app/templates/contact.html:6
 msgid "Contact"

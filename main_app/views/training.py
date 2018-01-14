@@ -60,7 +60,7 @@ def add_training(request):
             messages.add_message(request, messages.SUCCESS,
                                  gettext('Added training at {start} for club {club}').format(start=training.start_time,
                                                                                              club=training.club.name))
-        return redirect('list_trainings')
+            return redirect('list_trainings')
     else:
         form = AddTrainingForm(club=request.user.member.club)
     return render(request, 'trainings/add_training.html', {
