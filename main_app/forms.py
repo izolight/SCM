@@ -132,20 +132,20 @@ class AddIceForm(forms.ModelForm):
         Special check whether the ice slot is not overlapping nor that is has bad input
         such as start time is before end time
         """
-        validate_start_end(self, AddIceForm, IceSlot)
+        cleaned_data = super(AddIceForm, self).clean()
+        start_time = cleaned_data.get('start_time')
+        end_time = cleaned_data.get('end_time')
+        validate_start_end(self, start_time, end_time, IceSlot)
 
 
-def validate_start_end(form, form_class, model):
+def validate_start_end(form, start_time, end_time, model):
     """
     Helper function that is used to check for overlapping times, and wrong start and end_dates
     :param form: The form that should be checked
-    :param form_class: The class of the form (used to call super methods)
+    :param start_time: Beginning of the slot
+    :param end_time: End of the slot
     :param model: The model that belongs to the form
     """
-    cleaned_data = super(form_class, form).clean()
-    start_time = cleaned_data.get('start_time')
-    end_time = cleaned_data.get('end_time')
-
     if end_time <= start_time:
         form.add_error('end_time', gettext_lazy("End Time can't be before Start Time"))
 
@@ -187,8 +187,10 @@ class AddTrainingForm(forms.ModelForm):
         Special check whether the training is not overlapping nor that is has bad input
         such as start time is before end time
         """
-        validate_start_end(self, AddTrainingForm, Training)
-
+        cleaned_data = super(AddTrainingForm, self).clean()
+        start_time = cleaned_data.get('start_time')
+        end_time = cleaned_data.get('end_time')
+        validate_start_end(self, start_time, end_time, Training)
 
     def __init__(self, *args, **kwargs):
         club = kwargs.pop('club')
