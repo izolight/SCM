@@ -1,13 +1,14 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext
+from django.views.decorators.http import require_http_methods
 
 from main_app.forms import AddIceForm
 from main_app.models import IceSlot
 
 
+@require_http_methods(["GET"])
 @login_required()
 def list_ices(request):
     """
@@ -21,6 +22,7 @@ def list_ices(request):
     })
 
 
+@require_http_methods(["GET", "POST"])
 @login_required()
 def add_ice(request):
     """
@@ -49,6 +51,7 @@ def add_ice(request):
     })
 
 
+@require_http_methods(["GET", "POST"])
 @login_required()
 def edit_ice(request, ice_slot_id):
     """
@@ -78,6 +81,7 @@ def edit_ice(request, ice_slot_id):
     })
 
 
+@require_http_methods(["POST"])
 @login_required()
 def delete_ice(request, ice_slot_id):
     """
@@ -86,9 +90,8 @@ def delete_ice(request, ice_slot_id):
     :param ice_slot_id: id of to be deleted ice slot
     :return: success message and redirect to ice slot list or throws a error message
     """
-    if request.method != 'POST':
-        return HttpResponseBadRequest()
-    ice_slot = get_object_or_404(IceSlot, pk=ice_slot_id)
-    ice_slot.delete()
-    messages.add_message(request, messages.SUCCESS, gettext('Deleted ice_slot {id}').format(id=ice_slot_id))
-    return redirect('list_ices')
+    if request.method == 'POST':
+        ice_slot = get_object_or_404(IceSlot, pk=ice_slot_id)
+        ice_slot.delete()
+        messages.add_message(request, messages.SUCCESS, gettext('Deleted ice_slot {id}').format(id=ice_slot_id))
+        return redirect('list_ices')

@@ -1,13 +1,14 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseBadRequest, HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext
+from django.views.decorators.http import require_http_methods
 
 from main_app.forms import AddTrainingForm
 from main_app.models import Training
 
 
+@require_http_methods(["GET"])
 @login_required()
 def list_trainings(request):
     """
@@ -21,6 +22,7 @@ def list_trainings(request):
     })
 
 
+@require_http_methods(["GET"])
 @login_required()
 def view_training(request, training_id):
     """
@@ -33,6 +35,7 @@ def view_training(request, training_id):
     return render(request, 'trainings/view_training.html', {'training': training})
 
 
+@require_http_methods(["GET", "POST"])
 @login_required()
 def add_training(request):
     """
@@ -69,6 +72,7 @@ def add_training(request):
     })
 
 
+@require_http_methods(["GET", "POST"])
 @login_required()
 def edit_training(request, training_id):
     """
@@ -77,9 +81,20 @@ def edit_training(request, training_id):
     :param training_id: integer id of to be edited training
     :return: page with edit training mask
     """
-    return render(request, 'trainings/edit_training.html')
+    training = get_object_or_404(Training, pk=training_id)
+    if request.method == 'POST':
+        form = AddTrainingForm(request.POST, club=request.user.member.club, instance=training)
+        if form.is_valid():
+            form.save()
+            return redirect('list_trainings')
+    else:
+        form = AddTrainingForm(club=request.user.member.club, instance=training)
+    return render(request, 'trainings/add_training.html', {
+        'form': form
+    })
 
 
+@require_http_methods(["POST"])
 @login_required()
 def delete_training(request, training_id):
     """
@@ -88,11 +103,9 @@ def delete_training(request, training_id):
     :param training_id: integer id of to be deleted training
     :return: success or error message
     """
-    if request.method != 'POST':
-        return HttpResponseBadRequest()
-    # TODO logic for deleting
-    training = get_object_or_404(Training, pk=training_id)
-    training.delete()
-    messages.add_message(request, messages.SUCCESS,
-                         gettext('Deleted training {training_id}').format(training_id=training_id))
-    return redirect('list_trainings')
+    if request.method == 'POST':
+        training = get_object_or_404(Training, pk=training_id)
+        training.delete()
+        messages.add_message(request, messages.SUCCESS,
+                             gettext('Deleted training {training_id}').format(training_id=training_id))
+        return redirect('list_trainings')

@@ -2,14 +2,15 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.http import HttpResponseBadRequest, HttpResponseNotFound
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.translation import gettext
+from django.views.decorators.http import require_http_methods
 
 from main_app.forms import EditMemberForm, AddMemberForm
 from main_app.models import Member, City
 
 
+@require_http_methods(["GET"])
 @login_required()
 def list_members(request):
     """
@@ -24,6 +25,7 @@ def list_members(request):
     })
 
 
+@require_http_methods(["GET"])
 @login_required()
 def list_member(request, member_id):
     """
@@ -32,17 +34,13 @@ def list_member(request, member_id):
     :param member_id: database id of particular user
     :return: page with user details
     """
-    if request.method != 'GET':
-        return HttpResponseBadRequest()
-    # TODO logic for listing single member
-    member = Member.objects.get(pk=member_id)
-    if not member:
-        return HttpResponseNotFound()
+    member = get_object_or_404(Member, pk=member_id)
     return render(request, 'members/list_member.html', {
         'member': member
     })
 
 
+@require_http_methods(["POST"])
 @login_required()
 def delete_member(request, member_id):
     """
@@ -51,15 +49,16 @@ def delete_member(request, member_id):
     :param member_id: database id of particular user
     :return: Success message or a human readable error message
     """
-    if request.method != 'POST':
-        return HttpResponseBadRequest()
-    club = request.user.member.club
-    member = get_object_or_404(Member, pk=member_id, club=club)
-    member.delete()
-    messages.add_message(request, messages.SUCCESS, gettext('Deleted member {member_id}').format(member_id=member_id))
-    return redirect('list_members')
+    if request.method == 'POST':
+        club = request.user.member.club
+        member = get_object_or_404(Member, pk=member_id, club=club)
+        member.delete()
+        messages.add_message(request, messages.SUCCESS,
+                             gettext('Deleted member {member_id}').format(member_id=member_id))
+        return redirect('list_members')
 
 
+@require_http_methods(["GET", "POST"])
 @login_required()
 def edit_member(request, member_id):
     """
@@ -90,6 +89,7 @@ def edit_member(request, member_id):
     })
 
 
+@require_http_methods(["GET", "POST"])
 @login_required()
 def add_member(request):
     """
@@ -151,6 +151,7 @@ def check_for_city(city, zip_code):
     return db_city
 
 
+@require_http_methods(["GET", "POST"])
 def signup(request):
     """
     loads new "user for application" form

@@ -2,11 +2,13 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 from django.utils.translation import gettext
+from django.views.decorators.http import require_http_methods
 
 from main_app.forms import CreateInvoiceForm
 from main_app.models import Invoice
 
 
+@require_http_methods(["GET", "POST"])
 @login_required()
 def create_invoice(request):
     """
@@ -31,6 +33,7 @@ def create_invoice(request):
     })
 
 
+@require_http_methods(["GET"])
 @login_required()
 def list_invoices(request):
     """
@@ -44,6 +47,7 @@ def list_invoices(request):
     })
 
 
+@require_http_methods(["GET", "POST"])
 @login_required()
 def edit_invoice(request, invoice_id):
     """
