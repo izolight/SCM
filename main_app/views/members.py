@@ -72,9 +72,17 @@ def edit_member(request, member_id):
     if request.method == 'POST':
         form = EditMemberForm(request.POST, member=member)
         if form.is_valid():
+            if form.has_changed():
+                member.user.first_name = form.cleaned_data['first_name']
+                member.user.last_name = form.cleaned_data['last_name']
+                member.user.email = form.cleaned_data['email']
+                member.address = form.cleaned_data['address']
+                member.city = check_for_city(form.cleaned_data['city'], form.cleaned_data['zip_code'])
+                member.phone_number = form.cleaned_data['phone_number']
+                member.save()
             messages.add_message(request, messages.SUCCESS,
                                  gettext('Edited Member {member_id} successfully').format(member_id=member_id))
-        return redirect('list_members')
+            return redirect('list_members')
     else:
         form = EditMemberForm(member=member)
     return render(request, 'members/edit_member.html', {
@@ -106,36 +114,30 @@ def add_member(request):
 
 
 def create_member(form):
-    first_name = form.cleaned_data['first_name']
-    last_name = form.cleaned_data['last_name']
-    username = form.cleaned_data['username']
-    email = form.cleaned_data['email']
     password = form.cleaned_data['password1']
-    address = form.cleaned_data['address']
-    city = form.cleaned_data['city']
-    zip_code = form.cleaned_data['zip_code']
-    phone_number = form.cleaned_data['phone_number']
-    club = form.cleaned_data['club']
-
-    user = User.objects.create_user(first_name=first_name,
-                                    last_name=last_name,
-                                    username=username,
-                                    email=email,
+    user = User.objects.create_user(first_name=form.cleaned_data['first_name'],
+                                    last_name=form.cleaned_data['last_name'],
+                                    username=form.cleaned_data['username'],
+                                    email=form.cleaned_data['email'],
                                     password=password)
     user.save()
     user.refresh_from_db()
-    user.member.address = address
+    user.member.city = check_for_city(form.cleaned_data['city'], form.cleaned_data['zip_code'])
+    user.member.address = form.cleaned_data['address']
+    user.member.phone_number = form.cleaned_data['phone_number']
+    user.member.club = form.cleaned_data['club']
+    user.save()
+
+    return user, password
+
+
+def check_for_city(city, zip_code):
     db_city = City.objects.filter(name=city).filter(zip_code=zip_code).first()
     if db_city is None:
         db_city = City.objects.create(name=city, zip_code=zip_code)
         db_city.save()
         db_city.refresh_from_db()
-    user.member.city = db_city
-    user.member.phone_number = phone_number
-    user.member.club=club
-    user.save()
-
-    return user, password
+    return db_city
 
 
 def signup(request):

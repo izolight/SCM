@@ -57,16 +57,18 @@ class EditMemberForm(forms.Form):
                                 error_messages={'invalid': gettext_lazy("Enter correct Zip Code")})
     phone_number = forms.RegexField(regex=r'^\+41\d{9}$', label=gettext_lazy("Phone Number"), initial="+41",
                                     error_messages={'invalid': gettext_lazy("Enter a valid phone number")})
+    email = forms.EmailField(label=gettext_lazy("E-Mail address"))
 
     def __init__(self, *args, **kwargs):
-        super().__init__()
-        member = kwargs['member']
-        self.first_name = member.user.first_name
-        self.last_name = member.user.last_name
-        self.address = member.address
-        self.city = member.city.name
-        self.zip_code = member.city.zip_code
-        self.phone_number = member.phone_number
+        member = kwargs.pop('member')
+        super().__init__(*args, **kwargs)
+        self.initial["first_name"] = member.user.first_name
+        self.initial["last_name"] = member.user.last_name
+        self.initial["address"] = member.address
+        self.initial["city"] = member.city.name
+        self.initial["zip_code"] = member.city.zip_code
+        self.initial["phone_number"] = member.phone_number
+        self.initial["email"] = member.user.email
 
 
 class CreateInvoiceForm(forms.ModelForm):

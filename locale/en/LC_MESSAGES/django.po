@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-14 12:10+0100\n"
+"POT-Creation-Date: 2018-01-14 13:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,34 +46,32 @@ msgstr ""
 #: main_app/forms.py:21 main_app/forms.py:54
 #: main_app/templates/create_account.html:30
 #: main_app/templates/members/add_member.html:30
-#: main_app/templates/members/edit_member.html:29
+#: main_app/templates/members/edit_member.html:30
 msgid "Address"
 msgstr ""
 
 #: main_app/forms.py:22 main_app/forms.py:55
 #: main_app/templates/create_account.html:42
 #: main_app/templates/members/add_member.html:42
-#: main_app/templates/members/edit_member.html:44
+#: main_app/templates/members/edit_member.html:42
 msgid "City"
 msgstr ""
 
 #: main_app/forms.py:23 main_app/forms.py:56
 #: main_app/templates/create_account.html:37
 #: main_app/templates/members/add_member.html:37
-#: main_app/templates/members/edit_member.html:35
-#: main_app/templates/members/edit_member.html:36
+#: main_app/templates/members/edit_member.html:37
 msgid "Zip Code"
 msgstr ""
 
 #: main_app/forms.py:24 main_app/forms.py:57 main_app/models.py:18
-#: main_app/templates/members/edit_member.html:38
 msgid "Enter correct Zip Code"
 msgstr ""
 
 #: main_app/forms.py:25 main_app/forms.py:58
 #: main_app/templates/create_account.html:49
 #: main_app/templates/members/add_member.html:49
-#: main_app/templates/members/edit_member.html:50
+#: main_app/templates/members/edit_member.html:49
 msgid "Phone Number"
 msgstr ""
 
@@ -81,9 +79,10 @@ msgstr ""
 msgid "Enter a valid phone number"
 msgstr ""
 
-#: main_app/forms.py:27 main_app/templates/contact.html:21
+#: main_app/forms.py:27 main_app/forms.py:60 main_app/templates/contact.html:21
 #: main_app/templates/create_account.html:54
 #: main_app/templates/members/add_member.html:54
+#: main_app/templates/members/edit_member.html:54
 #: main_app/templates/registration/password_reset_form.html:16
 msgid "E-Mail address"
 msgstr ""
@@ -118,19 +117,19 @@ msgstr ""
 msgid "Passwords do not match"
 msgstr ""
 
-#: main_app/forms.py:104
+#: main_app/forms.py:106
 msgid "Enter a valid email address."
 msgstr ""
 
-#: main_app/forms.py:138
+#: main_app/forms.py:140
 msgid "End Time can't be before Start Time"
 msgstr ""
 
-#: main_app/forms.py:141
+#: main_app/forms.py:143
 msgid "End Time must be on the same day as Start Time"
 msgstr ""
 
-#: main_app/forms.py:150 main_app/forms.py:154
+#: main_app/forms.py:152 main_app/forms.py:156
 msgid "There is already a slot between {start: %H:%M} - {end: %H:%M}"
 msgstr ""
 
@@ -160,7 +159,7 @@ msgstr ""
 #: main_app/templates/ice_slots/edit_ice.html:33
 #: main_app/templates/invoices/create_invoice.html:43
 #: main_app/templates/members/add_member.html:79
-#: main_app/templates/members/edit_member.html:54
+#: main_app/templates/members/edit_member.html:59
 #: main_app/templates/registration/password_reset_form.html:26
 #: main_app/templates/trainings/add_training.html:52
 #: main_app/templates/trainings/edit_training.html:46
@@ -171,9 +170,9 @@ msgstr ""
 #: main_app/templates/ice_slots/add_ice.html:30
 #: main_app/templates/ice_slots/delete_ice.html:17
 #: main_app/templates/invoices/create_invoice.html:44
-#: main_app/templates/members/add_member.html:82
+#: main_app/templates/members/add_member.html:81
 #: main_app/templates/members/delete_member.html:17
-#: main_app/templates/members/edit_member.html:55
+#: main_app/templates/members/edit_member.html:61
 #: main_app/templates/trainings/add_training.html:53
 #: main_app/templates/trainings/delete_training.html:17
 #: main_app/templates/trainings/edit_training.html:47
@@ -499,12 +498,12 @@ msgstr ""
 msgid "Deleted member {member_id}"
 msgstr ""
 
-#: main_app/views/members.py:76
+#: main_app/views/members.py:84
 #, python-brace-format
 msgid "Edited Member {member_id} successfully"
 msgstr ""
 
-#: main_app/views/members.py:98
+#: main_app/views/members.py:106
 #, python-brace-format
 msgid "Added member {first_name} {last_name}"
 msgstr ""
