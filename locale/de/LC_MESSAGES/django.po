@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-14 14:05+0100\n"
+"POT-Creation-Date: 2018-01-14 15:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -136,6 +136,14 @@ msgstr "Endzeitpunkt muss am gleichen Tag wie der Startzeitpunkt sein."
 msgid "There is already a slot between {start: %H:%M} - {end: %H:%M}"
 msgstr "Zwischen {start: %H:%M} - {end: %H:%M} ist schon ein Slot vorhanden"
 
+#: main_app/forms.py:197
+msgid "Start is not within the selected ice slot"
+msgstr ""
+
+#: main_app/forms.py:199
+msgid "End is not within the selected ice slot"
+msgstr ""
+
 #: main_app/templates/contact.html:6
 msgid "Contact"
 msgstr "Kontakt"
@@ -208,14 +216,14 @@ msgstr "Eisbelegung löschen"
 
 #: main_app/templates/ice_slots/delete_ice.html:16
 #: main_app/templates/ice_slots/edit_ice.html:34
-#: main_app/templates/ice_slots/list_ices.html:51
-#: main_app/templates/ice_slots/list_ices.html:63
+#: main_app/templates/ice_slots/list_ices.html:45
+#: main_app/templates/ice_slots/list_ices.html:59
 #: main_app/templates/members/delete_member.html:16
 #: main_app/templates/members/list_members.html:45
 #: main_app/templates/members/list_members.html:58
 #: main_app/templates/trainings/delete_training.html:16
 #: main_app/templates/trainings/list_trainings.html:44
-#: main_app/templates/trainings/list_trainings.html:52
+#: main_app/templates/trainings/list_trainings.html:57
 msgid "Delete"
 msgstr "Löschen"
 
@@ -236,17 +244,18 @@ msgid "Training"
 msgstr ""
 
 #: main_app/templates/ice_slots/edit_ice.html:23
-#: main_app/templates/ice_slots/list_ices.html:25
 #: main_app/templates/trainings/add_training.html:43
 #: main_app/templates/trainings/edit_training.html:23
 #: main_app/templates/trainings/list_trainings.html:25
+#: main_app/templates/trainings/view_training.html:19
 msgid "Trainer"
 msgstr ""
 
 #: main_app/templates/ice_slots/edit_ice.html:27
-#: main_app/templates/ice_slots/list_ices.html:26
+#: main_app/templates/ice_slots/list_ices.html:25
 #: main_app/templates/trainings/edit_training.html:27
 #: main_app/templates/trainings/list_trainings.html:26
+#: main_app/templates/trainings/view_training.html:11
 msgid "Date"
 msgstr "Datum"
 
@@ -258,12 +267,12 @@ msgstr "Eisbelegungen anzeigen"
 msgid "Here is a list for the ice reservations"
 msgstr "Hier ist eine Übersicht über den Eisbelegungsplan:"
 
-#: main_app/templates/ice_slots/list_ices.html:46
-#: main_app/templates/ice_slots/list_ices.html:59
+#: main_app/templates/ice_slots/list_ices.html:40
+#: main_app/templates/ice_slots/list_ices.html:53
 #: main_app/templates/members/list_members.html:39
 #: main_app/templates/members/list_members.html:52
-#: main_app/templates/trainings/list_trainings.html:40
-#: main_app/templates/trainings/list_trainings.html:49
+#: main_app/templates/trainings/list_trainings.html:38
+#: main_app/templates/trainings/list_trainings.html:51
 msgid "Edit"
 msgstr "Bearbeiten"
 
@@ -299,11 +308,11 @@ msgstr "Neue Rechnung"
 
 #: main_app/templates/invoices/create_invoice.html:23
 #: main_app/templates/trainings/add_training.html:23
+#: main_app/templates/trainings/view_training.html:34
 msgid "Description"
 msgstr "Beschreibung"
 
 #: main_app/templates/invoices/create_invoice.html:28
-#: main_app/templates/trainings/list_trainings.html:27
 msgid "Amount"
 msgstr "Betrag"
 
@@ -487,12 +496,25 @@ msgid "Please enter the new data for this training"
 msgstr "Bitte tragen Sie die Daten für das korrigierte Training ein"
 
 #: main_app/templates/trainings/list_trainings.html:6
+#: main_app/templates/trainings/view_training.html:4
 msgid "Training overview"
 msgstr "Trainingsübersicht"
 
 #: main_app/templates/trainings/list_trainings.html:12
 msgid "Here is a list of all trainings"
 msgstr "Hier sehen Sie eine Übersicht über die geplanten Trainings"
+
+#: main_app/templates/trainings/view_training.html:15
+msgid "Time"
+msgstr "Zeit"
+
+#: main_app/templates/trainings/view_training.html:23
+msgid "Participants"
+msgstr "Teilnehmer"
+
+#: main_app/templates/trainings/view_training.html:29
+msgid "unregister"
+msgstr "abmelden"
 
 #: main_app/views/ice_slots.py:42
 #, python-brace-format
@@ -506,7 +528,7 @@ msgstr ""
 "Zeit von {old_start}-{old_end} auf {start}-{end} für Eisbelegung {id} "
 "geändert"
 
-#: main_app/views/ice_slots.py:94
+#: main_app/views/ice_slots.py:93
 #, python-brace-format
 msgid "Deleted ice_slot {id}"
 msgstr "Eisbelegung {id} gelöscht"
@@ -531,12 +553,12 @@ msgstr "Mitglied {member_id} erfolgreich bearbeitet"
 msgid "Added member {first_name} {last_name}"
 msgstr "Mitglied {first_name} {last_name} hinzugefügt"
 
-#: main_app/views/training.py:61
+#: main_app/views/training.py:62
 #, python-brace-format
 msgid "Added training at {start} for club {club}"
 msgstr "Training um {start} für Club {club} hinzugefügt"
 
-#: main_app/views/training.py:96
+#: main_app/views/training.py:97
 #, python-brace-format
 msgid "Deleted training {training_id}"
 msgstr "Training {training_id} gelöscht"
