@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-13 13:54+0100\n"
+"POT-Creation-Date: 2018-01-14 12:03+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: main_app/forms.py:19 main_app/forms.py:50 main_app/templates/contact.html:19
+#: main_app/forms.py:19 main_app/forms.py:51 main_app/templates/contact.html:19
 #: main_app/templates/create_account.html:20
 #: main_app/templates/invoices/edit_invoice.html:18
 #: main_app/templates/members/add_member.html:20
@@ -34,7 +34,7 @@ msgstr ""
 msgid "First Name"
 msgstr ""
 
-#: main_app/forms.py:20 main_app/forms.py:51 main_app/templates/contact.html:20
+#: main_app/forms.py:20 main_app/forms.py:52 main_app/templates/contact.html:20
 #: main_app/templates/create_account.html:25
 #: main_app/templates/invoices/edit_invoice.html:19
 #: main_app/templates/members/add_member.html:25
@@ -43,21 +43,21 @@ msgstr ""
 msgid "Last Name"
 msgstr ""
 
-#: main_app/forms.py:21 main_app/forms.py:52
+#: main_app/forms.py:21 main_app/forms.py:53
 #: main_app/templates/create_account.html:30
 #: main_app/templates/members/add_member.html:30
 #: main_app/templates/members/edit_member.html:29
 msgid "Address"
 msgstr ""
 
-#: main_app/forms.py:22 main_app/forms.py:53
+#: main_app/forms.py:22 main_app/forms.py:54
 #: main_app/templates/create_account.html:42
 #: main_app/templates/members/add_member.html:42
 #: main_app/templates/members/edit_member.html:44
 msgid "City"
 msgstr ""
 
-#: main_app/forms.py:23 main_app/forms.py:54
+#: main_app/forms.py:23 main_app/forms.py:55
 #: main_app/templates/create_account.html:37
 #: main_app/templates/members/add_member.html:37
 #: main_app/templates/members/edit_member.html:35
@@ -65,19 +65,19 @@ msgstr ""
 msgid "Zip Code"
 msgstr ""
 
-#: main_app/forms.py:24 main_app/forms.py:55 main_app/models.py:18
+#: main_app/forms.py:24 main_app/forms.py:56 main_app/models.py:18
 #: main_app/templates/members/edit_member.html:38
 msgid "Enter correct Zip Code"
 msgstr ""
 
-#: main_app/forms.py:25 main_app/forms.py:56
+#: main_app/forms.py:25 main_app/forms.py:57
 #: main_app/templates/create_account.html:49
 #: main_app/templates/members/add_member.html:49
 #: main_app/templates/members/edit_member.html:50
 msgid "Phone Number"
 msgstr ""
 
-#: main_app/forms.py:26 main_app/forms.py:57 main_app/models.py:37
+#: main_app/forms.py:26 main_app/forms.py:58 main_app/models.py:44
 msgid "Enter a valid phone number"
 msgstr ""
 
@@ -102,31 +102,31 @@ msgid ""
 "characters. Please, don't use 'ä', 'ö' and 'ü'"
 msgstr ""
 
-#: main_app/forms.py:31 main_app/templates/create_account.html:64
-#: main_app/templates/members/add_member.html:64
+#: main_app/forms.py:32 main_app/templates/create_account.html:64
+#: main_app/templates/members/add_member.html:69
 #: main_app/templates/registration/login.html:33
 msgid "Password"
 msgstr ""
 
-#: main_app/forms.py:32 main_app/templates/create_account.html:69
-#: main_app/templates/members/add_member.html:69
+#: main_app/forms.py:33 main_app/templates/create_account.html:69
+#: main_app/templates/members/add_member.html:74
 #: main_app/templates/registration/password_reset_confirm.html:28
 msgid "Confirm Password"
 msgstr ""
 
-#: main_app/forms.py:43 main_app/templates/create_account.html:84
+#: main_app/forms.py:44 main_app/templates/create_account.html:84
 msgid "Passwords do not match"
 msgstr ""
 
-#: main_app/forms.py:102
+#: main_app/forms.py:103
 msgid "Enter a valid email address."
 msgstr ""
 
-#: main_app/forms.py:136
+#: main_app/forms.py:137
 msgid "End Time can't be before Start Time"
 msgstr ""
 
-#: main_app/forms.py:139
+#: main_app/forms.py:140
 msgid "End Time must be on the same day as Start Time"
 msgstr ""
 
@@ -155,7 +155,7 @@ msgstr ""
 #: main_app/templates/ice_slots/add_ice.html:29
 #: main_app/templates/ice_slots/edit_ice.html:33
 #: main_app/templates/invoices/create_invoice.html:43
-#: main_app/templates/members/add_member.html:74
+#: main_app/templates/members/add_member.html:79
 #: main_app/templates/members/edit_member.html:54
 #: main_app/templates/registration/password_reset_form.html:26
 #: main_app/templates/trainings/add_training.html:52
@@ -167,7 +167,7 @@ msgstr ""
 #: main_app/templates/ice_slots/add_ice.html:30
 #: main_app/templates/ice_slots/delete_ice.html:17
 #: main_app/templates/invoices/create_invoice.html:44
-#: main_app/templates/members/add_member.html:77
+#: main_app/templates/members/add_member.html:82
 #: main_app/templates/members/delete_member.html:17
 #: main_app/templates/members/edit_member.html:55
 #: main_app/templates/trainings/add_training.html:53
@@ -336,6 +336,10 @@ msgstr ""
 msgid "Memberlist"
 msgstr ""
 
+#: main_app/templates/members/add_member.html:64
+msgid "Club"
+msgstr ""
+
 #: main_app/templates/members/delete_member.html:6
 #: main_app/templates/members/delete_member.html:11
 msgid "Delete Member"
@@ -486,17 +490,17 @@ msgstr ""
 msgid "Created {invoice_title} for club {club}"
 msgstr ""
 
-#: main_app/views/members.py:58
+#: main_app/views/members.py:59
 #, python-brace-format
 msgid "Deleted member {member_id}"
 msgstr ""
 
-#: main_app/views/members.py:75
+#: main_app/views/members.py:76
 #, python-brace-format
 msgid "Edited Member {member_id} successfully"
 msgstr ""
 
-#: main_app/views/members.py:97
+#: main_app/views/members.py:98
 #, python-brace-format
 msgid "Added member {first_name} {last_name}"
 msgstr ""
