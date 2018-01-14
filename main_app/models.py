@@ -101,6 +101,9 @@ class IceSlot(models.Model):
     end_time = models.DateTimeField()
     club = models.ForeignKey(Club, on_delete=models.CASCADE, null=True, related_name="ice_slots")
 
+    class Meta:
+        ordering = ['start_time']
+
     def __str__(self):
         """
         Overwriting to string method (otherwise it returns just the whole object of IceSlot)
@@ -122,6 +125,9 @@ class Training(models.Model):
     trainer = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, related_name="trainings_as_trainer")
     club = models.ForeignKey(Club, on_delete=models.CASCADE, null=True, related_name="trainings")
     ice_slot = models.ForeignKey(IceSlot, on_delete=models.SET_NULL, null=True, related_name="trainings")
+
+    class Meta:
+        ordering = ['start_time']
 
     def __str__(self):
         """
