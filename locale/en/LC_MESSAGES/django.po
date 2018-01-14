@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-14 15:36+0100\n"
+"POT-Creation-Date: 2018-01-14 15:55+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -219,8 +219,8 @@ msgstr ""
 #: main_app/templates/members/list_members.html:45
 #: main_app/templates/members/list_members.html:58
 #: main_app/templates/trainings/delete_training.html:16
-#: main_app/templates/trainings/list_trainings.html:44
-#: main_app/templates/trainings/list_trainings.html:57
+#: main_app/templates/trainings/list_trainings.html:46
+#: main_app/templates/trainings/list_trainings.html:59
 msgid "Delete"
 msgstr ""
 
@@ -268,8 +268,8 @@ msgstr ""
 #: main_app/templates/ice_slots/list_ices.html:53
 #: main_app/templates/members/list_members.html:39
 #: main_app/templates/members/list_members.html:52
-#: main_app/templates/trainings/list_trainings.html:38
-#: main_app/templates/trainings/list_trainings.html:51
+#: main_app/templates/trainings/list_trainings.html:40
+#: main_app/templates/trainings/list_trainings.html:53
 msgid "Edit"
 msgstr ""
 
@@ -483,6 +483,10 @@ msgstr ""
 msgid "Here is a list of all trainings"
 msgstr ""
 
+#: main_app/templates/trainings/list_trainings.html:27
+msgid "Number of participants"
+msgstr ""
+
 #: main_app/templates/trainings/view_training.html:15
 msgid "Time"
 msgstr ""
@@ -495,32 +499,32 @@ msgstr ""
 msgid "unregister"
 msgstr ""
 
-#: main_app/views/ice_slots.py:42
+#: main_app/views/ice_slots.py:44
 #, python-brace-format
 msgid "Added ice-slot at {start} for club {club}"
 msgstr ""
 
-#: main_app/views/ice_slots.py:70
+#: main_app/views/ice_slots.py:72
 #, python-brace-format
 msgid "Changed time from {old_start}-{old_end} to {start}-{end} for slot {id}"
 msgstr ""
 
-#: main_app/views/ice_slots.py:93
+#: main_app/views/ice_slots.py:95
 #, python-brace-format
 msgid "Deleted ice_slot {id}"
 msgstr ""
 
-#: main_app/views/invoices.py:24
+#: main_app/views/invoices.py:26
 #, python-brace-format
 msgid "Created {invoice_title} for club {club}"
 msgstr ""
 
-#: main_app/views/members.py:59
+#: main_app/views/members.py:57
 #, python-brace-format
 msgid "Deleted member {member_id}"
 msgstr ""
 
-#: main_app/views/members.py:84
+#: main_app/views/members.py:83
 #, python-brace-format
 msgid "Edited Member {member_id} successfully"
 msgstr ""
@@ -530,12 +534,12 @@ msgstr ""
 msgid "Added member {first_name} {last_name}"
 msgstr ""
 
-#: main_app/views/training.py:62
+#: main_app/views/training.py:65
 #, python-brace-format
 msgid "Added training at {start} for club {club}"
 msgstr ""
 
-#: main_app/views/training.py:97
+#: main_app/views/training.py:110
 #, python-brace-format
 msgid "Deleted training {training_id}"
 msgstr ""
