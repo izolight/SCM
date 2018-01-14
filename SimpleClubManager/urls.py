@@ -48,6 +48,7 @@ urlpatterns += i18n_patterns(
     url(r'^impressum/', views.impressum, name='impressum'),
     url(r'^accounts/create/', views.create_account, name='create_account'),
     url(r'^trainings/$', views.list_trainings, name='list_trainings'),
+    url(r'^trainings/(?P<training_id>[0-9]+)/$', views.view_training, name='view_training'),
     url(r'^trainings/add/$', views.add_training, name='add_training'),
     url(r'^trainings/(?P<training_id>[0-9]+)/edit/$', views.edit_training, name='edit_training'),
     url(r'^trainings/(?P<training_id>[0-9]+)/delete/$', views.delete_training, name='delete_training'),

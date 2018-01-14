@@ -29,7 +29,8 @@ def view_training(request, training_id):
     :param training_id: integer id of to be viewed training
     :return: page displaying one training
     """
-    return render(request, 'trainings/view_training.html')
+    training = get_object_or_404(Training, pk=training_id)
+    return render(request, 'trainings/view_training.html', {'training': training})
 
 
 @login_required()

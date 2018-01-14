@@ -1,36 +1,39 @@
 {% extends "main/base.html" %}
 {% load i18n %}
 {% block title %}
-    Trainingsverwaltung
+    {% trans "View Training" %}
 {% endblock title %}
 
 {% block content %}
-    <h3>Trainingsansicht</h3>
-    <div class="row">
-        <div class="col-sm-3">Nr</div>
-        <div class="col-sm-3">1</div>
+    <div class="col-sm-7">
+        <h3>{{ training.title }}</h3>
+        <div class="row">
+            <div class="col-sm-4">{% trans "Date" %}</div>
+            <div class="col-sm-4">{{ training.start_time|date:"l d M Y" }}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">{% trans "Time" %}</div>
+            <div class="col-sm-4">{{ training.start_time|date:"H:i" }}-{{ training.end_time|date:"H:i" }}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">{% trans "Trainer" %}</div>
+            <div class="col-sm-4">{{ training.trainer }}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">{% trans "Participants" %}</div>
+        </div>
+        <div class="row">
+            <ul>
+                {% for m in training.members.all %}
+                    <li>{{ m }} {% if m == user.member %}
+                        <a class="btn btn-default btn-sm" href="#" role="button">{% trans "unregister" %}</a>{% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <h4>{% trans "Description" %}</h4>
+        <div class="row">
+            <div class="col-sm-12">{{ training.description }}</div>
+        </div>
     </div>
-    <div class="row">
-        <div class="col-sm-3">Training</div>
-        <div class="col-sm-3">Junior 1</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-3">Trainer</div>
-        <div class="col-sm-3">Sebastian</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-3">Datum</div>
-        <div class="col-sm-3">28.11.2017 - 09:00</div>
-    </div>
-    <h4>Spieler</h4>
-    <ul>
-        <li>Stefan</li>
-        <li>Tobias</li>
-        <li>Michael <a class="btn btn-default btn-sm" href="#" role="button">Abmelden</a></li>
-        <li>Gregor</li>
-        <li>etwas1</li>
-        <li>etwas2</li>
-        <li>jemand1</li>
-        <li>jemand2</li>
-    </ul>
 {% endblock content %}
