@@ -22,7 +22,6 @@
             <thead>
             <tr>
                 <th>{% trans "Training" %}</th>
-                <th>{% trans "Trainer" %}</th>
                 <th>{% trans "Date" %}</th>
                 <th class="hidden-xs">&nbsp;</th>
                 <th class="hidden-xs">&nbsp;</th>
@@ -33,12 +32,7 @@
                 <tr>
                     <td>
                         {% for t in ice.trainings.all %}
-                            {{ t.title }}<br>
-                        {% endfor %}
-                    </td>
-                    <td>
-                        {% for t in ice.trainings.all %}
-                            {{ t.trainer.user.first_name }}<br>
+                            {{ t.title }} {{ t.start_time|date:"H:i" }} - {{ t.end_time|date:"H:i" }}<br>
                         {% endfor %}
                     </td>
                     <td>{{ ice.start_time }} - {{ ice.end_time }}</td>
