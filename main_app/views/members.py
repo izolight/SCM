@@ -114,6 +114,11 @@ def add_member(request):
 
 
 def create_member(form):
+    """
+    Helper function that is used by the signup and add_member form
+    :param form: the form from the request
+    :return: user object and password
+    """
     password = form.cleaned_data['password1']
     user = User.objects.create_user(first_name=form.cleaned_data['first_name'],
                                     last_name=form.cleaned_data['last_name'],
@@ -132,6 +137,12 @@ def create_member(form):
 
 
 def check_for_city(city, zip_code):
+    """
+    Helper function to check if a city exists in the db and creates it if necessary
+    :param city: cityname
+    :param zip_code: corresponding zip code
+    :return: city object
+    """
     db_city = City.objects.filter(name=city).filter(zip_code=zip_code).first()
     if db_city is None:
         db_city = City.objects.create(name=city, zip_code=zip_code)
