@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext
 from django.views.decorators.http import require_http_methods
+from django.http import HttpResponse
+from django.core import serializers
 
 from main_app.forms import AddIceForm
 from main_app.models import IceSlot
@@ -94,3 +96,12 @@ def delete_ice(request, ice_slot_id):
         ice_slot.delete()
         messages.add_message(request, messages.SUCCESS, gettext('Deleted ice_slot {id}').format(id=ice_slot_id))
         return redirect('list_ices')
+
+
+@require_http_methods(["GET"])
+@login_required()
+def view_ice(request, ice_slot_id):
+    ice_slot = get_object_or_404(IceSlot, pk=ice_slot_id)
+    trainings = ice_slot.trainings.all()
+    data = serializers.serialize('json', trainings, fields=('title', 'start_time', 'end_time'))
+    return HttpResponse(data, content_type="application/json")

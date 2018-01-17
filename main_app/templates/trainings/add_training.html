@@ -40,6 +40,10 @@
                 {{ form.ice_slot.errors }}
             </div>
             <div class="form-group">
+                <ul id="trainings">
+                </ul>
+            </div>
+            <div class="form-group">
                 <label for="trainer">{% trans "Trainer" %}</label>
                 {% render_field form.trainer class="form-control" %}
                 {{ form.trainer.errors }}
@@ -80,6 +84,20 @@
                         "drops": "down",
                     }
                 );
+                $('#id_ice_slot').change(function () {
+                    var id=$(this).find(':selected')[0].value;
+                    $.ajax({
+                        type: 'GET',
+                        url: '/ice_slots/' + id,
+                        success: function (data) {
+                            var trainings = $('#trainings');
+                            trainings.empty();
+                            for (var i = 0; i < data.length; i++) {
+                                 trainings.append('<li>' + data[i].fields['title'] + ' ' + data[i].fields.start_time + '-' + data[i].fields.end_time + '</li>');
+                            }
+                        }
+                    })
+                });
             </script>
         </form>
     </div>

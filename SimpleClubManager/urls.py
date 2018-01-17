@@ -42,6 +42,7 @@ urlpatterns += i18n_patterns(
     url(r'^invoices/create/$', views.create_invoice, name='create_invoice'),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^ice_slots/$', views.list_ices, name='list_ices'),
+    url(r'^ice_slots/(?P<ice_slot_id>[0-9]+)/$', views.view_ice, name='view_ice'),
     url(r'^ice_slots/add/$', views.add_ice, name='add_ice'),
     url(r'^ice_slots/(?P<ice_slot_id>[0-9]+)/edit/$', views.edit_ice, name='edit_ice'),
     url(r'^ice_slots/(?P<ice_slot_id>[0-9]+)/delete/$', views.delete_ice, name='delete_ice'),

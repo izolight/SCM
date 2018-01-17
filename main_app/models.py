@@ -109,7 +109,7 @@ class IceSlot(models.Model):
         Overwriting to string method (otherwise it returns just the whole object of IceSlot)
         :return: string in format: ice slot start time and ice slot end time
         """
-        return f'{self.start_time} - {self.end_time}'
+        return f'{self.start_time.strftime("%Y-%m-%Y")} {self.start_time.strftime("%H:%M")} - {self.end_time.strftime("%H:%M")}'
 
 
 class Training(models.Model):
@@ -134,7 +134,7 @@ class Training(models.Model):
         Overwriting to string method (otherwise it returns just the whole object of Training)
         :return: title of training string
         """
-        return self.title
+        return f'{self.title}: {self.start_time.strftime("%Y-%m-%Y")} {self.start_time.strftime("%H:%M")} - {self.end_time.strftime("%H:%M")}'
 
 
 class SubscriptionType(models.Model):
