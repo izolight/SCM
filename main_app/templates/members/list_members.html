@@ -39,11 +39,13 @@
                                              role="button">{% trans "Edit" %}</a>
                     </td>
                     <td class="hidden-xs">
+                        {% if member != user.member %}
                         <form method="post" action="{% url 'delete_member' member.id %}">
                             {% csrf_token %}
                             <button class="btn btn-default btn-sm hidden-xs"
                                     type="submit" role="button">{% trans "Delete" %}</button>
                         </form>
+                        {% endif %}
                     </td>
                     <td class="hidden-sm hidden-md hidden-lg">
                     <td class="hidden-sm hidden-md hidden-lg"><a
@@ -52,11 +54,13 @@
                             role="button">{% trans "Edit" %}</a>
                     </td>
                     <td class="hidden-sm hidden-md hidden-lg">
+                        {% if member != user.member %}
                         <form method="post" action="{% url 'delete_member' member.id %}">
                             {% csrf_token %}
                             <button class="btn btn-default hidden-sm hidden-md hidden-lg"
                                     type="submit" role="button">{% trans "Delete" %}</button>
                         </form>
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}
