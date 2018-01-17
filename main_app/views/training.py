@@ -110,3 +110,16 @@ def delete_training(request, training_id):
         messages.add_message(request, messages.SUCCESS,
                              gettext('Deleted training {training_id}').format(training_id=training_id))
         return redirect('list_trainings')
+
+
+@require_http_methods(["POST"])
+@login_required()
+def unregister_from_training(request, training_id):
+    if request.method == 'POST':
+        training = get_object_or_404(Training, pk=training_id)
+        training.members.remove(request.user.member)
+        training.save()
+        training.refresh_from_db()
+        messages.add_message(request, messages.SUCCESS,
+                             gettext('Unregistered from training'))
+        return redirect('view_training', training_id=training_id)

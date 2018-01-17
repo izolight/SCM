@@ -7,6 +7,12 @@
 {% block content %}
     <div class="col-sm-7">
         <h3>{{ training.title }}</h3>
+        {% for m in messages %}
+            <div class="alert alert-{{ m.tags }} alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>{{ m }}</strong>
+            </div>
+        {% endfor %}
         <div class="row">
             <div class="col-sm-4">{% trans "Date" %}</div>
             <div class="col-sm-4">{{ training.start_time|date:"l d M Y" }}</div>
@@ -26,7 +32,12 @@
             <ul>
                 {% for m in training.members.all %}
                     <li>{{ m }} {% if m == user.member %}
-                        <a class="btn btn-default btn-sm" href="#" role="button">{% trans "unregister" %}</a>{% endif %}
+                        <form action="{% url 'unregister_from_training' training.id %}" method="post" novalidate>
+                            {% csrf_token %}
+                            <button class="btn btn-default btn-sm" type="submit"
+                                    role="button">{% trans "unregister" %}</button>
+                        </form>
+                    {% endif %}
                     </li>
                 {% endfor %}
             </ul>
