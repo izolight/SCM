@@ -16,7 +16,8 @@ def list_trainings(request):
     :param request: client request
     :return: page with table of trainings
     """
-    trainings = Training.objects.all()
+    club = request.user.member.club
+    trainings = Training.objects.filter(club=club)
     return render(request, 'trainings/list_trainings.html', {
         'trainings': trainings
     })
